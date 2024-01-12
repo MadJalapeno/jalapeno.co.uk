@@ -1,0 +1,25 @@
+{
+  "name": "jalapeno.co.uk",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm-run-all -p dev:*",
+    "dev:11ty": "eleventy --serve --port=4004",
+    "dev:tw": "tailwindcss -i src/assets/css/tailwind.css -c tailwind.config.js -o _site/static/tw-style.css --watch",
+    "build": "ELEVENTY_PRODUCTION=true eleventy && NODE_ENV=production npx tailwindcss -i src/assets/css/tailwind.css -c tailwind.config.js -o _site/static/tw-style.css --minify"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "@tailwindcss/typography": "^0.5.10",
+    "autoprefixer": "^10.4.16",
+    "daisyui": "^4.6.0",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.33",
+    "tailwindcss": "^3.4.1"
+  }
+}

@@ -1,0 +1,18 @@
+/* src/assets/css/tailwind.css*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    a:link {
+        @apply underline text-sky-600;
+    }
+
+    a:visited {
+        @apply text-purple-500;
+    }
+
+    a:hover {
+        @apply decoration-sky-500 text-sky-300;
+    }
+}

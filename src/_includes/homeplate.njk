@@ -1,0 +1,14 @@
+<section class="w-full rounded-md p-2 mb-4 border-solid border-2 border-slate-300 bg-slate-100">
+  <div class="flex relative">
+    <div>
+      <h2 class="text-xl">{{ post.data.title }}</h2>
+    </div>
+    <div class="absolute inset-y-0 right-0">
+      {{ post.data.date | postDate }}
+    </div>
+      
+  </div>
+  <div class="p-4">
+    <p class="prose"> {{ post.content | safe }}</p>
+  </div>
+</section>
