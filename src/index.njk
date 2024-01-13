@@ -1,23 +1,30 @@
 ---
 layout: default
 title: Home
-eleventyImport:
-  collections:["post"]
+
 pagination:
-  data: collections.post
-  size: 5
+  data: collections.posts
+  size: 3
   alias: posts
+permalink: "{% if pagination.pageNumber > 0 %}/{{ pagination.pageNumber + 1 }}{% endif %}/index.html"
 ---
-{%- for post in posts | reverse -%}
 
-{% include "homeplate.njk" %}
-
+{%- for post in collections.front -%}
+  {% include "homeplate.njk" %}
 {%- endfor -%}
 
-{%- for pageEntry in pagination.pages %}
+{%- set totalPages = pagination.pages|length -%}
+{%- set currentPage = pagination.pageNumber + 1 -%}
+{%- set previousHref = pagination.href.previous -%}
+{%- set nextHref = pagination.href.next -%}
 
-    <li><a href="{{ pagination.hrefs[ loop.index0 ] }}"{% if page.url == pagination.hrefs[ loop.index0 ] %} aria-current="page"{% endif %}>Page {{ loop.index }}</a></li>
-{%- endfor %}
+<!--
 
-{% if collections.post.length > site.paginate %}
-{% endif %}
+totalPages: {{ totalPages }}
+currentPage: {{ currentPage }}
+previousHref: {{ previousHref }}
+nextHref: {{ nextHref }}
+
+-->
+
+{#% include "pagination.njk" %#}

@@ -1,7 +1,6 @@
 ---
 date: 2024-01-12 07:00:00
 title: Good Morning
-tags: post
 author: mikee
 mood: tired
 ---

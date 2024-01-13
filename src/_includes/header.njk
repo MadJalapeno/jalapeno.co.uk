@@ -9,23 +9,15 @@ https://medium.com/swlh/are-you-using-svg-favicons-yet-a-guide-for-modern-browse
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content="{{ eleventy.generator }}">
     <meta name="theme-color" content="#ffffff">
+
     <link rel="icon" href="/assets/logo.svg">
-    <link rel="mask-icon" href="/assets/logo.svg" color="#000000">
+    <link rel="mask-icon" href="/assets/images/logo.svg" color="#000000">
     <link rel="manifest" href="manifest.json">
+
+    <link rel="stylesheet" href="{{ '/assets/css/tw-style.css' | url }}">    
+    <link rel="stylesheet" href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css">
+
     <title>{% if title %}{{title}} ▢ {% endif %}{{site.title}}</title>
-    <link rel="stylesheet" href="{{ '/static/tw-style.css' | url }}">
-    <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
-    <script>
-      document.documentElement.setAttribute('data-theme', window.localStorage.getItem('theme'))
-    </script>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Cutive&display=swap');
-</style>
-<style>
-  body {
-  font-family: 'Cutive', sans-serif;
-  }
-</style>
 
 </head>
 

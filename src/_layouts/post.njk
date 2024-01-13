@@ -1,9 +1,13 @@
 ---
-
+layout: default
 ---
 
-<!-- https://tfedder.de/blog/generating-a-static-blog-with-eleventy/ -->
-		{% set prevPost = collections.blog_posts | getPreviousCollectionItem %}
-		{% set nextPost = collections.blog_posts | getNextCollectionItem %}
-		{% if prevPost %}<p><a href="{{ prevPost.url }}">˂ Previous post: {{ prevPost.data.title }}</a></p>{% endif %}
-		{% if nextPost %}<p><a href="{{ nextPost.url }}">Next post: {{ nextPost.data.title }} ˃</a></p>{% endif %}
+<article class="single-article">
+
+
+  <header>
+    <h1>{{ title }}</h1>
+  </header>
+
+  {{ content | safe }}
+</article>

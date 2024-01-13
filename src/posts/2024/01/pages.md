@@ -1,7 +1,6 @@
 ---
 date: 2024-01-12 10:00:00
 title: Pagination in 11ty
-tags: post
 author: mikee
 mood: learning
 ---
