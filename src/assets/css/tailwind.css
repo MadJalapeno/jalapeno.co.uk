@@ -5,7 +5,7 @@
 
 @layer base {
     a:link {
-        @apply text-sky-400 after:content-['_↗'];
+        @apply text-sky-400;
     }
 
     a:visited {
