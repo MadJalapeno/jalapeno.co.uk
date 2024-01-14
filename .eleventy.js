@@ -31,7 +31,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addCollection("front", function(collectionAPI) {
     return collectionAPI.getFilteredByTag("posts").sort(function(a, b) {
         return b.date - a.date;
-      }).slice(0, 5);
+      });
     });
   
 
@@ -52,9 +52,4 @@ module.exports = function(eleventyConfig) {
       layouts: "_layouts"
     }
   };
-
-
-
-
-
 };

@@ -1,11 +1,12 @@
 ---
 layout: default
-title: Home
+title: Posts
 
 pagination:
   data: collections.front
-  size: 5
+  size: 3
   alias: posts
+permalink: "/posts/{% if pagination.pageNumber > 0 %}/{{ pagination.pageNumber + 1 }}{% endif %}/index.html"
 ---
 
 {%- for post in posts -%}

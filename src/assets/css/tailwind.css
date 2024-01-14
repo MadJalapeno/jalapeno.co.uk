@@ -15,8 +15,4 @@
     a:hover {
         @apply decoration-sky-500 text-sky-300;
     }
-
-    p {
-        @apply pb-2;
-    }
 }

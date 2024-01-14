@@ -2,7 +2,8 @@
 date: 2024-01-12 16:00:00
 title: Images?
 author: mikee
-mood: need a pee
+mood: I need a pee, but want to finish this first
+tags: images
 ---
 Next up, on the wonderful fact finding adventure that is Static Site Generators, is figuring how to do images.
 

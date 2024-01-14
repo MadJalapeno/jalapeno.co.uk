@@ -1,15 +1,30 @@
-<section class="w-full rounded-md p-2 mb-4 border-solid border-2 border-slate-300 bg-slate-100">
-  <div class="flex relative p-4">
-    <div>
-      <h2 class="text-xl">{{ post.data.title }}</h2>
+<section class="w-full rounded p-2 mb-4 border-solid border-2 border-slate-300 bg-slate-100 dark:bg-slate-800 shadow-md">
+  <div class="px-4 flex">
+    <div class="flex-1">
+      <h2 class="text-xl dark:text-fire-500">{{ post.data.title }}</h2>
     </div>
-    <div class="absolute inset-y-0 right-0">
-      <div class="text-sm">date: {{ post.data.date | postDate }}</div>
-      <div class="text-xs">mood: {{ post.data.mood }}</div>
+    <div class="flex-1">
+      <div class="text-sm text-end text-emerald-700 dark:text-fire-700">{{ post.data.date | postDate }}</div>    
     </div>
+
   </div>
-  <div class="p-4">
-    <p class="prose"> {{ post.content | safe }}</p>
+  <div class="px-4">
+    <article class="prose dark:text-slate-300"> {{ post.content | safe }}</article>
   </div>
+
+    <div class="px-4 flex">
+      <div class="text-xs flex-1 my-2 text-emerald-700 dark:text-fire-700">mood: {{ post.data.mood }}</div>
+      <div class="text-xs flex flex-1 flex-row justify-end"> 
+        <div class="m-2 dark:text-fire-700">tags:</div> 
+        {% for eachTag in post.data.tags %}
+        
+          <a href="/tags/{{ eachTag }}">
+            <div class="m-1 p-1 px-2 bg-slate-300 rounded-full dark:text-fire-700 hover:dark:text-fire-600">{{ eachTag }}</div>
+            </a>
+          
+        {% endfor %}
+        
+        </div>
+    </div>  
 </section>
 

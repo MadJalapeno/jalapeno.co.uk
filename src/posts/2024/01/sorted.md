@@ -18,7 +18,11 @@ Got the front page to only show the most recent content by adding the following 
 and then the loop in index.njk is
 
 ```js
- for post in collections.front 
-   include "homeplate.njk" 
- endfor 
+{% raw %}
+  {% for post in collections.front %} 
+    {% include "homeplate.njk" %} 
+  {% endfor %} 
+{% endraw %}
 ````
+
+links: [how to escape code in markdown](https://github.com/11ty/eleventy/issues/1086)
