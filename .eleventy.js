@@ -6,6 +6,7 @@ module.exports = function(eleventyConfig) {
   // --- Config
 
   eleventyConfig.addPassthroughCopy("./src/assets/images/*");
+  eleventyConfig.addPassthroughCopy("admin/");
 
   eleventyConfig.addWatchTarget('./tailwind.config.js');
   eleventyConfig.addWatchTarget('./src/assets/css/tailwind.css');

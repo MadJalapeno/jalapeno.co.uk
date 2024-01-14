@@ -8,6 +8,7 @@
     "start": "npm-run-all -p dev:*",
     "dev:11ty": "eleventy --serve --port=4004",
     "dev:tw": "tailwindcss -i src/assets/css/tailwind.css -c tailwind.config.js -o _site/assets/css/tw-style.css --watch",
+    "xxx_dev:decap": "npx decap-server",
     "build": "ELEVENTY_PRODUCTION=true eleventy && NODE_ENV=production npx tailwindcss -i src/assets/css/tailwind.css -c tailwind.config.js -o _site/assets/css/tw-style.css --minify"
   },
   "keywords": [],
@@ -21,5 +22,8 @@
     "npm-run-all": "^4.1.5",
     "postcss": "^8.4.33",
     "tailwindcss": "^3.4.1"
+  },
+  "dependencies": {
+    "decap-cms-app": "^3.0.12"
   }
 }

@@ -1,0 +1,25 @@
+# Decap CMS Configuration File
+
+# when using the default proxy server port
+local_backend: true
+
+# The backend option specifies how to access the content for your site
+backend:
+  name: git-gateway
+  branch: main # The branch to update (optional; defaults to master)
+  #repo: MadJalapeno/jalapeno.co.uk
+
+# This line should *not* be indented
+media_folder: "assets/images/uploads" # Media files will be stored in the repo under images/uploads
+
+collections:
+  - name: "posts" # Used in routes, e.g., /admin/collections/blog
+    folder: "posts" # The path to the folder where the documents are stored
+    label: "Posts" # Used in the UI
+    fields: # The fields for each document, usually in front matter
+      - { label: "Title", name: "title", widget: "string" }    
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Author", name: "author", widget: "string", default: "mikee" }
+      - { label: "Mood", name: "mood", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Tags", name: "tags", widget: "list", default: ["post"] }
