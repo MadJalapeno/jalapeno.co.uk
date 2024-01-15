@@ -14,9 +14,9 @@ It does also need access to the filesystem (in this case via a SMB share), which
 
 Maybe that's where I'm going wrong. I want all the advantages of a Wordpress, without all the disadvantages.
 
-Maybe I should look at something that works directly in the GIT.
+Maybe I should look at something that works directly in the git repository, or the  git editor.
 
 
 ![Alt text](https://ichef.bbci.co.uk/news/1536/cpsprodpb/1381A/production/_132289897_0-20.jpg.webp)
 
-You can however drag images stright into the md file when editing it in Visual Studio Code.
+You can however drag images straight into the md file when editing it in Visual Studio Code.
