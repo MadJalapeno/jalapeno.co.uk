@@ -14,16 +14,21 @@ https://medium.com/swlh/are-you-using-svg-favicons-yet-a-guide-for-modern-browse
     <link rel="mask-icon" href="/assets/images/logo.svg" color="#000000">
     <link rel="manifest" href="manifest.json">
 
-    <link rel="stylesheet" href="{{ '/assets/css/tw-style.css' | url }}">    
+    <!-- tailwindcss style sheet -->
+    <link rel="stylesheet" href="{{ '/assets/css/tw-style.css' | url }}">
+
+    <!-- styling for code in pages -->
     <link rel="stylesheet" href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css">
 
-    <title>{% if title %}{{title}} ▢ {% endif %}{{site.title}}</title>
+    <!-- font awesome for glyphicons -->
+    <script src="https://kit.fontawesome.com/b20f6cedee.js" crossorigin="anonymous"></script>
 
     <style>
       pre.language-yaml, pre.language-js {
         border: 2px solid #333;
       }
     </style>
-
+    
+    <title>{% if title %}{{title}} ▢ {% endif %}{{site.title}}</title>
 </head>
 

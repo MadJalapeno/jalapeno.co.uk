@@ -1,39 +1,68 @@
 <ul class="nav flex flex-col overflow-hidden">
   
 <a href="/" class="nav-link hover:bg-lime-200 rounded-md">  
-  <li class="nav-item p-1">
+  <div class="nav-item p-1">
   Home
-  </li>
+  </div>
 </a>
 
+{% if  "/about" in page.url %}
+  <div class="p-1 text-right font-semibold dark:text-fire-400">
+    About  <i class="fa-regular fa-hand-point-right"></i>
+  </div>
+{% else %}
 <a href="/about" class="nav-link hover:bg-lime-200 rounded-md">
-  <li class="nav-item p-1">
+  <div class="nav-item p-1">
     About
-  </li>
+  </div>
 </a>
+{% endif %}
 
-<a href="/pages" class="nav-link hover:bg-lime-200 rounded-md">
-  <li class="nav-item p-1">
+{% if  "/pages" in page.url %}
+  <div class="nav-item p-1">
     Pages
-</li>
+  </div>
+{% else %}
+<a href="/pages" class="nav-link hover:bg-lime-200 rounded-md">
+  <div class="nav-item p-1">
+    Pages
+</div>
 </a>
+{% endif %}
 
-<a href="/projects" class="nav-link hover:bg-lime-200 rounded-md">
-  <li class="nav-item p-1">
+{% if  "/projects" in page.url %}
+  <div class="nav-item p-1">
     Projects
-</li>
+  </div>
+{% else %}
+<a href="/projects" class="nav-link hover:bg-lime-200 rounded-md">
+  <div class="nav-item p-1">
+    Projects
+</div>
 </a>
+{% endif %}
 
+{% if  "/posts" in page.url %}
+  <div class="p-1 text-right">
+    Posts
+  </div>
+{% else %}
 <a href="/posts" class="nav-link hover:bg-lime-200 rounded-md">
-<li class="nav-item p-1">
-Posts
-</li>
+  <div class="nav-item p-1">
+  Posts
+  </div>
 </a>
+{% endif %}
 
-<a href="/contact" class="nav-link hover:bg-lime-200 rounded-md">
-<li class="nav-item p-1">
-Contact
-</li>
-</a>
-
+{% if  "/contact" in page.url %}
+  <div class="nav-item p-1">
+    Contact
+  </div>
+{% else %}
+  <a href="/contact" class="nav-link hover:bg-lime-200 rounded-md">
+    <div class="nav-item p-1">
+        Contact
+    </div>
+  </a>
+{% endif %}
 </ul>

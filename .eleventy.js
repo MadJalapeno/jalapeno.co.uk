@@ -11,6 +11,9 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addWatchTarget('./tailwind.config.js');
   eleventyConfig.addWatchTarget('./src/assets/css/tailwind.css');
 
+  eleventyConfig.ignores.add("README.md");
+  eleventyConfig.ignores.add("./src/posts/template.md");
+
   // --- Shortcodes
 
   eleventyConfig.addShortcode('version', function () {
