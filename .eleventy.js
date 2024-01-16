@@ -48,6 +48,8 @@ module.exports = function(eleventyConfig) {
     return NYtime.toLocaleString(DateTime.DATE_MED_WITH_WEEKDAY);
   });
 
+  eleventyConfig.addAsyncFilter("makeUppercase", async function(value) {});
+
   return {
     dir: {
       input: "src",

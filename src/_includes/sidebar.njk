@@ -1,68 +1,31 @@
-<ul class="nav flex flex-col overflow-hidden">
+<ul class="nav flex flex-col overflow-hidden  text-right">
   
+{% if source == "home" %}
+  <div class="p-1 text-right font-semibold dark:text-fire-400">
+    Home  &nbsp; <i class="fa-regular fa-folder-open"></i>
+  </div>
+{% else %}
 <a href="/" class="nav-link hover:bg-lime-200 rounded-md">  
   <div class="nav-item p-1">
-  Home
+  Home  &nbsp;  <i class="fa-regular fa-folder"></i>
   </div>
 </a>
+{% endif %}
 
-{% if  "/about" in page.url %}
+{% for section in site.sections %}
+  {% if "/"+( section | slugify ) in page.url %}
+  {# we're on this page #}
   <div class="p-1 text-right font-semibold dark:text-fire-400">
-    About  <i class="fa-regular fa-hand-point-right"></i>
+    {{ section }} &nbsp; <i class="fa-regular fa-folder-open"></i>
   </div>
 {% else %}
-<a href="/about" class="nav-link hover:bg-lime-200 rounded-md">
-  <div class="nav-item p-1">
-    About
-  </div>
-</a>
-{% endif %}
-
-{% if  "/pages" in page.url %}
-  <div class="nav-item p-1">
-    Pages
-  </div>
-{% else %}
-<a href="/pages" class="nav-link hover:bg-lime-200 rounded-md">
-  <div class="nav-item p-1">
-    Pages
-</div>
-</a>
-{% endif %}
-
-{% if  "/projects" in page.url %}
-  <div class="nav-item p-1">
-    Projects
-  </div>
-{% else %}
-<a href="/projects" class="nav-link hover:bg-lime-200 rounded-md">
-  <div class="nav-item p-1">
-    Projects
-</div>
-</a>
-{% endif %}
-
-{% if  "/posts" in page.url %}
-  <div class="p-1 text-right">
-    Posts
-  </div>
-{% else %}
-<a href="/posts" class="nav-link hover:bg-lime-200 rounded-md">
-  <div class="nav-item p-1">
-  Posts
-  </div>
-</a>
-{% endif %}
-
-{% if  "/contact" in page.url %}
-  <div class="nav-item p-1">
-    Contact
-  </div>
-{% else %}
-  <a href="/contact" class="nav-link hover:bg-lime-200 rounded-md">
+  {# we're NOT on this page #}
+  <a href="/{{ section | slugify }}" class="nav-link hover:bg-lime-200 rounded-md">
     <div class="nav-item p-1">
-        Contact
+        {{ section }}  &nbsp; <i class="fa-regular fa-folder"></i>
     </div>
   </a>
 {% endif %}
+{% endfor %}
+
 </ul>
