@@ -6,7 +6,7 @@ module.exports = function(eleventyConfig) {
   // --- Config
 
   eleventyConfig.addPassthroughCopy("./src/assets/images/*");
-  eleventyConfig.addPassthroughCopy("admin/");
+  eleventyConfig.addPassthroughCopy("./src/admin/*");
 
   eleventyConfig.addWatchTarget('./tailwind.config.js');
   eleventyConfig.addWatchTarget('./src/assets/css/tailwind.css');
@@ -40,6 +40,19 @@ module.exports = function(eleventyConfig) {
   
 
   // --- Filters
+
+  	// Return all the tags used in a collection
+	eleventyConfig.addFilter("getAllTags", collection => {
+		let tagSet = new Set();
+		for(let item of collection) {
+			(item.data.tags || []).forEach(tag => tagSet.add(tag));
+		}
+		return Array.from(tagSet);
+	});
+
+	eleventyConfig.addFilter("filterTagList", function filterTagList(tags) {
+		return (tags || []).filter(tag => ["all", "nav", "post", "posts"].indexOf(tag) === -1);
+	});
 
   // Make the dates correct and human readable
   // https://moment.github.io/luxon/#/formatting

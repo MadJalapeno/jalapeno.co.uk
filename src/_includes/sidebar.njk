@@ -1,5 +1,6 @@
 <ul class="nav flex flex-col overflow-hidden  text-right">
   
+{# home page #}  
 {% if source == "home" %}
   <div class="p-1 text-right font-semibold dark:text-fire-400">
     Home  &nbsp; <i class="fa-regular fa-folder-open"></i>
@@ -12,6 +13,7 @@
 </a>
 {% endif %}
 
+{# sections pulled from site.json in _data direcctory #}
 {% for section in site.sections %}
   {% if "/"+( section | slugify ) in page.url %}
   {# we're on this page #}
@@ -20,8 +22,8 @@
   </div>
 {% else %}
   {# we're NOT on this page #}
-  <a href="/{{ section | slugify }}" class="nav-link hover:bg-lime-200 rounded-md">
-    <div class="nav-item p-1">
+  <a href="/{{ section | slugify }}" class="rounded-md">
+    <div class="p-1">
         {{ section }}  &nbsp; <i class="fa-regular fa-folder"></i>
     </div>
   </a>

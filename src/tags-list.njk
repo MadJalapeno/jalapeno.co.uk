@@ -1,0 +1,24 @@
+---
+permalink: /tags/
+layout: default.njk
+---
+{% set postslist = collections[ tag ] %}
+
+<section class="w-full rounded p-2 mb-4 border-solid border-2 border-slate-300 bg-slate-100 dark:bg-slate-800 shadow-md">
+
+
+<h1>Tags</h1>
+
+<div class="flex flex-wrap" role="navigation" aria-label="Webdev tag cloud">
+{% for tag in collections.all | getAllTags | filterTagList %}
+	{% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+	
+		<div class="m-1 p-1 px-2 flex dark:text-fire-700 hover:dark:text-fire-600 border-2 rounded-md bg-white">
+		  <div class="px-2"><a href="{{ tagUrl }}" class="post-tag">{{ tag }}</a>{{ postslistCounter }}  {{ postslist.length }}</div> 
+		  <div class="px-2 rounded-full bg-slate-100">{{ collections[tag].length }}</div>
+    </div>
+
+{% endfor %}
+</div>
+
+</section>

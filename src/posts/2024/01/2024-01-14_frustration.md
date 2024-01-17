@@ -6,7 +6,7 @@ title: Frustrations abound
 tags: ["frustration", "Front End"]
 ---
 
-Just spent a frustrating hour or two trying to get a nicer front end installed on here, but with no luck. DecapCMS kept on trying to authorize itself with Netlify, despite authorizing myself to do it. 
+Just spent a frustrating hour or two trying to get a nicer back end installed on here, but with no luck. DecapCMS kept on trying to authorize itself with Netlify, despite authorizing myself to do it. 
 
 So instead I am using Typora to create this post. It's a very nice, simple to use but comprehensive Markdown editor. Main reason I was looking for something else is that it would be nice to have something available anywhere. 
 
