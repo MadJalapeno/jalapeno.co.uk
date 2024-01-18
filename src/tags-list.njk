@@ -9,14 +9,14 @@ layout: default.njk
 
 <h1>Tags</h1>
 
-<div class="flex flex-wrap" role="navigation" aria-label="Webdev tag cloud">
+<div class="flex flex-wrap items-start justify-center p-5 py-10" role="navigation" aria-label="Webdev tag cloud">
 {% for tag in collections.all | getAllTags | filterTagList %}
 	{% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
 	
-		<div class="m-1 p-1 px-2 flex dark:text-fire-700 hover:dark:text-fire-600 border-2 rounded-md bg-white">
-		  <div class="px-2"><a href="{{ tagUrl }}" class="post-tag">{{ tag }}</a>{{ postslistCounter }}  {{ postslist.length }}</div> 
-		  <div class="px-2 rounded-full bg-slate-100">{{ collections[tag].length }}</div>
-    </div>
+  <div class="flex dark:text-fire-700 m-4">
+    <div class="p-2 px-4 border-r-2 border-indigo-500 border-2 border-r-0 rounded-l-full"><a href="{{ tagUrl }}" class="post-tag">{{ tag }}</a>{{ postslistCounter }}  {{ postslist.length }}</div> 
+    <div class="p-2 px-4 text-fire-100 bg-slate-500 justify-center border-2 rounded-r-full">{{ collections[tag].length }}</div>
+  </div>
 
 {% endfor %}
 </div>
