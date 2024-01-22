@@ -8,28 +8,45 @@ https://www.codeply.com/p/bACkfI6wD2
 
 {% include "header.njk" %}
 
-<body class="bg-slate-200 dark:bg-slate-700 flex flex-col min-h-screen content-center">
+<body >
+  <div class="md:flex w-full">
 
-  <div class="container p-2 mx-auto max-w-6xl">
-    <div class="flex flex-row flex-wrap py-4">
-      
-      <aside class="w-full sm:w-1/3 md:w-1/4 px-2 pb-3">
-        <div class="sticky top-0 p-4 rounded w-full shadow-md border-solid border-2 border-slate-300 bg-slate-100 dark:bg-slate-800">
-          <div class="p-4 grid justify-end ">
-            <img src="/assets/images/logo.svg" width="50" height="50">
-          </div>
+    <!-- column sidebar -->
+    <div class="flex-auto basis-1/3 bg-base-300">
 
-          <div class="">
-            {% include "sidebar.njk" %}
-          </div>
+      <!-- side navigation -->
+      <aside class="w-full flex px-2 pt-3 pb-3 md:min-h-screen relative">
+
+        <!-- side col 1 -->
+        <div class="flex-auto basis-1/2"></div> 
+
+        <!-- side col 2 -->
+        <div class="flex-auto basis-1/2 top-0 mx-auto"> {# sticky  self-center #}
+
+          <div class="p-4 rounded w-full shadow-md border-solid border-2 bg-base-100">
+
+            <div class="p-4 grid justify-end ">
+              <img src="/assets/images/logo.svg" width="50" height="50">
+            </div>
+
+            <div class="">
+              {% include "sidebar.njk" %}
+            </div>
+
+        </div>
       </div>
     </aside>
+    </div>
 
-    <main role="main" class="w-full sm:w-2/3 md:w-3/4 px-2 space-y-6">
+
+    <!-- column mainbar -->
+    <div class="flex-auto basis-2/3 bg-base">
+    <main role="main" class="pt-3 w-full sm:w-2/3 md:w-3/4 px-2 space-y-6">
 {#- this is where the content goes -#}
       {{ content | safe}}
     </main>
-  </div>
+    </div>
+  
 </div>
 
 {%- include "footer.njk" -%}

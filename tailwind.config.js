@@ -35,7 +35,34 @@ module.exports = {
     },
   },
 
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [require("@tailwindcss/typography"),
+            require("daisyui")],
+
+// https://themes.ionevolve.com/
+  daisyui: {
+    themes: [
+        "light", 
+        "dim",
+        { "fire": {
+          // background colors
+          "base-100": "#eee",
+          "base-200": "#ddd",
+          "base-300": "#ccc",
+          "base-content": "#333",
+          // primary (tab) colors
+          "primary": "#66cc8a",
+          "primary-content": "#f9fafb",      
+          "primary-focus": "#41be6d",
+          // accent color
+          'accent' : '#ea5234',    
+          'accent-focus' : '#d03516',
+          'accent-content' : '#f9fafb',
+          //
+          "sidebar": "#007777",
+        }
+      }
+    ],
+  },
 
   content: ["./src/**/*.{njk,md}", "./src/**/*.svg",],
 

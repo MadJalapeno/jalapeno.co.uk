@@ -5,6 +5,11 @@ module.exports = function(eleventyConfig) {
 
   // --- Config
 
+  eleventyConfig.setWatchThrottleWaitTime(100); // in milliseconds
+  eleventyConfig.setServerOptions({
+    showVersion: true,
+  })
+
   eleventyConfig.addPassthroughCopy("./src/assets/images/*");
   eleventyConfig.addPassthroughCopy("./src/admin/*");
 

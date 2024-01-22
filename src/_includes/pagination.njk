@@ -1,24 +1,19 @@
 {% if totalPages > 1 %}
-<section class="w-full rounded p-2 mb-4 border-solid border-2 border-slate-300 bg-slate-100 dark:bg-slate-800 shadow-md">
+<section class="w-full rounded p-2 mb-4">
   <div class="px-4 flex">
 
-  <div class="flex flex-1 flex-row">
-  {#   <li>{% if page.url != pagination.href.first %}<a href="{{ pagination.href.first }}">First</a>{% else %}First{% endif %}</li>
-    <li>{% if pagination.href.previous %}<a href="{{ pagination.href.previous }}">Previous</a>{% else %}Previous{% endif %}</li>
-#}
+  <div class="join">
+
 {%- for pageEntry in pagination.pages %}{% if page.url == pagination.hrefs[ loop.index0 ] %}  
-      <div class="px-2">
+      <button class="join-item btn btn-sm btn-active">
         Page {{ loop.index }}
-      </div>
+      </button>
       {% else %}
-      <div class="px-2">
+      <button class="join-item btn btn-sm">
         <a href="{{ pagination.hrefs[ loop.index0 ] }}">Page {{ loop.index }}</a>
-      </div>
+      </button>
       {% endif %}{%- endfor %}
-{# 
-    <li>{% if pagination.href.next %}<a href="{{ pagination.href.next }}">Next</a>{% else %}Next{% endif %}</li>
-    <li>{% if page.url != pagination.href.last %}<a href="{{ pagination.href.last }}">Last</a>{% else %}Last{% endif %}</li>
-#}
+
   </div>
   </div>
   </section>
