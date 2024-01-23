@@ -1,0 +1,550 @@
+
+[11ty] File changed: src/_layouts/default.njk
+  Eleventy Restarting +3m
+  Eleventy:TemplatePassthroughManager Resetting counts to 0 +3m
+  Eleventy:EleventyFiles >>> When processing .gitignore/.eleventyignore, Eleventy does not currently support negative patterns but encountered one: +3m
+  Eleventy:EleventyFiles >>> !.vscode/settings.json +1ms
+  Eleventy:EleventyFiles Follow along at https://github.com/11ty/eleventy/issues/693 to track support. +0ms
+  Eleventy:EleventyFiles >>> When processing .gitignore/.eleventyignore, Eleventy does not currently support negative patterns but encountered one: +0ms
+  Eleventy:EleventyFiles >>> !.vscode/tasks.json +0ms
+  Eleventy:EleventyFiles Follow along at https://github.com/11ty/eleventy/issues/693 to track support. +0ms
+  Eleventy:EleventyFiles >>> When processing .gitignore/.eleventyignore, Eleventy does not currently support negative patterns but encountered one: +0ms
+  Eleventy:EleventyFiles >>> !.vscode/launch.json +0ms
+  Eleventy:EleventyFiles Follow along at https://github.com/11ty/eleventy/issues/693 to track support. +0ms
+  Eleventy:EleventyFiles >>> When processing .gitignore/.eleventyignore, Eleventy does not currently support negative patterns but encountered one: +0ms
+  Eleventy:EleventyFiles >>> !.vscode/extensions.json +0ms
+  Eleventy:EleventyFiles Follow along at https://github.com/11ty/eleventy/issues/693 to track support. +0ms
+  Eleventy:EleventyFiles .gitignore,.eleventyignore,src/.eleventyignore ignoring: ./_site/* +0ms
+  Eleventy:EleventyFiles .gitignore,.eleventyignore,src/.eleventyignore ignoring: ./src/admin/* +0ms
+  Eleventy:EleventyFiles .gitignore,.eleventyignore,src/.eleventyignore ignoring: ./lib-cov +0ms
+  Eleventy:EleventyFiles .gitignore,.eleventyignore,src/.eleventyignore ignoring: ./*.seed +0ms
+  Eleventy:EleventyFiles .gitignore,.eleventyignore,src/.eleventyignore ignoring: ./*.log +0ms
+  Eleventy:EleventyFiles .gitignore,.eleventyignore,src/.eleventyignore ignoring: ./*.csv +0ms
+  Eleventy:EleventyFiles .gitignore,.eleventyignore,src/.eleventyignore ignoring: ./*.dat +0ms
+  Eleventy:EleventyFiles .gitignore,.eleventyignore,src/.eleventyignore ignoring: ./*.out +0ms
+  Eleventy:EleventyFiles .gitignore,.eleventyignore,src/.eleventyignore ignoring: ./*.pid +0ms
+  Eleventy:EleventyFiles .gitignore,.eleventyignore,src/.eleventyignore ignoring: ./*.gz +0ms
+  Eleventy:EleventyFiles .gitignore,.eleventyignore,src/.eleventyignore ignoring: ./pids +0ms
+  Eleventy:EleventyFiles .gitignore,.eleventyignore,src/.eleventyignore ignoring: ./logs +0ms
+  Eleventy:EleventyFiles .gitignore,.eleventyignore,src/.eleventyignore ignoring: ./results +0ms
+  Eleventy:EleventyFiles .gitignore,.eleventyignore,src/.eleventyignore ignoring: ./npm-debug.log +1ms
+  Eleventy:EleventyFiles .gitignore,.eleventyignore,src/.eleventyignore ignoring: ./node_modules/** +0ms
+  Eleventy:EleventyFiles .gitignore,.eleventyignore,src/.eleventyignore ignoring: ./.DS_Store +0ms
+  Eleventy:EleventyFiles .gitignore,.eleventyignore,src/.eleventyignore ignoring: ./.AppleDouble +0ms
+  Eleventy:EleventyFiles .gitignore,.eleventyignore,src/.eleventyignore ignoring: ./.LSOverride +0ms
+  Eleventy:EleventyFiles .gitignore,.eleventyignore,src/.eleventyignore ignoring: ./Icon +0ms
+  Eleventy:EleventyFiles .gitignore,.eleventyignore,src/.eleventyignore ignoring: ./._* +0ms
+  Eleventy:EleventyFiles .gitignore,.eleventyignore,src/.eleventyignore ignoring: ./.Spotlight-V100 +0ms
+  Eleventy:EleventyFiles .gitignore,.eleventyignore,src/.eleventyignore ignoring: ./.Trashes +0ms
+  Eleventy:EleventyFiles .gitignore,.eleventyignore,src/.eleventyignore ignoring: ./Thumbs.db +0ms
+  Eleventy:EleventyFiles .gitignore,.eleventyignore,src/.eleventyignore ignoring: ./thumbs.db +0ms
+  Eleventy:EleventyFiles .gitignore,.eleventyignore,src/.eleventyignore ignoring: ./Desktop.ini +0ms
+  Eleventy:EleventyFiles .gitignore,.eleventyignore,src/.eleventyignore ignoring: ./$RECYCLE.BIN +0ms
+  Eleventy:EleventyFiles .gitignore,.eleventyignore,src/.eleventyignore ignoring: ./package-lock.json +0ms
+  Eleventy:EleventyFiles .gitignore,.eleventyignore,src/.eleventyignore ignoring: ./yarn.lock +0ms
+  Eleventy:EleventyFiles .gitignore,.eleventyignore,src/.eleventyignore ignoring: ./.vscode/**/* +0ms
+  Eleventy:TemplatePassthroughManager Resetting counts to 0 +2ms
+  Eleventy:EleventyFiles >>> When processing .gitignore/.eleventyignore, Eleventy does not currently support negative patterns but encountered one: +0ms
+  Eleventy:EleventyFiles >>> !.vscode/settings.json +0ms
+  Eleventy:EleventyFiles Follow along at https://github.com/11ty/eleventy/issues/693 to track support. +0ms
+  Eleventy:EleventyFiles >>> When processing .gitignore/.eleventyignore, Eleventy does not currently support negative patterns but encountered one: +0ms
+  Eleventy:EleventyFiles >>> !.vscode/tasks.json +0ms
+  Eleventy:EleventyFiles Follow along at https://github.com/11ty/eleventy/issues/693 to track support. +0ms
+  Eleventy:EleventyFiles >>> When processing .gitignore/.eleventyignore, Eleventy does not currently support negative patterns but encountered one: +0ms
+  Eleventy:EleventyFiles >>> !.vscode/launch.json +0ms
+  Eleventy:EleventyFiles Follow along at https://github.com/11ty/eleventy/issues/693 to track support. +0ms
+  Eleventy:EleventyFiles >>> When processing .gitignore/.eleventyignore, Eleventy does not currently support negative patterns but encountered one: +0ms
+  Eleventy:EleventyFiles >>> !.vscode/extensions.json +0ms
+  Eleventy:EleventyFiles Follow along at https://github.com/11ty/eleventy/issues/693 to track support. +0ms
+  Eleventy:EleventyFiles .gitignore,.eleventyignore,src/.eleventyignore ignoring: ./_site/* +1ms
+  Eleventy:EleventyFiles .gitignore,.eleventyignore,src/.eleventyignore ignoring: ./src/admin/* +0ms
+  Eleventy:EleventyFiles .gitignore,.eleventyignore,src/.eleventyignore ignoring: ./lib-cov +0ms
+  Eleventy:EleventyFiles .gitignore,.eleventyignore,src/.eleventyignore ignoring: ./*.seed +0ms
+  Eleventy:EleventyFiles .gitignore,.eleventyignore,src/.eleventyignore ignoring: ./*.log +0ms
+  Eleventy:EleventyFiles .gitignore,.eleventyignore,src/.eleventyignore ignoring: ./*.csv +0ms
+  Eleventy:EleventyFiles .gitignore,.eleventyignore,src/.eleventyignore ignoring: ./*.dat +0ms
+  Eleventy:EleventyFiles .gitignore,.eleventyignore,src/.eleventyignore ignoring: ./*.out +0ms
+  Eleventy:EleventyFiles .gitignore,.eleventyignore,src/.eleventyignore ignoring: ./*.pid +0ms
+  Eleventy:EleventyFiles .gitignore,.eleventyignore,src/.eleventyignore ignoring: ./*.gz +0ms
+  Eleventy:EleventyFiles .gitignore,.eleventyignore,src/.eleventyignore ignoring: ./pids +0ms
+  Eleventy:EleventyFiles .gitignore,.eleventyignore,src/.eleventyignore ignoring: ./logs +0ms
+  Eleventy:EleventyFiles .gitignore,.eleventyignore,src/.eleventyignore ignoring: ./results +0ms
+  Eleventy:EleventyFiles .gitignore,.eleventyignore,src/.eleventyignore ignoring: ./npm-debug.log +0ms
+  Eleventy:EleventyFiles .gitignore,.eleventyignore,src/.eleventyignore ignoring: ./node_modules/** +0ms
+  Eleventy:EleventyFiles .gitignore,.eleventyignore,src/.eleventyignore ignoring: ./.DS_Store +0ms
+  Eleventy:EleventyFiles .gitignore,.eleventyignore,src/.eleventyignore ignoring: ./.AppleDouble +0ms
+  Eleventy:EleventyFiles .gitignore,.eleventyignore,src/.eleventyignore ignoring: ./.LSOverride +0ms
+  Eleventy:EleventyFiles .gitignore,.eleventyignore,src/.eleventyignore ignoring: ./Icon +0ms
+  Eleventy:EleventyFiles .gitignore,.eleventyignore,src/.eleventyignore ignoring: ./._* +0ms
+  Eleventy:EleventyFiles .gitignore,.eleventyignore,src/.eleventyignore ignoring: ./.Spotlight-V100 +0ms
+  Eleventy:EleventyFiles .gitignore,.eleventyignore,src/.eleventyignore ignoring: ./.Trashes +0ms
+  Eleventy:EleventyFiles .gitignore,.eleventyignore,src/.eleventyignore ignoring: ./Thumbs.db +0ms
+  Eleventy:EleventyFiles .gitignore,.eleventyignore,src/.eleventyignore ignoring: ./thumbs.db +0ms
+  Eleventy:EleventyFiles .gitignore,.eleventyignore,src/.eleventyignore ignoring: ./Desktop.ini +0ms
+  Eleventy:EleventyFiles .gitignore,.eleventyignore,src/.eleventyignore ignoring: ./$RECYCLE.BIN +0ms
+  Eleventy:EleventyFiles .gitignore,.eleventyignore,src/.eleventyignore ignoring: ./package-lock.json +0ms
+  Eleventy:EleventyFiles .gitignore,.eleventyignore,src/.eleventyignore ignoring: ./yarn.lock +0ms
+  Eleventy:EleventyFiles .gitignore,.eleventyignore,src/.eleventyignore ignoring: ./.vscode/**/* +0ms
+  Eleventy Directories:
+  Eleventy Input (Dir): src
+  Eleventy Input (File): undefined
+  Eleventy Data: src/_data
+  Eleventy Includes: src/_includes
+  Eleventy Layouts: src/_layouts
+  Eleventy Output: _site
+  Eleventy Template Formats: liquid,md,njk,html,11ty.js
+  Eleventy Verbose Output: false +4ms
+  Eleventy:EleventyFiles Searching for: [ './src/**/*.{liquid,md,njk,html,11ty.js,11ty.cjs,11ty.mjs}' ] +1ms
+  Eleventy:FastGlobManager Glob search ('templates') searching for: [ './src/**/*.{liquid,md,njk,html,11ty.js,11ty.cjs,11ty.mjs}' ] +3m
+  Eleventy:FastGlobManager Glob search ('templates') ignoring: [ '_site/*',               'src/admin/*', 'lib-cov',               '*.seed', '*.log',                 '*.csv', '*.dat',                 '*.out', '*.pid',                 '*.gz', 'pids',                  'logs', 'results',               'npm-debug.log', 'node_modules/**',       '.DS_Store', '.AppleDouble',          '.LSOverride', 'Icon',                  '._*', '.Spotlight-V100',       '.Trashes', 'Thumbs.db',             'thumbs.db', 'Desktop.ini',           '$RECYCLE.BIN', 'package-lock.json',     'yarn.lock', '.vscode/**/*',          '_site/**', 'src/_includes/**',      'src/_layouts/**', 'src/_data/**',          '**/node_modules/**', '.git/**',               'README.md', 'src/posts/template.md' ] +0ms
+  Eleventy:TemplatePassthroughManager TemplatePassthrough copy started. +2ms
+  Eleventy:TemplatePassthroughManager `addPassthroughCopy` config API paths: { './src/assets/images/*': { outputPath: true, copyOptions: {} }, './src/admin/*': { outputPath: true, copyOptions: {} } } +0ms
+  Eleventy:TemplatePassthroughManager `addPassthroughCopy` config API normalized paths: [ { inputPath: './src/assets/images/*', outputPath: true, copyOptions: {} }, { inputPath: './src/admin/*', outputPath: true, copyOptions: {} } ] +1ms
+  Eleventy:TemplatePassthroughManager TemplatePassthrough copying from config: { inputPath: './src/assets/images/*', outputPath: true, copyOptions: {} } +0ms
+  Eleventy:TemplatePassthroughManager TemplatePassthrough copying from config: { inputPath: './src/admin/*', outputPath: true, copyOptions: {} } +0ms
+  Eleventy:TemplatePassthrough Copying './src/assets/images/*' +3m
+  Eleventy:TemplatePassthrough Searching for: './src/assets/images/*' +0ms
+  Eleventy:FastGlobManager Glob search ('passthrough') searching for: './src/assets/images/*' +1ms
+  Eleventy:TemplatePassthrough Copying './src/admin/*' +0ms
+  Eleventy:TemplatePassthrough Searching for: './src/admin/*' +0ms
+  Eleventy:FastGlobManager Glob search ('passthrough') searching for: './src/admin/*' +0ms
+  Eleventy:TemplateData Using [ '.11tydata', '' ] suffixes to find data files. +3m
+  Eleventy:TemplateData getLocalDataPaths('./src/about.md'): [ './src/about.11tydata.js', './src/about.11tydata.cjs', './src/about.11tydata.mjs', './src/about.11tydata.json', './src/about.json', './src/src.11tydata.js', './src/src.11tydata.cjs', './src/src.11tydata.mjs', './src/src.11tydata.json', './src/src.json' ] +0ms
+  Eleventy:TemplateWriter ./src/about.md adding to template map. +3m
+  Eleventy:TemplateData Using [ '.11tydata', '' ] suffixes to find data files. +0ms
+  Eleventy:TemplateData getLocalDataPaths('./src/contact.md'): [ './src/contact.11tydata.js', './src/contact.11tydata.cjs', './src/contact.11tydata.mjs', './src/contact.11tydata.json', './src/contact.json', './src/src.11tydata.js', './src/src.11tydata.cjs', './src/src.11tydata.mjs', './src/src.11tydata.json', './src/src.json' ] +0ms
+  Eleventy:TemplateWriter ./src/contact.md adding to template map. +0ms
+  Eleventy:TemplateData Using [ '.11tydata', '' ] suffixes to find data files. +0ms
+  Eleventy:TemplateData getLocalDataPaths('./src/index.njk'): [ './src/index.11tydata.js', './src/index.11tydata.cjs', './src/index.11tydata.mjs', './src/index.11tydata.json', './src/index.json', './src/src.11tydata.js', './src/src.11tydata.cjs', './src/src.11tydata.mjs', './src/src.11tydata.json', './src/src.json' ] +0ms
+  Eleventy:TemplateWriter ./src/index.njk adding to template map. +1ms
+  Eleventy:TemplateData Using [ '.11tydata', '' ] suffixes to find data files. +1ms
+  Eleventy:TemplateData getLocalDataPaths('./src/links.md'): [ './src/links.11tydata.js', './src/links.11tydata.cjs', './src/links.11tydata.mjs', './src/links.11tydata.json', './src/links.json', './src/src.11tydata.js', './src/src.11tydata.cjs', './src/src.11tydata.mjs', './src/src.11tydata.json', './src/src.json' ] +0ms
+  Eleventy:TemplateWriter ./src/links.md adding to template map. +0ms
+  Eleventy:TemplateData Using [ '.11tydata', '' ] suffixes to find data files. +0ms
+  Eleventy:TemplateData getLocalDataPaths('./src/posts.njk'): [ './src/posts.11tydata.js', './src/posts.11tydata.cjs', './src/posts.11tydata.mjs', './src/posts.11tydata.json', './src/posts.json', './src/src.11tydata.js', './src/src.11tydata.cjs', './src/src.11tydata.mjs', './src/src.11tydata.json', './src/src.json' ] +0ms
+  Eleventy:TemplateWriter ./src/posts.njk adding to template map. +0ms
+  Eleventy:TemplateData Using [ '.11tydata', '' ] suffixes to find data files. +0ms
+  Eleventy:TemplateData getLocalDataPaths('./src/tags-list.njk'): [ './src/tags-list.11tydata.js', './src/tags-list.11tydata.cjs', './src/tags-list.11tydata.mjs', './src/tags-list.11tydata.json', './src/tags-list.json', './src/src.11tydata.js', './src/src.11tydata.cjs', './src/src.11tydata.mjs', './src/src.11tydata.json', './src/src.json' ] +0ms
+  Eleventy:TemplateWriter ./src/tags-list.njk adding to template map. +0ms
+  Eleventy:TemplateData Using [ '.11tydata', '' ] suffixes to find data files. +0ms
+  Eleventy:TemplateData getLocalDataPaths('./src/tags.njk'): [ './src/tags.11tydata.js', './src/tags.11tydata.cjs', './src/tags.11tydata.mjs', './src/tags.11tydata.json', './src/tags.json', './src/src.11tydata.js', './src/src.11tydata.cjs', './src/src.11tydata.mjs', './src/src.11tydata.json', './src/src.json' ] +0ms
+  Eleventy:TemplateWriter ./src/tags.njk adding to template map. +0ms
+  Eleventy:TemplateData Using [ '.11tydata', '' ] suffixes to find data files. +0ms
+  Eleventy:TemplateData getLocalDataPaths('./src/pages/projects/index.njk'): [ './src/pages/projects/index.11tydata.js', './src/pages/projects/index.11tydata.cjs', './src/pages/projects/index.11tydata.mjs', './src/pages/projects/index.11tydata.json', './src/pages/projects/index.json', './src/pages/projects/projects.11tydata.js', './src/pages/projects/projects.11tydata.cjs', './src/pages/projects/projects.11tydata.mjs', './src/pages/projects/projects.11tydata.json', './src/pages/projects/projects.json', './src/pages/pages.11tydata.js', './src/pages/pages.11tydata.cjs', './src/pages/pages.11tydata.mjs', './src/pages/pages.11tydata.json', './src/pages/pages.json', './src/src.11tydata.js', './src/src.11tydata.cjs', './src/src.11tydata.mjs', './src/src.11tydata.json', './src/src.json' ] +0ms
+  Eleventy:TemplateWriter ./src/pages/projects/index.njk adding to template map. +1ms
+  Eleventy:TemplateData Using [ '.11tydata', '' ] suffixes to find data files. +1ms
+  Eleventy:TemplateData getLocalDataPaths('./src/posts/2024/01/2024-01-14_frustration.md'): [ './src/posts/2024/01/2024-01-14_frustration.11tydata.js', './src/posts/2024/01/2024-01-14_frustration.11tydata.cjs', './src/posts/2024/01/2024-01-14_frustration.11tydata.mjs', './src/posts/2024/01/2024-01-14_frustration.11tydata.json', './src/posts/2024/01/2024-01-14_frustration.json', './src/posts/2024/01/01.11tydata.js', './src/posts/2024/01/01.11tydata.cjs', './src/posts/2024/01/01.11tydata.mjs', './src/posts/2024/01/01.11tydata.json', './src/posts/2024/01/01.json', './src/posts/2024/2024.11tydata.js', './src/posts/2024/2024.11tydata.cjs', './src/posts/2024/2024.11tydata.mjs', './src/posts/2024/2024.11tydata.json', './src/posts/2024/2024.json', './src/posts/posts.11tydata.js', './src/posts/posts.11tydata.cjs', './src/posts/posts.11tydata.mjs', './src/posts/posts.11tydata.json', './src/posts/posts.json', './src/src.11tydata.js', './src/src.11tydata.cjs', './src/src.11tydata.mjs', './src/src.11tydata.json', './src/src.json' ] +0ms
+  Eleventy:TemplateWriter ./src/posts/2024/01/2024-01-14_frustration.md adding to template map. +0ms
+  Eleventy:TemplateData Using [ '.11tydata', '' ] suffixes to find data files. +0ms
+  Eleventy:TemplateData getLocalDataPaths('./src/posts/2024/01/2024-01-15_alternatives.md'): [ './src/posts/2024/01/2024-01-15_alternatives.11tydata.js', './src/posts/2024/01/2024-01-15_alternatives.11tydata.cjs', './src/posts/2024/01/2024-01-15_alternatives.11tydata.mjs', './src/posts/2024/01/2024-01-15_alternatives.11tydata.json', './src/posts/2024/01/2024-01-15_alternatives.json', './src/posts/2024/01/01.11tydata.js', './src/posts/2024/01/01.11tydata.cjs', './src/posts/2024/01/01.11tydata.mjs', './src/posts/2024/01/01.11tydata.json', './src/posts/2024/01/01.json', './src/posts/2024/2024.11tydata.js', './src/posts/2024/2024.11tydata.cjs', './src/posts/2024/2024.11tydata.mjs', './src/posts/2024/2024.11tydata.json', './src/posts/2024/2024.json', './src/posts/posts.11tydata.js', './src/posts/posts.11tydata.cjs', './src/posts/posts.11tydata.mjs', './src/posts/posts.11tydata.json', './src/posts/posts.json', './src/src.11tydata.js', './src/src.11tydata.cjs', './src/src.11tydata.mjs', './src/src.11tydata.json', './src/src.json' ] +0ms
+  Eleventy:TemplateWriter ./src/posts/2024/01/2024-01-15_alternatives.md adding to template map. +0ms
+  Eleventy:TemplateData Using [ '.11tydata', '' ] suffixes to find data files. +0ms
+  Eleventy:TemplateData getLocalDataPaths('./src/posts/2024/01/2024-01-16_agit.md'): [ './src/posts/2024/01/2024-01-16_agit.11tydata.js', './src/posts/2024/01/2024-01-16_agit.11tydata.cjs', './src/posts/2024/01/2024-01-16_agit.11tydata.mjs', './src/posts/2024/01/2024-01-16_agit.11tydata.json', './src/posts/2024/01/2024-01-16_agit.json', './src/posts/2024/01/01.11tydata.js', './src/posts/2024/01/01.11tydata.cjs', './src/posts/2024/01/01.11tydata.mjs', './src/posts/2024/01/01.11tydata.json', './src/posts/2024/01/01.json', './src/posts/2024/2024.11tydata.js', './src/posts/2024/2024.11tydata.cjs', './src/posts/2024/2024.11tydata.mjs', './src/posts/2024/2024.11tydata.json', './src/posts/2024/2024.json', './src/posts/posts.11tydata.js', './src/posts/posts.11tydata.cjs', './src/posts/posts.11tydata.mjs', './src/posts/posts.11tydata.json', './src/posts/posts.json', './src/src.11tydata.js', './src/src.11tydata.cjs', './src/src.11tydata.mjs', './src/src.11tydata.json', './src/src.json' ] +0ms
+  Eleventy:TemplateWriter ./src/posts/2024/01/2024-01-16_agit.md adding to template map. +0ms
+  Eleventy:TemplateData Using [ '.11tydata', '' ] suffixes to find data files. +0ms
+  Eleventy:TemplateData getLocalDataPaths('./src/posts/2024/01/2024-01-16_markdown.md'): [ './src/posts/2024/01/2024-01-16_markdown.11tydata.js', './src/posts/2024/01/2024-01-16_markdown.11tydata.cjs', './src/posts/2024/01/2024-01-16_markdown.11tydata.mjs', './src/posts/2024/01/2024-01-16_markdown.11tydata.json', './src/posts/2024/01/2024-01-16_markdown.json', './src/posts/2024/01/01.11tydata.js', './src/posts/2024/01/01.11tydata.cjs', './src/posts/2024/01/01.11tydata.mjs', './src/posts/2024/01/01.11tydata.json', './src/posts/2024/01/01.json', './src/posts/2024/2024.11tydata.js', './src/posts/2024/2024.11tydata.cjs', './src/posts/2024/2024.11tydata.mjs', './src/posts/2024/2024.11tydata.json', './src/posts/2024/2024.json', './src/posts/posts.11tydata.js', './src/posts/posts.11tydata.cjs', './src/posts/posts.11tydata.mjs', './src/posts/posts.11tydata.json', './src/posts/posts.json', './src/src.11tydata.js', './src/src.11tydata.cjs', './src/src.11tydata.mjs', './src/src.11tydata.json', './src/src.json' ] +0ms
+  Eleventy:TemplateWriter ./src/posts/2024/01/2024-01-16_markdown.md adding to template map. +1ms
+  Eleventy:TemplateData Using [ '.11tydata', '' ] suffixes to find data files. +1ms
+  Eleventy:TemplateData getLocalDataPaths('./src/posts/2024/01/2024-01-19_daisyui.md'): [ './src/posts/2024/01/2024-01-19_daisyui.11tydata.js', './src/posts/2024/01/2024-01-19_daisyui.11tydata.cjs', './src/posts/2024/01/2024-01-19_daisyui.11tydata.mjs', './src/posts/2024/01/2024-01-19_daisyui.11tydata.json', './src/posts/2024/01/2024-01-19_daisyui.json', './src/posts/2024/01/01.11tydata.js', './src/posts/2024/01/01.11tydata.cjs', './src/posts/2024/01/01.11tydata.mjs', './src/posts/2024/01/01.11tydata.json', './src/posts/2024/01/01.json', './src/posts/2024/2024.11tydata.js', './src/posts/2024/2024.11tydata.cjs', './src/posts/2024/2024.11tydata.mjs', './src/posts/2024/2024.11tydata.json', './src/posts/2024/2024.json', './src/posts/posts.11tydata.js', './src/posts/posts.11tydata.cjs', './src/posts/posts.11tydata.mjs', './src/posts/posts.11tydata.json', './src/posts/posts.json', './src/src.11tydata.js', './src/src.11tydata.cjs', './src/src.11tydata.mjs', './src/src.11tydata.json', './src/src.json' ] +0ms
+  Eleventy:TemplateWriter ./src/posts/2024/01/2024-01-19_daisyui.md adding to template map. +0ms
+  Eleventy:TemplateData Using [ '.11tydata', '' ] suffixes to find data files. +0ms
+  Eleventy:TemplateData getLocalDataPaths('./src/posts/2024/01/2024-01-22_dev_server.md'): [ './src/posts/2024/01/2024-01-22_dev_server.11tydata.js', './src/posts/2024/01/2024-01-22_dev_server.11tydata.cjs', './src/posts/2024/01/2024-01-22_dev_server.11tydata.mjs', './src/posts/2024/01/2024-01-22_dev_server.11tydata.json', './src/posts/2024/01/2024-01-22_dev_server.json', './src/posts/2024/01/01.11tydata.js', './src/posts/2024/01/01.11tydata.cjs', './src/posts/2024/01/01.11tydata.mjs', './src/posts/2024/01/01.11tydata.json', './src/posts/2024/01/01.json', './src/posts/2024/2024.11tydata.js', './src/posts/2024/2024.11tydata.cjs', './src/posts/2024/2024.11tydata.mjs', './src/posts/2024/2024.11tydata.json', './src/posts/2024/2024.json', './src/posts/posts.11tydata.js', './src/posts/posts.11tydata.cjs', './src/posts/posts.11tydata.mjs', './src/posts/posts.11tydata.json', './src/posts/posts.json', './src/src.11tydata.js', './src/src.11tydata.cjs', './src/src.11tydata.mjs', './src/src.11tydata.json', './src/src.json' ] +0ms
+  Eleventy:TemplateWriter ./src/posts/2024/01/2024-01-22_dev_server.md adding to template map. +0ms
+  Eleventy:TemplateData Using [ '.11tydata', '' ] suffixes to find data files. +0ms
+  Eleventy:TemplateData getLocalDataPaths('./src/posts/2024/01/hello.md'): [ './src/posts/2024/01/hello.11tydata.js', './src/posts/2024/01/hello.11tydata.cjs', './src/posts/2024/01/hello.11tydata.mjs', './src/posts/2024/01/hello.11tydata.json', './src/posts/2024/01/hello.json', './src/posts/2024/01/01.11tydata.js', './src/posts/2024/01/01.11tydata.cjs', './src/posts/2024/01/01.11tydata.mjs', './src/posts/2024/01/01.11tydata.json', './src/posts/2024/01/01.json', './src/posts/2024/2024.11tydata.js', './src/posts/2024/2024.11tydata.cjs', './src/posts/2024/2024.11tydata.mjs', './src/posts/2024/2024.11tydata.json', './src/posts/2024/2024.json', './src/posts/posts.11tydata.js', './src/posts/posts.11tydata.cjs', './src/posts/posts.11tydata.mjs', './src/posts/posts.11tydata.json', './src/posts/posts.json', './src/src.11tydata.js', './src/src.11tydata.cjs', './src/src.11tydata.mjs', './src/src.11tydata.json', './src/src.json' ] +0ms
+  Eleventy:TemplateWriter ./src/posts/2024/01/hello.md adding to template map. +0ms
+  Eleventy:TemplateData Using [ '.11tydata', '' ] suffixes to find data files. +0ms
+  Eleventy:TemplateData getLocalDataPaths('./src/posts/2024/01/images.md'): [ './src/posts/2024/01/images.11tydata.js', './src/posts/2024/01/images.11tydata.cjs', './src/posts/2024/01/images.11tydata.mjs', './src/posts/2024/01/images.11tydata.json', './src/posts/2024/01/images.json', './src/posts/2024/01/01.11tydata.js', './src/posts/2024/01/01.11tydata.cjs', './src/posts/2024/01/01.11tydata.mjs', './src/posts/2024/01/01.11tydata.json', './src/posts/2024/01/01.json', './src/posts/2024/2024.11tydata.js', './src/posts/2024/2024.11tydata.cjs', './src/posts/2024/2024.11tydata.mjs', './src/posts/2024/2024.11tydata.json', './src/posts/2024/2024.json', './src/posts/posts.11tydata.js', './src/posts/posts.11tydata.cjs', './src/posts/posts.11tydata.mjs', './src/posts/posts.11tydata.json', './src/posts/posts.json', './src/src.11tydata.js', './src/src.11tydata.cjs', './src/src.11tydata.mjs', './src/src.11tydata.json', './src/src.json' ] +0ms
+  Eleventy:TemplateWriter ./src/posts/2024/01/images.md adding to template map. +1ms
+  Eleventy:TemplateData Using [ '.11tydata', '' ] suffixes to find data files. +1ms
+  Eleventy:TemplateData getLocalDataPaths('./src/posts/2024/01/next_up.md'): [ './src/posts/2024/01/next_up.11tydata.js', './src/posts/2024/01/next_up.11tydata.cjs', './src/posts/2024/01/next_up.11tydata.mjs', './src/posts/2024/01/next_up.11tydata.json', './src/posts/2024/01/next_up.json', './src/posts/2024/01/01.11tydata.js', './src/posts/2024/01/01.11tydata.cjs', './src/posts/2024/01/01.11tydata.mjs', './src/posts/2024/01/01.11tydata.json', './src/posts/2024/01/01.json', './src/posts/2024/2024.11tydata.js', './src/posts/2024/2024.11tydata.cjs', './src/posts/2024/2024.11tydata.mjs', './src/posts/2024/2024.11tydata.json', './src/posts/2024/2024.json', './src/posts/posts.11tydata.js', './src/posts/posts.11tydata.cjs', './src/posts/posts.11tydata.mjs', './src/posts/posts.11tydata.json', './src/posts/posts.json', './src/src.11tydata.js', './src/src.11tydata.cjs', './src/src.11tydata.mjs', './src/src.11tydata.json', './src/src.json' ] +0ms
+  Eleventy:TemplateWriter ./src/posts/2024/01/next_up.md adding to template map. +0ms
+  Eleventy:TemplateData Using [ '.11tydata', '' ] suffixes to find data files. +0ms
+  Eleventy:TemplateData getLocalDataPaths('./src/posts/2024/01/pages.md'): [ './src/posts/2024/01/pages.11tydata.js', './src/posts/2024/01/pages.11tydata.cjs', './src/posts/2024/01/pages.11tydata.mjs', './src/posts/2024/01/pages.11tydata.json', './src/posts/2024/01/pages.json', './src/posts/2024/01/01.11tydata.js', './src/posts/2024/01/01.11tydata.cjs', './src/posts/2024/01/01.11tydata.mjs', './src/posts/2024/01/01.11tydata.json', './src/posts/2024/01/01.json', './src/posts/2024/2024.11tydata.js', './src/posts/2024/2024.11tydata.cjs', './src/posts/2024/2024.11tydata.mjs', './src/posts/2024/2024.11tydata.json', './src/posts/2024/2024.json', './src/posts/posts.11tydata.js', './src/posts/posts.11tydata.cjs', './src/posts/posts.11tydata.mjs', './src/posts/posts.11tydata.json', './src/posts/posts.json', './src/src.11tydata.js', './src/src.11tydata.cjs', './src/src.11tydata.mjs', './src/src.11tydata.json', './src/src.json' ] +0ms
+  Eleventy:TemplateWriter ./src/posts/2024/01/pages.md adding to template map. +0ms
+  Eleventy:TemplateData Using [ '.11tydata', '' ] suffixes to find data files. +0ms
+  Eleventy:TemplateData getLocalDataPaths('./src/posts/2024/01/pagination.md'): [ './src/posts/2024/01/pagination.11tydata.js', './src/posts/2024/01/pagination.11tydata.cjs', './src/posts/2024/01/pagination.11tydata.mjs', './src/posts/2024/01/pagination.11tydata.json', './src/posts/2024/01/pagination.json', './src/posts/2024/01/01.11tydata.js', './src/posts/2024/01/01.11tydata.cjs', './src/posts/2024/01/01.11tydata.mjs', './src/posts/2024/01/01.11tydata.json', './src/posts/2024/01/01.json', './src/posts/2024/2024.11tydata.js', './src/posts/2024/2024.11tydata.cjs', './src/posts/2024/2024.11tydata.mjs', './src/posts/2024/2024.11tydata.json', './src/posts/2024/2024.json', './src/posts/posts.11tydata.js', './src/posts/posts.11tydata.cjs', './src/posts/posts.11tydata.mjs', './src/posts/posts.11tydata.json', './src/posts/posts.json', './src/src.11tydata.js', './src/src.11tydata.cjs', './src/src.11tydata.mjs', './src/src.11tydata.json', './src/src.json' ] +0ms
+  Eleventy:TemplateWriter ./src/posts/2024/01/pagination.md adding to template map. +0ms
+  Eleventy:TemplateData Using [ '.11tydata', '' ] suffixes to find data files. +0ms
+  Eleventy:TemplateData getLocalDataPaths('./src/posts/2024/01/sleep.md'): [ './src/posts/2024/01/sleep.11tydata.js', './src/posts/2024/01/sleep.11tydata.cjs', './src/posts/2024/01/sleep.11tydata.mjs', './src/posts/2024/01/sleep.11tydata.json', './src/posts/2024/01/sleep.json', './src/posts/2024/01/01.11tydata.js', './src/posts/2024/01/01.11tydata.cjs', './src/posts/2024/01/01.11tydata.mjs', './src/posts/2024/01/01.11tydata.json', './src/posts/2024/01/01.json', './src/posts/2024/2024.11tydata.js', './src/posts/2024/2024.11tydata.cjs', './src/posts/2024/2024.11tydata.mjs', './src/posts/2024/2024.11tydata.json', './src/posts/2024/2024.json', './src/posts/posts.11tydata.js', './src/posts/posts.11tydata.cjs', './src/posts/posts.11tydata.mjs', './src/posts/posts.11tydata.json', './src/posts/posts.json', './src/src.11tydata.js', './src/src.11tydata.cjs', './src/src.11tydata.mjs', './src/src.11tydata.json', './src/src.json' ] +0ms
+  Eleventy:TemplateWriter ./src/posts/2024/01/sleep.md adding to template map. +1ms
+  Eleventy:TemplateData Using [ '.11tydata', '' ] suffixes to find data files. +1ms
+  Eleventy:TemplateData getLocalDataPaths('./src/posts/2024/01/sorted.md'): [ './src/posts/2024/01/sorted.11tydata.js', './src/posts/2024/01/sorted.11tydata.cjs', './src/posts/2024/01/sorted.11tydata.mjs', './src/posts/2024/01/sorted.11tydata.json', './src/posts/2024/01/sorted.json', './src/posts/2024/01/01.11tydata.js', './src/posts/2024/01/01.11tydata.cjs', './src/posts/2024/01/01.11tydata.mjs', './src/posts/2024/01/01.11tydata.json', './src/posts/2024/01/01.json', './src/posts/2024/2024.11tydata.js', './src/posts/2024/2024.11tydata.cjs', './src/posts/2024/2024.11tydata.mjs', './src/posts/2024/2024.11tydata.json', './src/posts/2024/2024.json', './src/posts/posts.11tydata.js', './src/posts/posts.11tydata.cjs', './src/posts/posts.11tydata.mjs', './src/posts/posts.11tydata.json', './src/posts/posts.json', './src/src.11tydata.js', './src/src.11tydata.cjs', './src/src.11tydata.mjs', './src/src.11tydata.json', './src/src.json' ] +0ms
+  Eleventy:TemplateWriter ./src/posts/2024/01/sorted.md adding to template map. +0ms
+  Eleventy:TemplateData Using [ '.11tydata', '' ] suffixes to find data files. +0ms
+  Eleventy:TemplateData getLocalDataPaths('./src/posts/2024/01/still.md'): [ './src/posts/2024/01/still.11tydata.js', './src/posts/2024/01/still.11tydata.cjs', './src/posts/2024/01/still.11tydata.mjs', './src/posts/2024/01/still.11tydata.json', './src/posts/2024/01/still.json', './src/posts/2024/01/01.11tydata.js', './src/posts/2024/01/01.11tydata.cjs', './src/posts/2024/01/01.11tydata.mjs', './src/posts/2024/01/01.11tydata.json', './src/posts/2024/01/01.json', './src/posts/2024/2024.11tydata.js', './src/posts/2024/2024.11tydata.cjs', './src/posts/2024/2024.11tydata.mjs', './src/posts/2024/2024.11tydata.json', './src/posts/2024/2024.json', './src/posts/posts.11tydata.js', './src/posts/posts.11tydata.cjs', './src/posts/posts.11tydata.mjs', './src/posts/posts.11tydata.json', './src/posts/posts.json', './src/src.11tydata.js', './src/src.11tydata.cjs', './src/src.11tydata.mjs', './src/src.11tydata.json', './src/src.json' ] +0ms
+  Eleventy:TemplateWriter ./src/posts/2024/01/still.md adding to template map. +0ms
+  Eleventy:TemplateData Using [ '.11tydata', '' ] suffixes to find data files. +1ms
+  Eleventy:TemplateData getLocalDataPaths('./src/posts/2024/01/weather.md'): [ './src/posts/2024/01/weather.11tydata.js', './src/posts/2024/01/weather.11tydata.cjs', './src/posts/2024/01/weather.11tydata.mjs', './src/posts/2024/01/weather.11tydata.json', './src/posts/2024/01/weather.json', './src/posts/2024/01/01.11tydata.js', './src/posts/2024/01/01.11tydata.cjs', './src/posts/2024/01/01.11tydata.mjs', './src/posts/2024/01/01.11tydata.json', './src/posts/2024/01/01.json', './src/posts/2024/2024.11tydata.js', './src/posts/2024/2024.11tydata.cjs', './src/posts/2024/2024.11tydata.mjs', './src/posts/2024/2024.11tydata.json', './src/posts/2024/2024.json', './src/posts/posts.11tydata.js', './src/posts/posts.11tydata.cjs', './src/posts/posts.11tydata.mjs', './src/posts/posts.11tydata.json', './src/posts/posts.json', './src/src.11tydata.js', './src/src.11tydata.cjs', './src/src.11tydata.mjs', './src/src.11tydata.json', './src/src.json' ] +0ms
+  Eleventy:TemplateWriter ./src/posts/2024/01/weather.md adding to template map. +1ms
+  Eleventy:TemplateData Using [ '.11tydata', '' ] suffixes to find data files. +0ms
+  Eleventy:TemplateData getLocalDataPaths('./src/assets/fonts/PT/PT/PT-Serif/PT-Serif_Bold-Italic.html'): [ './src/assets/fonts/PT/PT/PT-Serif/PT-Serif_Bold-Italic.11tydata.js', './src/assets/fonts/PT/PT/PT-Serif/PT-Serif_Bold-Italic.11tydata.cjs', './src/assets/fonts/PT/PT/PT-Serif/PT-Serif_Bold-Italic.11tydata.mjs', './src/assets/fonts/PT/PT/PT-Serif/PT-Serif_Bold-Italic.11tydata.json', './src/assets/fonts/PT/PT/PT-Serif/PT-Serif_Bold-Italic.json', './src/assets/fonts/PT/PT/PT-Serif/PT-Serif.11tydata.js', './src/assets/fonts/PT/PT/PT-Serif/PT-Serif.11tydata.cjs', './src/assets/fonts/PT/PT/PT-Serif/PT-Serif.11tydata.mjs', './src/assets/fonts/PT/PT/PT-Serif/PT-Serif.11tydata.json', './src/assets/fonts/PT/PT/PT-Serif/PT-Serif.json', './src/assets/fonts/PT/PT/PT.11tydata.js', './src/assets/fonts/PT/PT/PT.11tydata.cjs', './src/assets/fonts/PT/PT/PT.11tydata.mjs', './src/assets/fonts/PT/PT/PT.11tydata.json', './src/assets/fonts/PT/PT/PT.json', './src/assets/fonts/PT/PT.11tydata.js', './src/assets/fonts/PT/PT.11tydata.cjs', './src/assets/fonts/PT/PT.11tydata.mjs', './src/assets/fonts/PT/PT.11tydata.json', './src/assets/fonts/PT/PT.json', './src/assets/fonts/fonts.11tydata.js', './src/assets/fonts/fonts.11tydata.cjs', './src/assets/fonts/fonts.11tydata.mjs', './src/assets/fonts/fonts.11tydata.json', './src/assets/fonts/fonts.json', './src/assets/assets.11tydata.js', './src/assets/assets.11tydata.cjs', './src/assets/assets.11tydata.mjs', './src/assets/assets.11tydata.json', './src/assets/assets.json', './src/src.11tydata.js', './src/src.11tydata.cjs', './src/src.11tydata.mjs', './src/src.11tydata.json', './src/src.json' ] +0ms
+  Eleventy:TemplateWriter ./src/assets/fonts/PT/PT/PT-Serif/PT-Serif_Bold-Italic.html adding to template map. +0ms
+  Eleventy:TemplateData Using [ '.11tydata', '' ] suffixes to find data files. +0ms
+  Eleventy:TemplateData getLocalDataPaths('./src/assets/fonts/PT/PT/PT-Serif/PT-Serif_Bold.html'): [ './src/assets/fonts/PT/PT/PT-Serif/PT-Serif_Bold.11tydata.js', './src/assets/fonts/PT/PT/PT-Serif/PT-Serif_Bold.11tydata.cjs', './src/assets/fonts/PT/PT/PT-Serif/PT-Serif_Bold.11tydata.mjs', './src/assets/fonts/PT/PT/PT-Serif/PT-Serif_Bold.11tydata.json', './src/assets/fonts/PT/PT/PT-Serif/PT-Serif_Bold.json', './src/assets/fonts/PT/PT/PT-Serif/PT-Serif.11tydata.js', './src/assets/fonts/PT/PT/PT-Serif/PT-Serif.11tydata.cjs', './src/assets/fonts/PT/PT/PT-Serif/PT-Serif.11tydata.mjs', './src/assets/fonts/PT/PT/PT-Serif/PT-Serif.11tydata.json', './src/assets/fonts/PT/PT/PT-Serif/PT-Serif.json', './src/assets/fonts/PT/PT/PT.11tydata.js', './src/assets/fonts/PT/PT/PT.11tydata.cjs', './src/assets/fonts/PT/PT/PT.11tydata.mjs', './src/assets/fonts/PT/PT/PT.11tydata.json', './src/assets/fonts/PT/PT/PT.json', './src/assets/fonts/PT/PT.11tydata.js', './src/assets/fonts/PT/PT.11tydata.cjs', './src/assets/fonts/PT/PT.11tydata.mjs', './src/assets/fonts/PT/PT.11tydata.json', './src/assets/fonts/PT/PT.json', './src/assets/fonts/fonts.11tydata.js', './src/assets/fonts/fonts.11tydata.cjs', './src/assets/fonts/fonts.11tydata.mjs', './src/assets/fonts/fonts.11tydata.json', './src/assets/fonts/fonts.json', './src/assets/assets.11tydata.js', './src/assets/assets.11tydata.cjs', './src/assets/assets.11tydata.mjs', './src/assets/assets.11tydata.json', './src/assets/assets.json', './src/src.11tydata.js', './src/src.11tydata.cjs', './src/src.11tydata.mjs', './src/src.11tydata.json', './src/src.json' ] +0ms
+  Eleventy:TemplateWriter ./src/assets/fonts/PT/PT/PT-Serif/PT-Serif_Bold.html adding to template map. +0ms
+  Eleventy:TemplateData Using [ '.11tydata', '' ] suffixes to find data files. +0ms
+  Eleventy:TemplateData getLocalDataPaths('./src/assets/fonts/PT/PT/PT-Serif/PT-Serif_Caption-Italic.html'): [ './src/assets/fonts/PT/PT/PT-Serif/PT-Serif_Caption-Italic.11tydata.js', './src/assets/fonts/PT/PT/PT-Serif/PT-Serif_Caption-Italic.11tydata.cjs', './src/assets/fonts/PT/PT/PT-Serif/PT-Serif_Caption-Italic.11tydata.mjs', './src/assets/fonts/PT/PT/PT-Serif/PT-Serif_Caption-Italic.11tydata.json', './src/assets/fonts/PT/PT/PT-Serif/PT-Serif_Caption-Italic.json', './src/assets/fonts/PT/PT/PT-Serif/PT-Serif.11tydata.js', './src/assets/fonts/PT/PT/PT-Serif/PT-Serif.11tydata.cjs', './src/assets/fonts/PT/PT/PT-Serif/PT-Serif.11tydata.mjs', './src/assets/fonts/PT/PT/PT-Serif/PT-Serif.11tydata.json', './src/assets/fonts/PT/PT/PT-Serif/PT-Serif.json', './src/assets/fonts/PT/PT/PT.11tydata.js', './src/assets/fonts/PT/PT/PT.11tydata.cjs', './src/assets/fonts/PT/PT/PT.11tydata.mjs', './src/assets/fonts/PT/PT/PT.11tydata.json', './src/assets/fonts/PT/PT/PT.json', './src/assets/fonts/PT/PT.11tydata.js', './src/assets/fonts/PT/PT.11tydata.cjs', './src/assets/fonts/PT/PT.11tydata.mjs', './src/assets/fonts/PT/PT.11tydata.json', './src/assets/fonts/PT/PT.json', './src/assets/fonts/fonts.11tydata.js', './src/assets/fonts/fonts.11tydata.cjs', './src/assets/fonts/fonts.11tydata.mjs', './src/assets/fonts/fonts.11tydata.json', './src/assets/fonts/fonts.json', './src/assets/assets.11tydata.js', './src/assets/assets.11tydata.cjs', './src/assets/assets.11tydata.mjs', './src/assets/assets.11tydata.json', './src/assets/assets.json', './src/src.11tydata.js', './src/src.11tydata.cjs', './src/src.11tydata.mjs', './src/src.11tydata.json', './src/src.json' ] +0ms
+  Eleventy:TemplateWriter ./src/assets/fonts/PT/PT/PT-Serif/PT-Serif_Caption-Italic.html adding to template map. +0ms
+  Eleventy:TemplateData Using [ '.11tydata', '' ] suffixes to find data files. +0ms
+  Eleventy:TemplateData getLocalDataPaths('./src/assets/fonts/PT/PT/PT-Serif/PT-Serif_Caption-Regular.html'): [ './src/assets/fonts/PT/PT/PT-Serif/PT-Serif_Caption-Regular.11tydata.js', './src/assets/fonts/PT/PT/PT-Serif/PT-Serif_Caption-Regular.11tydata.cjs', './src/assets/fonts/PT/PT/PT-Serif/PT-Serif_Caption-Regular.11tydata.mjs', './src/assets/fonts/PT/PT/PT-Serif/PT-Serif_Caption-Regular.11tydata.json', './src/assets/fonts/PT/PT/PT-Serif/PT-Serif_Caption-Regular.json', './src/assets/fonts/PT/PT/PT-Serif/PT-Serif.11tydata.js', './src/assets/fonts/PT/PT/PT-Serif/PT-Serif.11tydata.cjs', './src/assets/fonts/PT/PT/PT-Serif/PT-Serif.11tydata.mjs', './src/assets/fonts/PT/PT/PT-Serif/PT-Serif.11tydata.json', './src/assets/fonts/PT/PT/PT-Serif/PT-Serif.json', './src/assets/fonts/PT/PT/PT.11tydata.js', './src/assets/fonts/PT/PT/PT.11tydata.cjs', './src/assets/fonts/PT/PT/PT.11tydata.mjs', './src/assets/fonts/PT/PT/PT.11tydata.json', './src/assets/fonts/PT/PT/PT.json', './src/assets/fonts/PT/PT.11tydata.js', './src/assets/fonts/PT/PT.11tydata.cjs', './src/assets/fonts/PT/PT.11tydata.mjs', './src/assets/fonts/PT/PT.11tydata.json', './src/assets/fonts/PT/PT.json', './src/assets/fonts/fonts.11tydata.js', './src/assets/fonts/fonts.11tydata.cjs', './src/assets/fonts/fonts.11tydata.mjs', './src/assets/fonts/fonts.11tydata.json', './src/assets/fonts/fonts.json', './src/assets/assets.11tydata.js', './src/assets/assets.11tydata.cjs', './src/assets/assets.11tydata.mjs', './src/assets/assets.11tydata.json', './src/assets/assets.json', './src/src.11tydata.js', './src/src.11tydata.cjs', './src/src.11tydata.mjs', './src/src.11tydata.json', './src/src.json' ] +1ms
+  Eleventy:TemplateWriter ./src/assets/fonts/PT/PT/PT-Serif/PT-Serif_Caption-Regular.html adding to template map. +1ms
+  Eleventy:TemplateData Using [ '.11tydata', '' ] suffixes to find data files. +0ms
+  Eleventy:TemplateData getLocalDataPaths('./src/assets/fonts/PT/PT/PT-Serif/PT-Serif_Italic.html'): [ './src/assets/fonts/PT/PT/PT-Serif/PT-Serif_Italic.11tydata.js', './src/assets/fonts/PT/PT/PT-Serif/PT-Serif_Italic.11tydata.cjs', './src/assets/fonts/PT/PT/PT-Serif/PT-Serif_Italic.11tydata.mjs', './src/assets/fonts/PT/PT/PT-Serif/PT-Serif_Italic.11tydata.json', './src/assets/fonts/PT/PT/PT-Serif/PT-Serif_Italic.json', './src/assets/fonts/PT/PT/PT-Serif/PT-Serif.11tydata.js', './src/assets/fonts/PT/PT/PT-Serif/PT-Serif.11tydata.cjs', './src/assets/fonts/PT/PT/PT-Serif/PT-Serif.11tydata.mjs', './src/assets/fonts/PT/PT/PT-Serif/PT-Serif.11tydata.json', './src/assets/fonts/PT/PT/PT-Serif/PT-Serif.json', './src/assets/fonts/PT/PT/PT.11tydata.js', './src/assets/fonts/PT/PT/PT.11tydata.cjs', './src/assets/fonts/PT/PT/PT.11tydata.mjs', './src/assets/fonts/PT/PT/PT.11tydata.json', './src/assets/fonts/PT/PT/PT.json', './src/assets/fonts/PT/PT.11tydata.js', './src/assets/fonts/PT/PT.11tydata.cjs', './src/assets/fonts/PT/PT.11tydata.mjs', './src/assets/fonts/PT/PT.11tydata.json', './src/assets/fonts/PT/PT.json', './src/assets/fonts/fonts.11tydata.js', './src/assets/fonts/fonts.11tydata.cjs', './src/assets/fonts/fonts.11tydata.mjs', './src/assets/fonts/fonts.11tydata.json', './src/assets/fonts/fonts.json', './src/assets/assets.11tydata.js', './src/assets/assets.11tydata.cjs', './src/assets/assets.11tydata.mjs', './src/assets/assets.11tydata.json', './src/assets/assets.json', './src/src.11tydata.js', './src/src.11tydata.cjs', './src/src.11tydata.mjs', './src/src.11tydata.json', './src/src.json' ] +0ms
+  Eleventy:TemplateWriter ./src/assets/fonts/PT/PT/PT-Serif/PT-Serif_Italic.html adding to template map. +0ms
+  Eleventy:TemplateData Using [ '.11tydata', '' ] suffixes to find data files. +0ms
+  Eleventy:TemplateData getLocalDataPaths('./src/assets/fonts/PT/PT/PT-Serif/PT-Serif_Regular.html'): [ './src/assets/fonts/PT/PT/PT-Serif/PT-Serif_Regular.11tydata.js', './src/assets/fonts/PT/PT/PT-Serif/PT-Serif_Regular.11tydata.cjs', './src/assets/fonts/PT/PT/PT-Serif/PT-Serif_Regular.11tydata.mjs', './src/assets/fonts/PT/PT/PT-Serif/PT-Serif_Regular.11tydata.json', './src/assets/fonts/PT/PT/PT-Serif/PT-Serif_Regular.json', './src/assets/fonts/PT/PT/PT-Serif/PT-Serif.11tydata.js', './src/assets/fonts/PT/PT/PT-Serif/PT-Serif.11tydata.cjs', './src/assets/fonts/PT/PT/PT-Serif/PT-Serif.11tydata.mjs', './src/assets/fonts/PT/PT/PT-Serif/PT-Serif.11tydata.json', './src/assets/fonts/PT/PT/PT-Serif/PT-Serif.json', './src/assets/fonts/PT/PT/PT.11tydata.js', './src/assets/fonts/PT/PT/PT.11tydata.cjs', './src/assets/fonts/PT/PT/PT.11tydata.mjs', './src/assets/fonts/PT/PT/PT.11tydata.json', './src/assets/fonts/PT/PT/PT.json', './src/assets/fonts/PT/PT.11tydata.js', './src/assets/fonts/PT/PT.11tydata.cjs', './src/assets/fonts/PT/PT.11tydata.mjs', './src/assets/fonts/PT/PT.11tydata.json', './src/assets/fonts/PT/PT.json', './src/assets/fonts/fonts.11tydata.js', './src/assets/fonts/fonts.11tydata.cjs', './src/assets/fonts/fonts.11tydata.mjs', './src/assets/fonts/fonts.11tydata.json', './src/assets/fonts/fonts.json', './src/assets/assets.11tydata.js', './src/assets/assets.11tydata.cjs', './src/assets/assets.11tydata.mjs', './src/assets/assets.11tydata.json', './src/assets/assets.json', './src/src.11tydata.js', './src/src.11tydata.cjs', './src/src.11tydata.mjs', './src/src.11tydata.json', './src/src.json' ] +0ms
+  Eleventy:TemplateWriter ./src/assets/fonts/PT/PT/PT-Serif/PT-Serif_Regular.html adding to template map. +0ms
+  Eleventy:TemplatePassthroughManager Skipped copying './src/admin/*' (emulated passthrough copy) +15ms
+  Eleventy:FastGlobManager Glob search ('global-data') searching for: [ './src/_data/**/*.{json,mjs,cjs,js}' ] +17ms
+  Eleventy:TemplatePassthrough Copying individual file 'src/assets/images/logo.svg' +18ms
+  Eleventy:TemplateData Found global data file ./src/_data/site.json and adding as: site +11ms
+  Eleventy:Template Template date: using file’s 'birthtimeMs' for './src/assets/fonts/PT/PT/PT-Serif/PT-Serif_Bold-Italic.html' of 2024-01-23T12:16:04.068Z (from 1706012164068.0425) +3m
+  Eleventy:Template Template date: using file’s 'birthtimeMs' for './src/assets/fonts/PT/PT/PT-Serif/PT-Serif_Bold.html' of 2024-01-23T12:16:04.068Z (from 1706012164068.0425) +0ms
+  Eleventy:Template Template date: using file’s 'birthtimeMs' for './src/assets/fonts/PT/PT/PT-Serif/PT-Serif_Caption-Italic.html' of 2024-01-23T12:16:04.068Z (from 1706012164068.0425) +0ms
+  Eleventy:Template Template date: using file’s 'birthtimeMs' for './src/assets/fonts/PT/PT/PT-Serif/PT-Serif_Caption-Regular.html' of 2024-01-23T12:16:04.068Z (from 1706012164068.0425) +0ms
+  Eleventy:Template Template date: using file’s 'birthtimeMs' for './src/assets/fonts/PT/PT/PT-Serif/PT-Serif_Italic.html' of 2024-01-23T12:16:04.068Z (from 1706012164068.0425) +0ms
+  Eleventy:Template Template date: using file’s 'birthtimeMs' for './src/assets/fonts/PT/PT/PT-Serif/PT-Serif_Regular.html' of 2024-01-23T12:16:04.068Z (from 1706012164068.0425) +0ms
+  Eleventy:Template getMappedDate: using a date in the data for './src/posts/2024/01/2024-01-14_frustration.md' of 2024-01-14T14:56:00.000Z +0ms
+  Eleventy:Template getMappedDate: YAML parsed it: 2024-01-14T14:56:00.000Z +0ms
+  Eleventy:Template getMappedDate: using a date in the data for './src/posts/2024/01/2024-01-15_alternatives.md' of 2024-01-15T20:16:00.000Z +0ms
+  Eleventy:Template getMappedDate: YAML parsed it: 2024-01-15T20:16:00.000Z +0ms
+  Eleventy:Template getMappedDate: using a date in the data for './src/posts/2024/01/2024-01-16_agit.md' of 2024-01-16T19:04:04.000Z +0ms
+  Eleventy:Template getMappedDate: YAML parsed it: 2024-01-16T19:04:04.000Z +0ms
+  Eleventy:Template getMappedDate: using a date in the data for './src/posts/2024/01/2024-01-16_markdown.md' of 2024-01-16T12:05:00.000Z +0ms
+  Eleventy:Template getMappedDate: YAML parsed it: 2024-01-16T12:05:00.000Z +1ms
+  Eleventy:Template getMappedDate: using a date in the data for './src/posts/2024/01/2024-01-19_daisyui.md' of 2024-01-19T08:45:00.000Z +0ms
+  Eleventy:Template getMappedDate: YAML parsed it: 2024-01-19T08:45:00.000Z +0ms
+  Eleventy:Template getMappedDate: using a date in the data for './src/posts/2024/01/2024-01-22_dev_server.md' of 2024-01-22T19:45:00.000Z +0ms
+  Eleventy:Template getMappedDate: YAML parsed it: 2024-01-22T19:45:00.000Z +0ms
+  Eleventy:Template getMappedDate: using a date in the data for './src/posts/2024/01/hello.md' of 2024-01-11T20:00:00.000Z +0ms
+  Eleventy:Template getMappedDate: YAML parsed it: 2024-01-11T20:00:00.000Z +0ms
+  Eleventy:Template getMappedDate: using a date in the data for './src/posts/2024/01/images.md' of 2024-01-12T16:00:00.000Z +0ms
+  Eleventy:Template getMappedDate: YAML parsed it: 2024-01-12T16:00:00.000Z +0ms
+  Eleventy:Template getMappedDate: using a date in the data for './src/posts/2024/01/next_up.md' of 2024-01-13T11:52:00.000Z +0ms
+  Eleventy:Template getMappedDate: YAML parsed it: 2024-01-13T11:52:00.000Z +0ms
+  Eleventy:Template getMappedDate: using a date in the data for './src/posts/2024/01/pages.md' of 2024-01-12T10:00:00.000Z +0ms
+  Eleventy:Template getMappedDate: YAML parsed it: 2024-01-12T10:00:00.000Z +0ms
+  Eleventy:Template getMappedDate: using a date in the data for './src/posts/2024/01/pagination.md' of 2024-01-12T11:56:00.000Z +0ms
+  Eleventy:Template getMappedDate: YAML parsed it: 2024-01-12T11:56:00.000Z +0ms
+  Eleventy:Template getMappedDate: using a date in the data for './src/posts/2024/01/sleep.md' of 2024-01-12T07:00:00.000Z +0ms
+  Eleventy:Template getMappedDate: YAML parsed it: 2024-01-12T07:00:00.000Z +0ms
+  Eleventy:Template getMappedDate: using a date in the data for './src/posts/2024/01/sorted.md' of 2024-01-13T07:59:00.000Z +1ms
+  Eleventy:Template getMappedDate: YAML parsed it: 2024-01-13T07:59:00.000Z +0ms
+  Eleventy:Template getMappedDate: using a date in the data for './src/posts/2024/01/still.md' of 2024-01-12T07:30:00.000Z +0ms
+  Eleventy:Template getMappedDate: YAML parsed it: 2024-01-12T07:30:00.000Z +0ms
+  Eleventy:Template getMappedDate: using a date in the data for './src/posts/2024/01/weather.md' of 2024-01-13T18:04:00.000Z +0ms
+  Eleventy:Template getMappedDate: YAML parsed it: 2024-01-13T18:04:00.000Z +0ms
+  Eleventy:Template Template date: using file’s 'birthtimeMs' for './src/about.md' of 2024-01-23T12:16:04.064Z (from 1706012164064.0425) +0ms
+  Eleventy:Template Template date: using file’s 'birthtimeMs' for './src/contact.md' of 2024-01-23T12:16:04.068Z (from 1706012164068.0425) +0ms
+  Eleventy:Template Template date: using file’s 'birthtimeMs' for './src/index.njk' of 2024-01-23T12:16:04.068Z (from 1706012164068.0425) +0ms
+  Eleventy:Template Template date: using file’s 'birthtimeMs' for './src/links.md' of 2024-01-23T12:16:04.068Z (from 1706012164068.0425) +0ms
+  Eleventy:Template Template date: using file’s 'birthtimeMs' for './src/posts.njk' of 2024-01-23T12:16:04.068Z (from 1706012164068.0425) +0ms
+  Eleventy:TemplatePassthroughManager Copied './src/assets/images/*' (1 files) +10ms
+  Eleventy:TemplatePassthroughManager TemplatePassthrough copy finished. Current count: 1 +0ms
+  Eleventy:Template Template date: using file’s 'birthtimeMs' for './src/pages/projects/index.njk' of 2024-01-23T12:16:04.068Z (from 1706012164068.0425) +2ms
+  Eleventy:Template Template date: using file’s 'birthtimeMs' for './src/tags.njk' of 2024-01-23T12:16:04.068Z (from 1706012164068.0425) +0ms
+  Eleventy:Template Template date: using file’s 'birthtimeMs' for './src/tags-list.njk' of 2024-01-23T12:16:04.068Z (from 1706012164068.0425) +0ms
+  Eleventy:Dependencies 'src/index.njk' depends on collection: 'front' +3m
+  Eleventy:Dependencies 'src/posts.njk' depends on collection: 'front' +0ms
+  Eleventy:TemplateMap Caching collections objects. +3m
+  Eleventy:Template Rendering permalink for './src/tags-list.njk': /tags/ becomes '/tags/' +3ms
+  Eleventy:TemplateMap Collection: collections.all size: 26 +2ms
+  Eleventy:TemplateMap Collection: collections.posts size: 15 +0ms
+  Eleventy:TemplateMap Collection: collections.frustration size: 1 +0ms
+  Eleventy:TemplateMap Collection: collections.Front End size: 1 +0ms
+  Eleventy:TemplateMap Collection: collections.alternatives size: 1 +0ms
+  Eleventy:TemplateMap Collection: collections.11ty size: 3 +0ms
+  Eleventy:TemplateMap Collection: collections.CMS size: 1 +0ms
+  Eleventy:TemplateMap Collection: collections.markdown size: 1 +0ms
+  Eleventy:TemplateMap Collection: collections.themes size: 2 +1ms
+  Eleventy:TemplateMap Collection: collections.daisyui size: 2 +0ms
+  Eleventy:TemplateMap Collection: collections.tailwindcss size: 3 +0ms
+  Eleventy:TemplateMap Collection: collections.images size: 1 +0ms
+  Eleventy:TemplateMap Collection: collections.post size: 1 +0ms
+  Eleventy:TemplateMap Collection: collections.weather size: 1 +0ms
+  Eleventy:TemplateMap Collection: collections.front size: 15 +0ms
+  Eleventy:Template Rendering permalink for './src/posts.njk': /posts/{% if pagination.pageNumber > 0 %}/{{ pagination.pageNumber + 1 }}{% endif %}/index.html becomes '/posts//index.html' +2ms
+  Eleventy:Template Rendering permalink for './src/posts.njk': /posts/{% if pagination.pageNumber > 0 %}/{{ pagination.pageNumber + 1 }}{% endif %}/index.html becomes '/posts//2/index.html' +0ms
+  Eleventy:Template Rendering permalink for './src/posts.njk': /posts/{% if pagination.pageNumber > 0 %}/{{ pagination.pageNumber + 1 }}{% endif %}/index.html becomes '/posts//3/index.html' +0ms
+  Eleventy:TemplateMap Collection: collections.all size: 28 +1ms
+  Eleventy:TemplateMap Collection: collections.page size: 0 +0ms
+  Eleventy:Template Rendering permalink for './src/tags.njk': /tags/{{ tag | slugify }}/ becomes '/tags/frustration/' +3ms
+  Eleventy:Template Rendering permalink for './src/tags.njk': /tags/{{ tag | slugify }}/ becomes '/tags/front-end/' +2ms
+  Eleventy:Template Rendering permalink for './src/tags.njk': /tags/{{ tag | slugify }}/ becomes '/tags/alternatives/' +2ms
+  Eleventy:Template Rendering permalink for './src/tags.njk': /tags/{{ tag | slugify }}/ becomes '/tags/11ty/' +2ms
+  Eleventy:Template Rendering permalink for './src/tags.njk': /tags/{{ tag | slugify }}/ becomes '/tags/cms/' +1ms
+  Eleventy:Template Rendering permalink for './src/tags.njk': /tags/{{ tag | slugify }}/ becomes '/tags/markdown/' +1ms
+  Eleventy:Template Rendering permalink for './src/tags.njk': /tags/{{ tag | slugify }}/ becomes '/tags/themes/' +2ms
+  Eleventy:Template Rendering permalink for './src/tags.njk': /tags/{{ tag | slugify }}/ becomes '/tags/daisyui/' +1ms
+  Eleventy:Template Rendering permalink for './src/tags.njk': /tags/{{ tag | slugify }}/ becomes '/tags/tailwindcss/' +1ms
+  Eleventy:Template Rendering permalink for './src/tags.njk': /tags/{{ tag | slugify }}/ becomes '/tags/images/' +2ms
+  Eleventy:Template Rendering permalink for './src/tags.njk': /tags/{{ tag | slugify }}/ becomes '/tags/weather/' +1ms
+  Eleventy:Template Rendering permalink for './src/tags.njk': /tags/{{ tag | slugify }}/ becomes '/tags/front/' +1ms
+  Eleventy:Template Rendering permalink for './src/tags.njk': /tags/{{ tag | slugify }}/ becomes '/tags/page/' +2ms
+  Eleventy:Template First round of computed data for './src/tags.njk' +0ms
+  Eleventy:ComputedData 'page.url' accesses [] variables +3m
+  Eleventy:ComputedData 'page.outputPath' accesses [] variables +0ms
+  Eleventy:ComputedData 'title' accesses [ 'tag' ] variables +1ms
+  Eleventy:ComputedData Computed data order of execution: [ 'permalink', 'page.url', 'page.outputPath', 'title' ] +0ms
+  Eleventy:Template Rendering permalink for './src/tags.njk': /tags/{{ tag | slugify }}/ becomes '/tags/frustration/' +2ms
+  Eleventy:Template Rendering permalink for './src/tags.njk': /tags/{{ tag | slugify }}/ becomes '/tags/frustration/' +2ms
+  Eleventy:Template First round of computed data for './src/tags.njk' +0ms
+  Eleventy:ComputedData 'page.url' accesses [] variables +3ms
+  Eleventy:ComputedData 'page.outputPath' accesses [] variables +0ms
+  Eleventy:ComputedData 'title' accesses [ 'tag' ] variables +0ms
+  Eleventy:ComputedData Computed data order of execution: [ 'permalink', 'page.url', 'page.outputPath', 'title' ] +0ms
+  Eleventy:Template Rendering permalink for './src/tags.njk': /tags/{{ tag | slugify }}/ becomes '/tags/front-end/' +2ms
+  Eleventy:Template Rendering permalink for './src/tags.njk': /tags/{{ tag | slugify }}/ becomes '/tags/front-end/' +1ms
+  Eleventy:Template First round of computed data for './src/tags.njk' +0ms
+  Eleventy:ComputedData 'page.url' accesses [] variables +3ms
+  Eleventy:ComputedData 'page.outputPath' accesses [] variables +1ms
+  Eleventy:ComputedData 'title' accesses [ 'tag' ] variables +0ms
+  Eleventy:ComputedData Computed data order of execution: [ 'permalink', 'page.url', 'page.outputPath', 'title' ] +0ms
+  Eleventy:Template Rendering permalink for './src/tags.njk': /tags/{{ tag | slugify }}/ becomes '/tags/alternatives/' +2ms
+  Eleventy:Template Rendering permalink for './src/tags.njk': /tags/{{ tag | slugify }}/ becomes '/tags/alternatives/' +1ms
+  Eleventy:Template First round of computed data for './src/tags.njk' +0ms
+  Eleventy:ComputedData 'page.url' accesses [] variables +3ms
+  Eleventy:ComputedData 'page.outputPath' accesses [] variables +0ms
+  Eleventy:ComputedData 'title' accesses [ 'tag' ] variables +0ms
+  Eleventy:ComputedData Computed data order of execution: [ 'permalink', 'page.url', 'page.outputPath', 'title' ] +0ms
+  Eleventy:Template Rendering permalink for './src/tags.njk': /tags/{{ tag | slugify }}/ becomes '/tags/11ty/' +2ms
+  Eleventy:Template Rendering permalink for './src/tags.njk': /tags/{{ tag | slugify }}/ becomes '/tags/11ty/' +2ms
+  Eleventy:Template First round of computed data for './src/tags.njk' +0ms
+  Eleventy:ComputedData 'page.url' accesses [] variables +3ms
+  Eleventy:ComputedData 'page.outputPath' accesses [] variables +0ms
+  Eleventy:ComputedData 'title' accesses [ 'tag' ] variables +0ms
+  Eleventy:ComputedData Computed data order of execution: [ 'permalink', 'page.url', 'page.outputPath', 'title' ] +0ms
+  Eleventy:Template Rendering permalink for './src/tags.njk': /tags/{{ tag | slugify }}/ becomes '/tags/cms/' +1ms
+  Eleventy:Template Rendering permalink for './src/tags.njk': /tags/{{ tag | slugify }}/ becomes '/tags/cms/' +2ms
+  Eleventy:Template First round of computed data for './src/tags.njk' +0ms
+  Eleventy:ComputedData 'page.url' accesses [] variables +3ms
+  Eleventy:ComputedData 'page.outputPath' accesses [] variables +0ms
+  Eleventy:ComputedData 'title' accesses [ 'tag' ] variables +0ms
+  Eleventy:ComputedData Computed data order of execution: [ 'permalink', 'page.url', 'page.outputPath', 'title' ] +0ms
+  Eleventy:Template Rendering permalink for './src/tags.njk': /tags/{{ tag | slugify }}/ becomes '/tags/markdown/' +2ms
+  Eleventy:Template Rendering permalink for './src/tags.njk': /tags/{{ tag | slugify }}/ becomes '/tags/markdown/' +1ms
+  Eleventy:Template First round of computed data for './src/tags.njk' +0ms
+  Eleventy:ComputedData 'page.url' accesses [] variables +3ms
+  Eleventy:ComputedData 'page.outputPath' accesses [] variables +1ms
+  Eleventy:ComputedData 'title' accesses [ 'tag' ] variables +0ms
+  Eleventy:ComputedData Computed data order of execution: [ 'permalink', 'page.url', 'page.outputPath', 'title' ] +0ms
+  Eleventy:Template Rendering permalink for './src/tags.njk': /tags/{{ tag | slugify }}/ becomes '/tags/themes/' +2ms
+  Eleventy:Template Rendering permalink for './src/tags.njk': /tags/{{ tag | slugify }}/ becomes '/tags/themes/' +1ms
+  Eleventy:Template First round of computed data for './src/tags.njk' +1ms
+  Eleventy:ComputedData 'page.url' accesses [] variables +3ms
+  Eleventy:ComputedData 'page.outputPath' accesses [] variables +0ms
+  Eleventy:ComputedData 'title' accesses [ 'tag' ] variables +0ms
+  Eleventy:ComputedData Computed data order of execution: [ 'permalink', 'page.url', 'page.outputPath', 'title' ] +0ms
+  Eleventy:Template Rendering permalink for './src/tags.njk': /tags/{{ tag | slugify }}/ becomes '/tags/daisyui/' +1ms
+  Eleventy:Template Rendering permalink for './src/tags.njk': /tags/{{ tag | slugify }}/ becomes '/tags/daisyui/' +2ms
+  Eleventy:Template First round of computed data for './src/tags.njk' +0ms
+  Eleventy:ComputedData 'page.url' accesses [] variables +3ms
+  Eleventy:ComputedData 'page.outputPath' accesses [] variables +0ms
+  Eleventy:ComputedData 'title' accesses [ 'tag' ] variables +0ms
+  Eleventy:ComputedData Computed data order of execution: [ 'permalink', 'page.url', 'page.outputPath', 'title' ] +1ms
+  Eleventy:Template Rendering permalink for './src/tags.njk': /tags/{{ tag | slugify }}/ becomes '/tags/tailwindcss/' +2ms
+  Eleventy:Template Rendering permalink for './src/tags.njk': /tags/{{ tag | slugify }}/ becomes '/tags/tailwindcss/' +1ms
+  Eleventy:Template First round of computed data for './src/tags.njk' +1ms
+  Eleventy:ComputedData 'page.url' accesses [] variables +3ms
+  Eleventy:ComputedData 'page.outputPath' accesses [] variables +0ms
+  Eleventy:ComputedData 'title' accesses [ 'tag' ] variables +0ms
+  Eleventy:ComputedData Computed data order of execution: [ 'permalink', 'page.url', 'page.outputPath', 'title' ] +0ms
+  Eleventy:Template Rendering permalink for './src/tags.njk': /tags/{{ tag | slugify }}/ becomes '/tags/images/' +1ms
+  Eleventy:Template Rendering permalink for './src/tags.njk': /tags/{{ tag | slugify }}/ becomes '/tags/images/' +1ms
+  Eleventy:Template First round of computed data for './src/tags.njk' +1ms
+  Eleventy:ComputedData 'page.url' accesses [] variables +3ms
+  Eleventy:ComputedData 'page.outputPath' accesses [] variables +0ms
+  Eleventy:ComputedData 'title' accesses [ 'tag' ] variables +0ms
+  Eleventy:ComputedData Computed data order of execution: [ 'permalink', 'page.url', 'page.outputPath', 'title' ] +0ms
+  Eleventy:Template Rendering permalink for './src/tags.njk': /tags/{{ tag | slugify }}/ becomes '/tags/weather/' +1ms
+  Eleventy:Template Rendering permalink for './src/tags.njk': /tags/{{ tag | slugify }}/ becomes '/tags/weather/' +2ms
+  Eleventy:Template First round of computed data for './src/tags.njk' +0ms
+  Eleventy:ComputedData 'page.url' accesses [] variables +3ms
+  Eleventy:ComputedData 'page.outputPath' accesses [] variables +0ms
+  Eleventy:ComputedData 'title' accesses [ 'tag' ] variables +0ms
+  Eleventy:ComputedData Computed data order of execution: [ 'permalink', 'page.url', 'page.outputPath', 'title' ] +0ms
+  Eleventy:Template Rendering permalink for './src/tags.njk': /tags/{{ tag | slugify }}/ becomes '/tags/front/' +1ms
+  Eleventy:Template Rendering permalink for './src/tags.njk': /tags/{{ tag | slugify }}/ becomes '/tags/front/' +2ms
+  Eleventy:Template First round of computed data for './src/tags.njk' +0ms
+  Eleventy:ComputedData 'page.url' accesses [] variables +3ms
+  Eleventy:ComputedData 'page.outputPath' accesses [] variables +0ms
+  Eleventy:ComputedData 'title' accesses [ 'tag' ] variables +0ms
+  Eleventy:ComputedData Computed data order of execution: [ 'permalink', 'page.url', 'page.outputPath', 'title' ] +1ms
+  Eleventy:Template Rendering permalink for './src/tags.njk': /tags/{{ tag | slugify }}/ becomes '/tags/page/' +2ms
+  Eleventy:Template Rendering permalink for './src/tags.njk': /tags/{{ tag | slugify }}/ becomes '/tags/page/' +1ms
+  Eleventy:TemplateMap Collection: collections.all size: 41 +64ms
+  Eleventy:Template Second round of computed data for './src/tags.njk' +0ms
+  Eleventy:ComputedData Computed data order of execution: [] +2ms
+  Eleventy:Template Second round of computed data for './src/tags.njk' +0ms
+  Eleventy:ComputedData Computed data order of execution: [] +0ms
+  Eleventy:Template Second round of computed data for './src/tags.njk' +0ms
+  Eleventy:ComputedData Computed data order of execution: [] +0ms
+  Eleventy:Template Second round of computed data for './src/tags.njk' +0ms
+  Eleventy:ComputedData Computed data order of execution: [] +0ms
+  Eleventy:Template Second round of computed data for './src/tags.njk' +0ms
+  Eleventy:ComputedData Computed data order of execution: [] +0ms
+  Eleventy:Template Second round of computed data for './src/tags.njk' +1ms
+  Eleventy:ComputedData Computed data order of execution: [] +1ms
+  Eleventy:Template Second round of computed data for './src/tags.njk' +0ms
+  Eleventy:ComputedData Computed data order of execution: [] +0ms
+  Eleventy:Template Second round of computed data for './src/tags.njk' +0ms
+  Eleventy:ComputedData Computed data order of execution: [] +0ms
+  Eleventy:Template Second round of computed data for './src/tags.njk' +0ms
+  Eleventy:ComputedData Computed data order of execution: [] +0ms
+  Eleventy:Template Second round of computed data for './src/tags.njk' +0ms
+  Eleventy:ComputedData Computed data order of execution: [] +0ms
+  Eleventy:Template Second round of computed data for './src/tags.njk' +0ms
+  Eleventy:ComputedData Computed data order of execution: [] +0ms
+  Eleventy:Template Second round of computed data for './src/tags.njk' +0ms
+  Eleventy:ComputedData Computed data order of execution: [] +0ms
+  Eleventy:Template Second round of computed data for './src/tags.njk' +0ms
+  Eleventy:ComputedData Computed data order of execution: [] +0ms
+  Eleventy:TemplateWriter Template map created. +272ms
+  Eleventy:Logger Writing _site/assets/fonts/PT/PT/PT-Serif/PT-Serif_Bold-Italic/index.html from ./src/assets/fonts/PT/PT/PT-Serif/PT-Serif_Bold-Italic.html (liquid) +3m
+  Eleventy:Logger Writing _site/assets/fonts/PT/PT/PT-Serif/PT-Serif_Bold/index.html from ./src/assets/fonts/PT/PT/PT-Serif/PT-Serif_Bold.html (liquid) +0ms
+  Eleventy:Logger Writing _site/assets/fonts/PT/PT/PT-Serif/PT-Serif_Caption-Italic/index.html from ./src/assets/fonts/PT/PT/PT-Serif/PT-Serif_Caption-Italic.html (liquid) +1ms
+  Eleventy:Logger Writing _site/assets/fonts/PT/PT/PT-Serif/PT-Serif_Caption-Regular/index.html from ./src/assets/fonts/PT/PT/PT-Serif/PT-Serif_Caption-Regular.html (liquid) +0ms
+  Eleventy:Logger Writing _site/assets/fonts/PT/PT/PT-Serif/PT-Serif_Italic/index.html from ./src/assets/fonts/PT/PT/PT-Serif/PT-Serif_Italic.html (liquid) +0ms
+  Eleventy:Logger Writing _site/assets/fonts/PT/PT/PT-Serif/PT-Serif_Regular/index.html from ./src/assets/fonts/PT/PT/PT-Serif/PT-Serif_Regular.html (liquid) +0ms
+  Eleventy:Logger Writing _site/pages/projects/index.html from ./src/pages/projects/index.njk +0ms
+  Eleventy:Logger Writing _site/index.html from ./src/index.njk +312ms
+  Eleventy:Logger Writing _site/posts/index.html from ./src/posts.njk +0ms
+  Eleventy:Logger Writing _site/tags/frustration/index.html from ./src/tags.njk +0ms
+  Eleventy:Logger Writing _site/tags/index.html from ./src/tags-list.njk +0ms
+  Eleventy:Logger Writing _site/posts/2024/01/2024-01-14_frustration/index.html from ./src/posts/2024/01/2024-01-14_frustration.md (liquid) +44ms
+  Eleventy:Logger Writing _site/posts/2024/01/2024-01-15_alternatives/index.html from ./src/posts/2024/01/2024-01-15_alternatives.md (liquid) +0ms
+  Eleventy:Logger Writing _site/posts/2024/01/2024-01-16_agit/index.html from ./src/posts/2024/01/2024-01-16_agit.md (liquid) +0ms
+  Eleventy:Logger Writing _site/posts/2024/01/2024-01-16_markdown/index.html from ./src/posts/2024/01/2024-01-16_markdown.md (liquid) +0ms
+  Eleventy:Logger Writing _site/posts/2024/01/2024-01-19_daisyui/index.html from ./src/posts/2024/01/2024-01-19_daisyui.md (liquid) +0ms
+  Eleventy:Logger Writing _site/posts/2024/01/2024-01-22_dev_server/index.html from ./src/posts/2024/01/2024-01-22_dev_server.md (liquid) +0ms
+  Eleventy:Logger Writing _site/posts/2024/01/hello/index.html from ./src/posts/2024/01/hello.md (liquid) +0ms
+  Eleventy:Logger Writing _site/posts/2024/01/images/index.html from ./src/posts/2024/01/images.md (liquid) +1ms
+  Eleventy:Logger Writing _site/posts/2024/01/next_up/index.html from ./src/posts/2024/01/next_up.md (liquid) +0ms
+  Eleventy:Logger Writing _site/posts/2024/01/pages/index.html from ./src/posts/2024/01/pages.md (liquid) +0ms
+  Eleventy:Logger Writing _site/posts/2024/01/pagination/index.html from ./src/posts/2024/01/pagination.md (liquid) +0ms
+  Eleventy:Logger Writing _site/posts/2024/01/sleep/index.html from ./src/posts/2024/01/sleep.md (liquid) +0ms
+  Eleventy:Logger Writing _site/posts/2024/01/sorted/index.html from ./src/posts/2024/01/sorted.md (liquid) +0ms
+  Eleventy:Logger Writing _site/posts/2024/01/still/index.html from ./src/posts/2024/01/still.md (liquid) +0ms
+  Eleventy:Logger Writing _site/posts/2024/01/weather/index.html from ./src/posts/2024/01/weather.md (liquid) +0ms
+  Eleventy:Logger Writing _site/about/index.html from ./src/about.md (liquid) +0ms
+  Eleventy:Logger Writing _site/contact/index.html from ./src/contact.md (liquid) +0ms
+  Eleventy:Logger Writing _site/links/index.html from ./src/links.md (liquid) +0ms
+  Eleventy:Logger Writing _site/1/index.html from ./src/index.njk +0ms
+  Eleventy:Logger Writing _site/posts/2/index.html from ./src/posts.njk +0ms
+  Eleventy:Logger Writing _site/tags/front-end/index.html from ./src/tags.njk +0ms
+  Eleventy:Logger Writing _site/2/index.html from ./src/index.njk +43ms
+  Eleventy:Logger Writing _site/posts/3/index.html from ./src/posts.njk +1ms
+  Eleventy:Logger Writing _site/tags/alternatives/index.html from ./src/tags.njk +0ms
+  Eleventy:Logger Writing _site/tags/11ty/index.html from ./src/tags.njk +14ms
+  Eleventy:Logger Writing _site/tags/cms/index.html from ./src/tags.njk +14ms
+  Eleventy:Logger Writing _site/tags/markdown/index.html from ./src/tags.njk +14ms
+  Eleventy:Logger Writing _site/tags/themes/index.html from ./src/tags.njk +14ms
+  Eleventy:Logger Writing _site/tags/daisyui/index.html from ./src/tags.njk +14ms
+  Eleventy:Logger Writing _site/tags/tailwindcss/index.html from ./src/tags.njk +14ms
+  Eleventy:Logger Writing _site/tags/images/index.html from ./src/tags.njk +14ms
+  Eleventy:Logger Writing _site/tags/weather/index.html from ./src/tags.njk +13ms
+  Eleventy:Logger Writing _site/tags/front/index.html from ./src/tags.njk +14ms
+  Eleventy:Logger Writing _site/tags/page/index.html from ./src/tags.njk +14ms
+  Eleventy:Template _site/assets/fonts/PT/PT/PT-Serif/PT-Serif_Bold-Italic/index.html written.. +732ms
+  Eleventy:Template _site/assets/fonts/PT/PT/PT-Serif/PT-Serif_Bold/index.html written.. +0ms
+  Eleventy:Template _site/assets/fonts/PT/PT/PT-Serif/PT-Serif_Caption-Italic/index.html written.. +0ms
+  Eleventy:Template _site/assets/fonts/PT/PT/PT-Serif/PT-Serif_Caption-Regular/index.html written.. +0ms
+  Eleventy:Template _site/assets/fonts/PT/PT/PT-Serif/PT-Serif_Italic/index.html written.. +0ms
+  Eleventy:Template _site/assets/fonts/PT/PT/PT-Serif/PT-Serif_Regular/index.html written.. +0ms
+  Eleventy:Template _site/pages/projects/index.html written.. +0ms
+  Eleventy:Template _site/index.html written.. +0ms
+  Eleventy:Template _site/posts/index.html written.. +0ms
+  Eleventy:Template _site/posts/2024/01/2024-01-14_frustration/index.html written.. +2ms
+  Eleventy:Template _site/posts/2024/01/2024-01-16_agit/index.html written.. +0ms
+  Eleventy:Template _site/posts/2024/01/2024-01-16_markdown/index.html written.. +0ms
+  Eleventy:Template _site/posts/2024/01/2024-01-19_daisyui/index.html written.. +0ms
+  Eleventy:Template _site/posts/2024/01/2024-01-22_dev_server/index.html written.. +0ms
+  Eleventy:Template _site/tags/index.html written.. +0ms
+  Eleventy:Template _site/posts/2024/01/2024-01-15_alternatives/index.html written.. +1ms
+  Eleventy:Template _site/tags/frustration/index.html written.. +0ms
+  Eleventy:Template _site/posts/2024/01/images/index.html written.. +0ms
+  Eleventy:Template _site/posts/2024/01/pagination/index.html written.. +0ms
+  Eleventy:Template _site/tags/11ty/index.html written.. +0ms
+  Eleventy:Template _site/posts/2024/01/sleep/index.html written.. +0ms
+  Eleventy:Template _site/posts/2024/01/still/index.html written.. +0ms
+  Eleventy:Template _site/posts/2024/01/next_up/index.html written.. +0ms
+  Eleventy:Template _site/posts/2024/01/hello/index.html written.. +0ms
+  Eleventy:Template _site/posts/2024/01/pages/index.html written.. +0ms
+  Eleventy:Template _site/posts/2024/01/weather/index.html written.. +0ms
+  Eleventy:Template _site/contact/index.html written.. +0ms
+  Eleventy:Template _site/links/index.html written.. +0ms
+  Eleventy:Template _site/1/index.html written.. +0ms
+  Eleventy:Template _site/tags/front/index.html written.. +0ms
+  Eleventy:Template _site/posts/2024/01/sorted/index.html written.. +0ms
+  Eleventy:Template _site/tags/daisyui/index.html written.. +0ms
+  Eleventy:Template _site/about/index.html written.. +0ms
+  Eleventy:Template _site/posts/2/index.html written.. +1ms
+  Eleventy:Template _site/tags/cms/index.html written.. +0ms
+  Eleventy:Template _site/tags/alternatives/index.html written.. +0ms
+  Eleventy:Template _site/tags/markdown/index.html written.. +0ms
+  Eleventy:Template _site/tags/themes/index.html written.. +0ms
+  Eleventy:Template _site/2/index.html written.. +0ms
+  Eleventy:Template _site/tags/front-end/index.html written.. +0ms
+  Eleventy:Template _site/posts/3/index.html written.. +0ms
+  Eleventy:Template _site/tags/weather/index.html written.. +0ms
+  Eleventy:Template _site/tags/images/index.html written.. +0ms
+  Eleventy:Template _site/tags/tailwindcss/index.html written.. +0ms
+  Eleventy:Template _site/tags/page/index.html written.. +0ms
+  Eleventy:Logger Benchmark    729ms  87%   689× (Configuration) "slugify" Nunjucks Filter +12ms
+  Eleventy:Benchmark Benchmark    729ms  87%   689× (Configuration) "slugify" Nunjucks Filter +3m
+  Eleventy:Benchmark Benchmark      2ms   0%    38× (Configuration) "url" Nunjucks Filter +0ms
+  Eleventy:Benchmark Benchmark      0ms   0%    14× (Configuration) "getAllTags" Nunjucks Filter +0ms
+  Eleventy:Benchmark Benchmark      0ms   0%    14× (Configuration) "filterTagList" Nunjucks Filter +0ms
+  Eleventy:Benchmark Benchmark      1ms   0%    30× (Configuration) "postDate" Nunjucks Filter +0ms
+  Eleventy:Benchmark Benchmark      1ms   0%     1× (Aggregate) Searching the file system (templates) +0ms
+  Eleventy:Benchmark Benchmark      7ms   1%     2× (Aggregate) Searching the file system (passthrough) +0ms
+  Eleventy:Benchmark Benchmark      1ms   0%     1× (Aggregate) Searching the file system (data) +0ms
+  Eleventy:Benchmark Benchmark      8ms   1%     1× (Aggregate) Passthrough Copy File +0ms
+  Eleventy:Benchmark Benchmark      7ms   1%    30× (Aggregate) Template Read +1ms
+  Eleventy:Benchmark Benchmark      0ms   0%    45× (Aggregate) (count) getOutputLocations +0ms
+  Eleventy:Benchmark Benchmark      0ms   0%    43× (Aggregate) (count) Render Permalink +0ms
+  Eleventy:Benchmark Benchmark      0ms   0%     3× (Aggregate) (count) > Render Permalink > ./src/posts.njk (3 pages) +0ms
+  Eleventy:Benchmark Benchmark      1ms   0%     1× (Aggregate) Template Compile +0ms
+  Eleventy:Logger Benchmark    230ms  27%   100× (Aggregate) Render +1ms
+  Eleventy:Benchmark Benchmark    230ms  27%   100× (Aggregate) Render +0ms
+  Eleventy:Benchmark Benchmark      3ms   0%     6× (Aggregate) > Render > ./src/posts.njk (3 pages) +0ms
+  Eleventy:Benchmark Benchmark      0ms   0%   100× (Aggregate) (count) Template Compile Cache Hit +0ms
+  Eleventy:Benchmark Benchmark      0ms   0%    39× (Aggregate) (count) > Render Permalink > ./src/tags.njk (13 pages) +0ms
+  Eleventy:Logger Benchmark    207ms  25%    65× (Aggregate) > Render > ./src/tags.njk (13 pages) +0ms
+  Eleventy:Benchmark Benchmark    207ms  25%    65× (Aggregate) > Render > ./src/tags.njk (13 pages) +0ms
+  Eleventy:Benchmark Benchmark      0ms   0%    26× (Aggregate) (count) getOutputHref +0ms
+  Eleventy:Benchmark Benchmark      0ms   0%    26× (Aggregate) (count) getOutputPath +0ms
+  Eleventy:Benchmark Benchmark     16ms   2%     4× (Aggregate) > Render to > _site/tags/frustration/index.html +0ms
+  Eleventy:Benchmark Benchmark     15ms   2%     4× (Aggregate) > Render to > _site/tags/front-end/index.html +0ms
+  Eleventy:Benchmark Benchmark     14ms   2%     4× (Aggregate) > Render to > _site/tags/alternatives/index.html +0ms
+  Eleventy:Benchmark Benchmark     14ms   2%     4× (Aggregate) > Render to > _site/tags/11ty/index.html +0ms
+  Eleventy:Benchmark Benchmark     14ms   2%     4× (Aggregate) > Render to > _site/tags/cms/index.html +0ms
+  Eleventy:Benchmark Benchmark     15ms   2%     4× (Aggregate) > Render to > _site/tags/markdown/index.html +0ms
+  Eleventy:Benchmark Benchmark     14ms   2%     4× (Aggregate) > Render to > _site/tags/themes/index.html +0ms
+  Eleventy:Benchmark Benchmark     15ms   2%     4× (Aggregate) > Render to > _site/tags/daisyui/index.html +0ms
+  Eleventy:Benchmark Benchmark     14ms   2%     4× (Aggregate) > Render to > _site/tags/tailwindcss/index.html +0ms
+  Eleventy:Benchmark Benchmark     14ms   2%     4× (Aggregate) > Render to > _site/tags/images/index.html +0ms
+  Eleventy:Benchmark Benchmark     14ms   2%     4× (Aggregate) > Render to > _site/tags/weather/index.html +0ms
+  Eleventy:Benchmark Benchmark     15ms   2%     4× (Aggregate) > Render to > _site/tags/front/index.html +0ms
+  Eleventy:Benchmark Benchmark     14ms   2%     4× (Aggregate) > Render to > _site/tags/page/index.html +0ms
+  Eleventy:Benchmark Benchmark     12ms   1%     1× (Aggregate) > Render > ./src/tags-list.njk +0ms
+  Eleventy:Benchmark Benchmark      1ms   0%     1× (Aggregate) > Render > ./src/posts/2024/01/2024-01-14_frustration.md +0ms
+  Eleventy:Benchmark Benchmark      1ms   0%     1× (Aggregate) > Render > ./src/posts/2024/01/2024-01-22_dev_server.md +0ms
+  Eleventy:Benchmark Benchmark      1ms   0%     1× (Aggregate) > Render > ./src/posts/2024/01/sorted.md +0ms
+  Eleventy:Benchmark Benchmark      3ms   0%     3× (Aggregate) > Render > ./src/index.njk (3 pages) +0ms
+  Eleventy:Benchmark Benchmark      2ms   0%     1× (Aggregate) > Render to > _site/index.html +0ms
+  Eleventy:Benchmark Benchmark      2ms   0%     1× (Aggregate) > Render to > _site/posts/index.html +0ms
+  Eleventy:Benchmark Benchmark      1ms   0%     1× (Aggregate) > Render to > _site/posts/2/index.html +0ms
+  Eleventy:Benchmark Benchmark      1ms   0%    45× (Aggregate) Template make parent directory +0ms
+  Eleventy:Logger Benchmark    553ms  66%    45× (Aggregate) Template Write +0ms
+  Eleventy:Benchmark Benchmark    553ms  66%    45× (Aggregate) Template Write +0ms
+  Eleventy:Benchmark Benchmark      1ms   0%     1× (Aggregate) > Compile > ./src/_layouts/default.njk +0ms
+[11ty] Copied 1 file / Wrote 45 files in 0.84 seconds (18.7ms each, v3.0.0-alpha.4)
+  Eleventy Finished writing templates. +835ms
+  Eleventy
+  Eleventy       Getting frustrated? Have a suggestion/feature request/feedback?
+  Eleventy       I want to hear it! Open an issue: https://github.com/11ty/eleventy/issues/new +0ms
+  Eleventy:FastGlobManager Glob search ('js-dependencies') searching for: [ './src/**/*.11tydata.js' ] +818ms
+  Eleventy:FastGlobManager Glob search ('js-dependencies') ignoring: [ '**/node_modules/**' ] +0ms
+  Eleventy:Logger Watching… +3ms
