@@ -9,7 +9,15 @@
 
   </div>
   <div class="px-4">
+    {% if post.content.length > 200 %}
+    <article class="prose text-base-content"> {{ post.content | safe | excerpt }} 
+      <a href="{{ post.url }}">Read More</a>
+
+    </article>
+    {% else %}
     <article class="prose text-base-content"> {{ post.content | safe }}</article>
+
+    {% endif %}
   </div>
 
     <div class="px-4 flex">

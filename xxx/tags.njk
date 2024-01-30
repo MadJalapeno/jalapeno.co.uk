@@ -1,0 +1,31 @@
+---
+layout: default.njk
+
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+  filter:
+    - all
+    - post
+    - posts
+    - tagList
+  addAllPagesToCollections: true
+eleventyComputed:
+  title: Tagged “{{ tag }}”
+permalink: /tags/{{ tag | slugify }}/
+---
+<h1>Items Tagged “{{ tag }}”</h1>
+
+{% set postslist = collections[ tag ] %}
+{% include "postslist.njk" %}
+
+
+<h1>All Tags:</h1>
+{# this just gets a list of ALL the tags and prints a link #}
+{% for a_tag in collections.all | getAllTags | filterTagList %}
+	{% set tagUrl %}/tags/{{ a_tag | slugify }}/{% endset %}
+	<div><a href="{{ tagUrl }}" class="post-tag">{{ a_tag }}</a></div>
+{% endfor %}
+
+<p>See <a href="/tags/">all tags</a>.</p>

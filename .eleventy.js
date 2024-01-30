@@ -1,17 +1,17 @@
 const { DateTime } = require("luxon");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
+
+
 module.exports = function(eleventyConfig) {
 
   // --- Config
 
-  eleventyConfig.setWatchThrottleWaitTime(100); // in milliseconds
   eleventyConfig.setServerOptions({
     showVersion: true,
   })
 
   eleventyConfig.addPassthroughCopy("./src/assets/images/*");
-  eleventyConfig.addPassthroughCopy("./src/admin/*");
 
   eleventyConfig.addWatchTarget('./tailwind.config.js');
   eleventyConfig.addWatchTarget('./src/assets/css/tailwind.css');
@@ -46,7 +46,18 @@ module.exports = function(eleventyConfig) {
 
   // --- Filters
 
-  	// Return all the tags used in a collection
+  eleventyConfig.addFilter('excerpt', (post) => {
+    const content = post.replace(/(<([^>]+)>)/gi, '');
+      return content.substr(0, content.lastIndexOf(' ', 200)) + '... ';
+    
+  });
+
+
+
+
+
+  // Return all the tags used in a collection
+  // source https://github.com/11ty/eleventy-base-blog/blob/main/eleventy.config.js
 	eleventyConfig.addFilter("getAllTags", collection => {
 		let tagSet = new Set();
 		for(let item of collection) {
@@ -59,6 +70,7 @@ module.exports = function(eleventyConfig) {
 		return (tags || []).filter(tag => ["all", "nav", "post", "posts"].indexOf(tag) === -1);
 	});
 
+
   // Make the dates correct and human readable
   // https://moment.github.io/luxon/#/formatting
   eleventyConfig.addFilter("postDate", (dateObj) => {
@@ -66,9 +78,22 @@ module.exports = function(eleventyConfig) {
     return NYtime.toLocaleString(DateTime.DATE_MED_WITH_WEEKDAY);
   });
 
+  eleventyConfig.addFilter('dateToIso', (dateString) => {
+    return new Date(dateString).toISOString()
+  });
+
   eleventyConfig.addAsyncFilter("makeUppercase", async function(value) {});
 
   return {
+
+    templateFormats: [
+			"md",
+			"njk",
+		],
+
+		// Pre-process *.md files with: (default: `liquid`)
+		markdownTemplateEngine: "njk",
+
     dir: {
       input: "src",
       data: "_data",

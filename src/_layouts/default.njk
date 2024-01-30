@@ -3,12 +3,10 @@
 grid ref 
 https://refine.dev/blog/tailwind-grid/#introduction
 https://www.codeply.com/p/bACkfI6wD2
-
--#} 
-
+#}
 {% include "header.njk" %}
 
-<body >
+<body timecode="1633">
   <div class="md:flex w-full">
 
     <!-- column sidebar -->
@@ -20,8 +18,8 @@ https://www.codeply.com/p/bACkfI6wD2
         <!-- side col 1 -->
         <div class="flex-auto basis-1/2"></div> 
 
-        <!-- side col 2 g -->
-        <div class="flex-auto basis-1/2 top-0 mx-auto"> {# sticky  self-center #}
+        <!-- side col 2 -->
+        <div class="flex-auto basis-1/2 top-0 mx-auto">
 
           <div class="p-4 rounded w-full shadow-md border-solid border-2 bg-base-100">
 
@@ -42,12 +40,14 @@ https://www.codeply.com/p/bACkfI6wD2
     <!-- column mainbar -->
     <div class="flex-auto basis-2/3 bg-base">
     <main role="main" class="pt-3 w-full sm:w-2/3 md:w-3/4 px-2 space-y-6">
-{#- this is where the content goes -#}
-      {{ content | safe}}
+    
+     {{ content | safe}}
     </main>
     </div>
   
 </div>
+
+
 
 {%- include "footer.njk" -%}
 </body>

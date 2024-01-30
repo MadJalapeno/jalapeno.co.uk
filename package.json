@@ -7,6 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start-run-old": "npm-run-all -p dev:*",
     "start": "concurrently \"npm run dev:*\"",
+    "debug": "DEBUG=Eleventy* npx @11ty/eleventy",
+    "debugstart": "DEBUG=* npx @11ty/eleventy --serve --quiet --port=4004",
     "dev:11ty": "eleventy --serve --port=4004",
     "dev:tw": "tailwindcss -i src/assets/css/tailwind.css -c tailwind.config.js -o _site/assets/css/tw-style.css --watch",
     "build": "ELEVENTY_PRODUCTION=true eleventy && NODE_ENV=production npx tailwindcss -i src/assets/css/tailwind.css -c tailwind.config.js -o _site/assets/css/tw-style.css --minify"
@@ -15,7 +17,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy": "3.0.0-alpha.4",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
     "@tailwindcss/typography": "^0.5.10",
     "autoprefixer": "^10.4.16",
