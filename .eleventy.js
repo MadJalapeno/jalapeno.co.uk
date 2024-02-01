@@ -49,10 +49,12 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter('excerpt', (post) => {
     const content = post.replace(/(<([^>]+)>)/gi, '');
       return content.substr(0, content.lastIndexOf(' ', 200)) + '... ';
-    
   });
 
-
+  eleventyConfig.addFilter('concat', (post) => {
+      const content = post;
+      return content.substr(0, content.lastIndexOf(' ', 500)) + '... ';
+  });
 
 
 

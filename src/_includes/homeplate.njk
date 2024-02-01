@@ -1,17 +1,17 @@
-<section class="w-full rounded p-2 mb-4 border-solid border-2 shadow-md">
+<section class="w-full rounded p-2 shadow-md">
   <div class="px-4 flex">
     <div class="flex-1">
       <h1 class="">{{ post.data.title }}</h1>
     </div>
     <div class="flex-1">
-      <div class="text-sm text-end text-secondary">{{ post.data.date | postDate }}</div>    
+      <div class="text-sm text-end text-fire-500">{{ post.data.date | postDate }}</div>    
     </div>
 
   </div>
   <div class="px-4">
     {% if post.content.length > 200 %}
-    <article class="prose text-base-content"> {{ post.content | safe | excerpt }} 
-      <a href="{{ post.url }}">Read More</a>
+    <article class="prose text-base-content"> {{ post.content | concat | safe }} 
+      <a href="{{ post.url }}" class="text-fire-500">Read More</a>
 
     </article>
     {% else %}
@@ -21,7 +21,7 @@
   </div>
 
     <div class="px-4 flex">
-      <div class="text-xs flex-1 my-2 text-neutral-content">mood: {{ post.data.mood }}</div>
+      <div class="text-xs flex-1 my-2 text-fire-500">mood: {{ post.data.mood }}</div>
       <div class="text-xs flex flex-1 flex-row justify-end"> 
         <div class="m-2">tags:</div> 
         {% for eachTag in post.data.tags %}
@@ -36,3 +36,4 @@
     </div>  
 </section>
 
+<div class="">&nbsp;</div>

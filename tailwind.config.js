@@ -45,9 +45,10 @@ module.exports = {
         "dim",
         { "fire": {
           // background colors
-          "base-100": "#eee",
-          "base-200": "#ddd",
-          "base-300": "#ccc",
+          "base-100": "#f6f6f6",
+          "base-200": "#eee",
+          "base-300": "#ddd",
+          "base-400": "#ccc",
           "base-content": "#333",
           // primary (tab) colors
           "primary": "#66cc8a",
