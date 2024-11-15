@@ -1,5 +1,6 @@
 ---
-
+import CustomStyles from '../components/CustomStyles.astro';
+import '../assets/style/tailwind.css';
 ---
 
 <html lang="en">
@@ -9,8 +10,13 @@
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro</title>
-	</head>
+		<CustomStyles />
+  </head>
 	<body>
 		<h1>Astro</h1>
+		<div class="prose">
+			<p>
+				Welcome to Astro! This is a simple page built with Astro and Tailwind CSS.
+			</p>
 	</body>
 </html>

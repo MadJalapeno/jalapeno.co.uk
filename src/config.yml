@@ -1,0 +1,20 @@
+site:
+  name: "Astro Site"
+  base: "/"
+
+metadata:
+  title: 
+    default: "Astro Site"
+    template: "%s | Astro Site"
+  description: "A site built with Astro"
+
+i18n:
+  languages:
+    - code: "en"
+      label: "English"
+ 
+#https://github.com/berts/astro_astrowind
+apps:
+  blog:
+    isEnable: true
+    postsPerPage: 5
