@@ -1,0 +1,26 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Navigation from "../components/widgets/Navigation.astro";
+
+
+const { pageTitle } = Astro.props;
+---
+<html lang="en">
+    <Header />
+  <body>
+<div class="grid place-items-center h-screen content-center">
+    <div>
+        <Navigation />
+    </div>
+    <div>
+        <h1>{pageTitle}</h1>
+    <slot />
+</div>
+</div>
+
+    
+    <Footer />
+
+  </body>
+</html>

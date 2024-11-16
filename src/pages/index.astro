@@ -1,25 +1,13 @@
 ---
-import CustomStyles from '../components/CustomStyles.astro';
-import '../assets/style/tailwind.css';
+import BaseLayout from '../layouts/BaseLayout.astro'
+const pageTitle = "Home 2 Page";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-		<CustomStyles />
-  </head>
-	<body>
-		<a href="/">Home</a>
-		<a href="/about">About</a>
-		<a href="/blog">Blog</a>
+<BaseLayout pageTitle={pageTitle}>
 		<h1>Astro</h1>
 		<div class="prose">
 			<p>
 				Welcome to Astro! This is a simple page built with Astro and Tailwind CSS.
 			</p>
-	</body>
-</html>
+		</div>
+</BaseLayout>
