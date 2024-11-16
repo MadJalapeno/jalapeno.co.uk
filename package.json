@@ -8,13 +8,14 @@
     "preview": "astro preview"
   },
   "dependencies": {
+    "@astrojs/mdx": "^3.1.9",
     "@astrojs/tailwind": "^5.1.2",
     "astro": "^4.16.13",
     "tailwindcss": "^3.4.15"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.10",
-    "tailwind-merge": "2.5.4",
-    "daisyui": "^4.12.14"
+    "daisyui": "^4.12.14",
+    "tailwind-merge": "2.5.4"
   }
 }
