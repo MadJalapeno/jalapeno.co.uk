@@ -1,11 +1,13 @@
 import path from 'path';
+
+
 import { fileURLToPath } from 'url';
 import tailwind from '@astrojs/tailwind';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 import { defineConfig } from 'astro/config';
-import { build } from 'astro';
+//import { build } from 'astro';
 
 import mdx from '@astrojs/mdx';
 
@@ -16,7 +18,9 @@ export default defineConfig({
 
   integrations: [tailwind({
     applyBaseStyles: false
-  }), mdx()],  
+  }), 
+  
+  mdx()],  
 
   build: {
     inlineStylesheets: 'never',
