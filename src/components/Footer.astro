@@ -1,10 +1,15 @@
 ---
-
+const year = new Date().getFullYear();
 ---
 
 <!-- Footer -->
 <footer class="bg-black text-white text-center py-4">
     <div class="container mx-auto">
-        <p>&copy; 2021 Astro</p>
+        <p>&copy; <span id="footer-year">{year}</span> All rights reserved.</p>
     </div>
- 
+ </footer>
+
+ <script>
+    document.getElementById('footer-year').innerText = new Date().getFullYear();
+</script>
+<!-- Footer end -->

@@ -1,5 +1,6 @@
 ---
-import '../assets/style/tailwind.css';
+import BaseLayout from '../layouts/BaseLayout.astro'
+
 const pageTitle = "About Me";
 const identity = {
   firstName: "Sarah",
@@ -14,14 +15,8 @@ const identity = {
 
 const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
 ---
-<body>
+<BaseLayout pageTitle={pageTitle}>
 
-    <a href="/">Home</a>
-    <a href="/about">About</a>
-    <a href="/blog">Blog</a>
-
-    <h1>{pageTitle}</h1>
-    <div class="prose">
         <p>
             This is the about page.
             <ul>
@@ -38,4 +33,4 @@ const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
 
         {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
 
-</body>
+</BaseLayout>
