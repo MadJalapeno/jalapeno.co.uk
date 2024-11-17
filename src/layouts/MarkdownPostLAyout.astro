@@ -1,7 +1,7 @@
 ---
-const { frontmatter } = Astro.props;
+const { frontmatter} = Astro.props;
 import BaseLayout from '../layouts/BaseLayout.astro'
-
+const [date, time] = new Date (frontmatter.pubDate).toISOString().split('T');
 ---
 <BaseLayout>
 
@@ -9,6 +9,6 @@ import BaseLayout from '../layouts/BaseLayout.astro'
     <slot />
     </div>
 
-<div>written by {frontmatter.author}</div>
+<div>written by {frontmatter.author}</div> on {date}.
 
 </BaseLayout>
