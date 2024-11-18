@@ -2,10 +2,9 @@
 const { frontmatter} = Astro.props;
 import BaseLayout from '../layouts/BaseLayout.astro'
 const [date, time] = new Date (frontmatter.pubDate).toISOString().split('T');
+const pageTitle = frontmatter.title;
 ---
-<BaseLayout>
-
-<div class="text-red-500">this is MarkdownPostLayout.astro</div>
+<BaseLayout pageTitle={pageTitle}>
 
 <div class="prose">
     <slot />
