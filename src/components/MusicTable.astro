@@ -1,0 +1,38 @@
+---
+import { loadYaml } from '../utils/loadYaml';
+
+const data = loadYaml('src/assets/data/allmusic.yml');
+
+console.log(data); // Add this line to log the imported data
+
+const musicData = Array.isArray(data) ? data : [];
+---
+
+<table>
+  <thead>
+    <tr>
+      <th>Full Name</th>
+      <th>Source</th>
+      <th>Title</th>
+      <th>Tag</th>
+      <th>Bio</th>
+    </tr>
+  </thead>
+  <tbody>
+    {musicData.length > 0 ? (
+      musicData.map((item) => (
+        <tr>
+          <td>{item.full_name}</td>
+          <td>{item.source}</td>
+          <td>{item.title}</td>
+          <td>{item.tag}</td>
+          <td> {item.bio || ''}</td>
+        </tr>
+      ))
+    ) : (
+      <tr>
+        <td colspan="5">No data available</td>
+      </tr>
+    )}
+  </tbody>
+</table>
