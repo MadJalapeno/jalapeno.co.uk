@@ -5,11 +5,14 @@ import { Astro } from 'astro';
 import { loadCsv } from '../../utils/loadCsv';
 import { loadYaml } from '../../utils/loadYaml';
 
-//const playlists = loadYaml('src/assets/data/allmusic.yml');
+//const allmusic = loadYaml('src/assets/data/allmusic.yml');
+//const musicD = Array.isArray(allmusic) ? allmusic : [];
+
 
 export function getStaticPaths() {
   return [
     {params: {playlist: '2020'}},
+    {params: {playlist: '2021'}},
   ];
 }
 
@@ -17,52 +20,35 @@ const { playlist } = Astro.params;
 const data = loadCsv(`src/assets/data/csv/${playlist}.csv`);
 const musicData = data || [];
 
-
-
-/*
-export async function getStaticPaths() {
-  return playlists.map((playlist) => ({
-    params: { playlist: playlist.playlist },
-  }));
-}
-
-const { playlist: list } = Astro.params;
-const playlist = playlists.find((p) => p.playlist === list);
-const data = loadCsv(`src/assets/data/csv/${playlist.file}`);
-const gitVersion = getGitVersion();
-
-const musicData = Array.isArray(data) ? data : [];
-*/
-
 const pageTitle = `Music playlist: ${playlist}`;
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <h1>Music List {playlist}</h1>
-  <table>
-    <thead>
-      <tr>
-        <th>Title</th>
-        <th>Artist</th>
-        <th>Album</th>
-        <th>ISRC</th>
-      </tr>
-    </thead>
-    <tbody>
-      {musicData.length > 0 ? (
-        musicData.map((item) => (
-          <tr>
-            <td>{item.title}</td>
-            <td>{item.artist}</td>
-            <td>{item.album}</td>
-            <td>{item.isrc}</td>
-          </tr>
-        ))
-      ) : (
-        <tr>
-          <td colspan="4">No data available</td>
+    <h1 class="text-2xl font-bold mb-4">Music List {playlist}</h1>
+    <table class="min-w-full bg-white border border-gray-200">
+      <thead>
+        <tr class="bg-gray-100 border-b">
+          <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Title</th>
+          <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Artist</th>
+          <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Album</th>
+          <th class="text-left py-3 px-4 uppercase font-semibold text-sm">ISRC</th>
         </tr>
-      )}
-    </tbody>
-  </table>
-</BaseLayout>
+      </thead>
+      <tbody>
+        {musicData.length > 0 ? (
+          musicData.map((item) => (
+          <tr class="border-b hover:bg-gray-50 odd:bg-white even:bg-gray-100">
+              <td class="py-1 px-4">{item.title}</td>
+              <td class="py-1 px-4">{item.artist}</td>
+              <td class="py-1 px-4">{item.album}</td>
+              <td class="py-1 px-4">{item.isrc}</td>
+            </tr>
+          ))
+        ) : (
+          <tr>
+            <td colspan="4" class="text-center py-3 px-4">No data available</td>
+          </tr>
+        )}
+      </tbody>
+    </table>
+  </BaseLayout>

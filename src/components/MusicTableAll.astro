@@ -10,7 +10,6 @@ const musicData = Array.isArray(data) ? data : [];
   <thead>
     <tr>
       <th>Full Name</th>
-      <th>Source</th>
       <th>Title</th>
       <th>Tag</th>
       <th>Bio</th>
@@ -20,8 +19,9 @@ const musicData = Array.isArray(data) ? data : [];
     {musicData.length > 0 ? (
       musicData.map((item) => (
         <tr>
-          <td>{item.full_name}</td>
-          <td>{item.source}</td>
+          <td><a href=
+          `/music/${item.source}/`
+          >{item.full_name}</a></td>
           <td>{item.title}</td>
           <td>{item.tag}</td>
           <td> {item.bio || ''}</td>

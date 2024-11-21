@@ -9,16 +9,26 @@ const { pageTitle } = Astro.props;
 <html lang="en">
     <Header pageTitle={pageTitle}/>
     
-  <body>
+<body>
 
 <div class="md:flex w-full">
-    <div id="sidebar" class="flex-auto basis-1/4">
+
+    <!-- column sidebar -->
+    <div id="sidebar" class="flex-auto basis-1/4 bg-base-300">
+
         <!-- side navigation -->
-        <aside class="w-full flex item-center px-2 pt-60 pb-3  md:min-h-full">
-            <div></div>
+        <aside class="w-full flex item-center px-2 pt-60 pb-3  md:min-h-full particles">
+            <div id="tsparticles"></div>
+
+
+            <!-- side col 1 -->
             <div id="side-col-1" class="flex-auto basis-1/3"></div>
+
+            <!-- side col 2 -- nav -->
             <div id="side-col-2" class="flex-auto basis-2/3 top-0 mx-auto self-start sticky">
+
                 <div class="p-4 rounded w-full">
+
                     <div class="">
                         <Navigation />
                     </div>
@@ -27,15 +37,20 @@ const { pageTitle } = Astro.props;
         </aside>
     </div>
 
+    <!-- column main -->
     <div id="main-section" class="flex-auto basis-3/4 bg-base pt-60">
         <main role="main" class="pt-3 w-full sm:w-2/3 md:w-3/4 px-2 space-y-6">
                     <slot />
         </main>
-        <div class="pb-8"></div>
+            <div class="pb-8"></div>
         </div>
     </div>
     
     <Footer />
+
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@1.34.1/tsparticles.min.js"
+    integrity="sha256-D6LXCdCl4meErhc25yXnxIFUtwR96gPo+GtLYv89VZo=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/assets/js/particles.js"></script>
 
   </body>
 </html>
