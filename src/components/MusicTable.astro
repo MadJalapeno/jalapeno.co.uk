@@ -1,7 +1,7 @@
 ---
-import { loadYaml } from '../utils/loadYaml';
+import { loadCsv } from '../utils/loadCsv';
 
-const data = loadYaml('src/assets/data/allmusic.yml');
+const data = loadCsv('src/assets/data/csv/2020.csv');
 
 console.log(data); // Add this line to log the imported data
 
@@ -11,27 +11,25 @@ const musicData = Array.isArray(data) ? data : [];
 <table>
   <thead>
     <tr>
-      <th>Full Name</th>
-      <th>Source</th>
       <th>Title</th>
-      <th>Tag</th>
-      <th>Bio</th>
+      <th>Artist</th>
+      <th>Album</th>
+      <th>ISRC</th>
     </tr>
   </thead>
   <tbody>
     {musicData.length > 0 ? (
       musicData.map((item) => (
         <tr>
-          <td>{item.full_name}</td>
-          <td>{item.source}</td>
           <td>{item.title}</td>
-          <td>{item.tag}</td>
-          <td> {item.bio || ''}</td>
+          <td>{item.artist}</td>
+          <td>{item.album}</td>
+          <td>{item.isrc}</td>
         </tr>
       ))
     ) : (
       <tr>
-        <td colspan="5">No data available</td>
+        <td colspan="4">No data available</td>
       </tr>
     )}
   </tbody>

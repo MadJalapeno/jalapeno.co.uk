@@ -1,0 +1,11 @@
+---
+import BaseLayout from '/src/layouts/BaseLayout.astro';
+import MusicTable from '/src/components/MusicTableAll.astro';
+
+const pageTitle = "Music List";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <h1>Music Playlists</h1>
+  <MusicTable />
+</BaseLayout>
