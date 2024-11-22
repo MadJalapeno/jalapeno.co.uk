@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "astro-blog",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -8,17 +8,23 @@
     "preview": "astro preview"
   },
   "dependencies": {
+    "@astrojs/markdown-remark": "^5.3.0",
     "@astrojs/mdx": "^3.1.9",
+    "@astrojs/sitemap": "^3.2.1",
     "@astrojs/tailwind": "^5.1.2",
     "@rollup/plugin-yaml": "^4.1.2",
     "astro": "^4.16.13",
+    "astro-icon": "^1.1.2",
     "js-yaml": "^4.1.0",
     "papaparse": "^5.4.1",
+    "postcss": "^8.4.49",
     "tailwindcss": "^3.4.15"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.10",
+    "autoprefixer": "^10.4.20",
     "daisyui": "^4.12.14",
-    "tailwind-merge": "2.5.4"
+    "tailwind-merge": "2.5.4",
+    "theme-change": "^2.5.0"
   }
 }

@@ -1,6 +1,12 @@
 ---
 const { pageTitle } = Astro.props;
-import '../assets/style/tailwind.css';
+import '../style/tailwind.css';
+import { Icon } from 'astro-icon/components';
+
+// favicon
+import { getImage } from 'astro:assets'
+import faviconSvgSrc from '../icons/logo.svg'
+const faviconSvg = await getImage({ src: faviconSvgSrc, format: 'svg' })
 
 ---
 <!-- header start -->
@@ -10,32 +16,22 @@ import '../assets/style/tailwind.css';
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="generator" content={Astro.generator} />
-    <link rel="icon" href="/assets/images/logo.svg">
-    <link rel="mask-icon" href="/assets/images/logo.svg" color="#000000">
-    <title>{pageTitle}</title>
 
-    <!-- particle system -->
-    <script is:inline src="https://cdn.jsdelivr.net/npm/@tsparticles/preset-links@3/tsparticles.preset.links.min.js"></script>
+    {pageTitle && <title>{pageTitle}</title>}
 
+    <link rel="icon" href={faviconSvg.src} type="image/svg+xml" />
+
+
+    <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    
     <style>
         .gradbody {
           background: linear-gradient(to bottom, #c1c2c2 0%, #d9e8e3 100%);
         }
   
-        #tsparticles {
-          position: absolute;
-          margin: 0;
-          padding: 0;
-          left: 0;
-          top: 0;
-          width: 100%;
-          height: 100%;
-          z-index: 0;
-        }
-  
-        .particles {
-          position: relative;
-        }
   
       </style>
 

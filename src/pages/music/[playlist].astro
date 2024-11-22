@@ -1,5 +1,5 @@
 ---
-import BaseLayout from '/src/layouts/BaseLayout.astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
 import { Astro } from 'astro';
 
 import { loadCsv } from '../../utils/loadCsv';
@@ -17,7 +17,7 @@ export function getStaticPaths() {
 }
 
 const { playlist } = Astro.params;
-const data = loadCsv(`src/assets/data/csv/${playlist}.csv`);
+const data = loadCsv(`src/data/csv/${playlist}.csv`);
 const musicData = data || [];
 
 const pageTitle = `Music playlist: ${playlist}`;

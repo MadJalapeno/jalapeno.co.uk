@@ -17,3 +17,8 @@
 @layer utilities {
   /* ... */
 }   
+
+.astro-code {
+  border-radius: var(--rounded-box);
+  padding: 1rem;
+}

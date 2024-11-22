@@ -1,0 +1,29 @@
+---
+import Header from '@components/Header.astro';
+import Footer from '@components/Footer.astro';
+import Navbar from "@components/widgets/Navigation.astro";
+import ThemeChange from "@components/widgets/ThemeChange.astro";
+
+const { pageTitle } = Astro.props;
+
+// https://github.com/saadeghi/daisy-blog/blob/master/src/components/layouts/page.astro
+
+---
+<!DOCTYPE html>
+<html lang="en">
+    <Header pageTitle={pageTitle}/>
+    
+    <body class="flex flex-col items-center h-screen h-[100svh]">
+        <div class="w-full max-w-3xl flex-grow">
+            <Navbar pageTitle="Jalapeno">
+                <ThemeChange />
+            </Navbar>
+            <div class="p-4 pb-10">
+                <div class="prose lg:prose-lg">
+                    <slot />
+                </div>
+            </div>
+        </div>
+        <Footer />
+    </body>
+    </html>
