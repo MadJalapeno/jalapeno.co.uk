@@ -1,3 +1,24 @@
 ---
-
+import { Image } from "astro:assets";
+import Hero from "@assets/images/4FF2DAE6-BD79-498A-8D26-B66AE1B09A1A.png";
 ---
+<!-- hero start -->
+<div class="hero p-0 w-full bg-red-200">
+    <div class="w-full p-0 gap-0 flex flex-col justify-center items-center">
+        <div class="text-center pt-10">
+            <div class ="badge badge-outline badge-lg">Hello!</div>
+            <h1 class="text-4xl md:text-5xl xl:text-7xl font-semibold brightness-150">
+                I'm a tea kettle.
+            </h1>
+        </div>
+
+        <Image 
+            class="max-w-xs md:max-w-lg mt-4 absolute"
+            src={Hero}
+            alt="A kettle of tea"
+        />
+    </div>
+  </div>
+
+
+<!-- hero end -->

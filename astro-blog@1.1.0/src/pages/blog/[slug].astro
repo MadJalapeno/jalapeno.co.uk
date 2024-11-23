@@ -1,0 +1,60 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import { Image } from "astro:assets";
+
+export const getStaticPaths = async () => {
+  const posts = await getCollection("posts");
+  const path = posts.map((post) => {
+    return {
+      params: {
+        slug: post.slug,
+      },
+      props: {
+        post,
+      },
+    };
+  });
+  return path;
+};
+
+type Props = {
+  post: CollectionEntry<"posts">;
+};
+
+const { post } = Astro.props;
+
+const { Content } = await post.render();
+---
+
+<Layout title={post.data.title} description={post.data.description}>
+  <article class="w-full flex flex-col items-center">
+    <header class="max-w-2xl mt-5">
+      <div class="badge badge-outline italic">
+        {post.data.category}
+      </div>
+      <h1 class="md:text-4xl text-2xl font-extrabold mb-4">
+        {post.data.title}
+      </h1>
+      <section class="flex mb-10">
+        <img
+          src={post.data.authorImage}
+          alt={post.data.author}
+          class="w-10 h-10 rounded-full object-cover"
+        />
+        <div class="flex flex-col ml-3">
+          <h2 class="text-md font-semibold">{post.data.author}</h2>
+          <time class="text-xs opacity-70">{post.data.date}</time>
+        </div>
+      </section>
+    </header>
+    <Image
+      src={post.data.image}
+      alt={post.data.title}
+      format="webp"
+      class="rounded-xl md:max-w-2xl mb-6 w-full h-96 object-cover"
+    />
+
+    <section class="prose md:prose-md mb-20"><Content /></section>
+  </article>
+</Layout>

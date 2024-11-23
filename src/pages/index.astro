@@ -1,11 +1,12 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
+import Hero from "@widgets/Hero.astro";
 const pageTitle = "The Home Page";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-		<h1>Astro</h1>
-		<div class="prose">
+		<div class="w-full prose">
+			<Hero />
 			<p>
 				Welcome to Astro! This is a simple page built with Astro and Tailwind CSS.
 			</p>

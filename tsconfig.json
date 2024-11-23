@@ -19,6 +19,12 @@
 			"@content/*": [
 				"src/content/*",
 			],
+			"@widgets/*": [
+				"src/components/widgets/*",
+			],
+			"@assets/*": [
+				"src/assets/*",
+			],
 		},
 	}
 }
