@@ -1,12 +1,12 @@
 site:
-  name: "Astro Site"
+  name: "The Jalapeno"
   base: "/"
 
 metadata:
   title: 
-    default: "Astro Site"
-    template: "%s | Astro Site"
-  description: "A site built with Astro"
+    default: "Jalapeno Blog Site"
+    template: "%s | Jalapeno"
+  description: "Personal blog site"
 
 i18n:
   languages:

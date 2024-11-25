@@ -19,11 +19,14 @@
 			"@content/*": [
 				"src/content/*",
 			],
-			"@widgets/*": [
-				"src/components/widgets/*",
+			"@partials/*": [
+				"src/components/partials/*",
 			],
 			"@assets/*": [
 				"src/assets/*",
+			],
+			"@utils/*": [
+				"src/utils/*",
 			],
 		},
 	}

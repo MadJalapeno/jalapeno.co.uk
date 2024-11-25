@@ -16,7 +16,7 @@ const { pageTitle } = Astro.props;
     <!-- Branding -->  
     <div class="flex-1">
       <a href="/" class=" hover:underline md:text-xl font-bold flex gap-4 items-center">
-        <Icon name="logo" alt="Astro Blog" class="bg-base-200 text-2xl" />
+        <Icon name="logo" alt="Astro Blog" class="text-2xl" />
         {pageTitle}
       </a>
     </div>
@@ -35,7 +35,7 @@ const { pageTitle } = Astro.props;
         <label tabindex={0} class="btn btn-ghost btn-square">
           <svg class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
         </label>
-        <ul tabindex={0} class="dropdown-content menu p-2 bg-base-200 rounded-box w-52 menu-compact">
+        <ul tabindex={0} class="dropdown-content menu p-2 rounded-box w-52 menu-compact">
           {nav.map(item => (
             <li>
               <a href={item.url}>{item.title}</a>
