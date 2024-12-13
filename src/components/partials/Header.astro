@@ -1,0 +1,39 @@
+---
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { pageTitle, description } = Astro.props;
+
+import '../../style/tailwind.css';
+import { Icon } from 'astro-icon/components';
+
+// favicon
+import { getImage } from 'astro:assets'
+import faviconSvgSrc from '../../icons/logo.svg'
+const faviconSvg = await getImage({ src: faviconSvgSrc, format: 'svg' })
+
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    {pageTitle && <title>{pageTitle}</title>}
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <link rel="icon" href={faviconSvg.src} type="image/svg+xml" />
+    <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .gradbody {
+          background: linear-gradient(to bottom, #c1c2c2 0%, #d9e8e3 100%);
+        }
+    </style>
+</head>
+<!-- header layout end -->

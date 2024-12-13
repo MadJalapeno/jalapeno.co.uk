@@ -1,0 +1,16 @@
+---
+import HomeLayout from "@layouts/HomeLayout.astro";
+import Hero from "@partials/Hero.astro";
+import LatestBlogs from "@partials/RecentBlogs.astro";
+
+
+const title = "Home";
+const description="My personal site built with Astro, Tailwind and DaisyUI."
+---
+<HomeLayout {title} {description}>
+		<div class="w-full">
+			<Hero />
+
+			<LatestBlogs />
+		</div>
+</HomeLayout>

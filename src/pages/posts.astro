@@ -1,0 +1,32 @@
+---
+import { getCollection } from "astro:content";
+
+import BaseLayout from '@layouts/BaseLayout.astro';
+import BlogPost from '@partials/BlogPost.astro';
+//import BlogCard from "@partials/BlogCard.astro";
+
+
+const pageTitle = "Blog Posts";
+const allPosts = await Astro.glob('@content/posts/*.{md,mdx}');
+
+//const allPosts = await getCollection("posts");
+const maxCardsToShow = 6;
+const displayedPosts = allPosts.slice(0, maxCardsToShow);
+
+// Function to extract the file name and construct the URL
+function getPostUrl(filePath) {
+  const fileName = filePath.split('/').pop();
+  return `/posts/${fileName.replace(/\.[^/.]+$/, "")}`;
+}
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <h1>Welcome to My Blog</h1>
+  <ul>
+    {allPosts.map((post) => (
+      <BlogPost url={getPostUrl(post.file)} title={post.frontmatter.title} />
+      //<BlogCard posts={displayedPosts} maxCardsToShow={maxCardsToShow} />
+
+    ))}
+  </ul>
+</BaseLayout>

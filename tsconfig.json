@@ -1,0 +1,36 @@
+{
+	"compilerOptions": {
+		"moduleResolution": "node",
+		"module": "ES2022",
+		"target": "es2022",
+		"types": ["vite/client"],
+		"baseUrl": ".",
+		"allowJs": true,
+		"paths": {
+			"@components/*": [
+				"src/components/*",
+			],
+			"@layouts/*": [
+				"src/components/layouts/*",
+			],
+			"@data/*": [
+				"src/data/*",
+			],
+			"@content/*": [
+				"src/content/*",
+			],
+			"@partials/*": [
+				"src/components/partials/*",
+			],
+			"@assets/*": [
+				"src/assets/*",
+			],
+			"@utils/*": [
+				"src/utils/*",
+			],
+			"@posts/*": [
+				"src/content/posts/*",
+			],
+		},
+	}
+}
