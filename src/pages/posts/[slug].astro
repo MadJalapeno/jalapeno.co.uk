@@ -1,24 +1,43 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import { Image } from 'astro:assets';
+import { getCollection, slugify } from "astro:content";
 
-import { getCollection } from "astro:content";
 const allBlogPosts = await getCollection("posts");
 
 const { slug } = Astro.params;
 const posts = await Astro.glob('@content/posts/*.{md,mdx}');
-const post = posts.find((p) => p.file.includes(slug));
+//const post = posts.find((p) => p.file.includes(slug));
+const post = posts.find((p) => slugify(p.frontmatter.title) === slug);
+
+
+
+if (!post) {
+  throw new Error(`Detritus says "Dat Post Not Found: ${slug}`);
+}
 
 const { frontmatter, Content } = post;
 
 // Import the hero image dynamically
-const heroImagePath = await import(`${frontmatter.hero}`);
-console.error ("⚠️   Looking for : " + heroImagePath);
-if (!heroImagePath) throw new Error(`"${heroImagePath}" couldn't find the effin' image`);
-
-if (!post) {
-  throw new Error(`Post not found: ${slug}`);
+let heroImage = frontmatter.image;
+if (heroImage.startsWith('./')) {
+  heroImage = heroImage.substring(2); // Remove the './' prefix
 }
+console.error ("⚠️ 1.  Looking for heroImage: " + heroImage);
+
+let heroImagePath;
+try {
+  heroImagePath = await import(`${heroImage}`);
+  console.error ("⚠️ 2.  Found heroImage: " + heroImagePath);
+
+  if (!heroImagePath) {
+    throw new Error(`Hero image not found at path: ${heroImage}`);
+  }
+} catch (error) {
+  console.error(`Error importing hero image: ${error.message}`);
+  throw new Error(`Failed to import hero image: ${heroImage}`);
+}
+
 
 export async function getStaticPaths() {
   const posts = await Astro.glob('@content/posts/*.{md,mdx}');

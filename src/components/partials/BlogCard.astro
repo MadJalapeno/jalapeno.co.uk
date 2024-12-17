@@ -1,9 +1,16 @@
 ---
 import { Image } from "astro:assets";
+import { slugify } from 'astro:content';
 
 const { posts, maxCardsToShow } = Astro.props;
 
 const imageSrc = "";
+
+// Function to extract the file name and construct the URL
+//function getPostUrl(filePath) {
+//  const fileName = filePath.split('/').pop();
+//  return `/posts/${fileName.replace(/\.[^/.]+$/, "")}`;
+//}
 ---
 
 {
@@ -27,7 +34,7 @@ const imageSrc = "";
             {post.data.date}
           </time>
         </h2>
-        <a href={`/blog/${post.slug}`}>
+        <a href={`/posts/${slugify(post.data.slug)}`}>
           <h1 class="font-semibold text-lg lg:text-xl">{post.data.title}</h1>
         </a>
 
