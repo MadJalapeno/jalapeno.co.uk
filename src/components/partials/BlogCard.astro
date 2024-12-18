@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import { slugify } from 'astro:content';
+import slugify from 'slugify';
 
 const { posts, maxCardsToShow } = Astro.props;
 
@@ -11,11 +11,15 @@ const imageSrc = "";
 //  const fileName = filePath.split('/').pop();
 //  return `/posts/${fileName.replace(/\.[^/.]+$/, "")}`;
 //}
+
+var postUrl = "";
 ---
 
 {
   posts.slice(0, maxCardsToShow).map((post) => (
-    
+
+      
+
     <article class="card lg:card-side ring-1 ring-base-content/10 bg-base-300/20 p-7 rounded-3xl">
       <a class="w-full" href={`/blog/${post.slug}`}>
         <Image
@@ -34,7 +38,7 @@ const imageSrc = "";
             {post.data.date}
           </time>
         </h2>
-        <a href={`/posts/${slugify(post.data.slug)}`}>
+        <a href={`/posts/${slugify(post.data.title, { lower: true })}`}>
           <h1 class="font-semibold text-lg lg:text-xl">{post.data.title}</h1>
         </a>
 
@@ -44,7 +48,7 @@ const imageSrc = "";
           </p>
         </div>
 
-        <a href={`/posts/${post.slug}`} class="mt-auto flex items-center">
+        <a href={`/posts/${slugify(post.data.title, { lower:true })}`} class="mt-auto flex items-center">
           <h2 class="text-sm font-semibold text-primary">Read article</h2>
           <svg
             viewBox="0 0 16 16"
