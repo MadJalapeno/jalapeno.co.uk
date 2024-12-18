@@ -18,6 +18,7 @@ const displayedPosts = allPosts.slice(0, maxCardsToShow);
 
 <BaseLayout pageTitle={pageTitle}>
   <h1>Welcome to My Blog</h1>
+  <div></div>
   <ul>
     {allPosts.map((post) => (
       <BlogPost url=`${(slugify(post.frontmatter.title, { lower: true }))}` title={post.frontmatter.title} />

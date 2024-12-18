@@ -1,6 +1,5 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
-import { Image } from 'astro:assets';
 import { getCollection } from "astro:content";
 import slugify from 'slugify';
 
@@ -8,10 +7,7 @@ const allBlogPosts = await getCollection("posts");
 
 const { slug } = Astro.params;
 const posts = await Astro.glob('@content/posts/*.{md,mdx}');
-//const post = posts.find((p) => p.file.includes(slug));
-const post = posts.find((p) => slugify(p.frontmatter.title, {lower: true }) === slug);
-
-
+const post = posts.find((p) => slugify(p.frontmatter.title, { lower: true }) === slug);
 
 if (!post) {
   throw new Error(`Detritus says "Dat Post Not Found: ${slug}`);
@@ -20,30 +16,21 @@ if (!post) {
 const { frontmatter, Content } = post;
 
 // Import the hero image dynamically
-let heroImage = frontmatter.image;
-if (heroImage.startsWith('./')) {
-  heroImage = heroImage.substring(2); // Remove the './' prefix
-}
-console.error ("⚠️ 1.  Looking for heroImage: " + heroImage);
-
+const images = import.meta.glob('/src/content/posts/images/*');
 let heroImagePath;
-try {
-  heroImagePath = await import(`${heroImage}`);
-  console.error ("⚠️ 2.  Found heroImage: " + heroImagePath);
+
+if (frontmatter.image) {
+  const imagePath = `${frontmatter.image}`;
+  heroImagePath = images[imagePath];
 
   if (!heroImagePath) {
-    throw new Error(`Hero image not found at path: ${heroImage}`);
+    throw new Error(`Hero image not found at path: ${imagePath}`);
   }
-} catch (error) {
-  console.error(`Error importing hero image: ${error.message}`);
-  throw new Error(`Failed to import hero image: ${heroImage}`);
 }
-
 
 export async function getStaticPaths() {
   const posts = await Astro.glob('@content/posts/*.{md,mdx}');
   return posts.map((post) => {
-    //const slug = post.file.split('/').pop().replace(/\.[^/.]+$/, "");
     const slug = slugify(post.frontmatter.title, { lower: true });
     return { params: { slug } };
   });
@@ -51,9 +38,10 @@ export async function getStaticPaths() {
 ---
 
 <BaseLayout pageTitle={frontmatter.title}>
-
   <div class="relative">
-    <Image src={heroImagePath.default} alt={frontmatter.title} class="w-full h-64 object-cover" />
+    {heroImagePath && (
+      <img src={heroImagePath} alt={frontmatter.title} class="w-full h-64 object-cover" />
+    )}
     <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
       <h1 class="text-4xl font-bold text-white px-8">{frontmatter.title}</h1>
     </div>
