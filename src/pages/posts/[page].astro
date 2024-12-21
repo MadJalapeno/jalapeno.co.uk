@@ -1,0 +1,80 @@
+---
+import { getCollection } from "astro:content";
+import slugify from 'slugify';
+
+import BaseLayout from '@layouts/BaseLayout.astro';
+
+const pageTitle = "Blog Posts";
+
+// Fetch all posts
+const allPosts = await Astro.glob('@content/posts/*.{md,mdx}');
+
+// Pagination settings
+const postsPerPage = 6;
+const totalPages = Math.ceil(allPosts.length / postsPerPage);
+
+console.error("totalPages: ", totalPages);
+
+export async function getStaticPaths() {
+  const allPosts = await Astro.glob('@content/posts/*.{md,mdx}');
+  const postsPerPage = 6;
+
+  const totalPages = Math.ceil(allPosts.length / postsPerPage);
+
+  return Array.from({ length: totalPages }).map((_, index) => ({
+    params: { page: (index + 1).toString() },
+  }));
+}
+
+// Get the current page from the URL parameter
+const { page } = Astro.params;
+const currentPage = parseInt(page) || 1;
+
+// Calculate the start and end index for the posts to display on the current page
+const startIndex = (currentPage - 1) * postsPerPage;
+const endIndex = startIndex + postsPerPage;
+
+// Get the posts for the current page
+const paginatedPosts = allPosts.slice(startIndex, endIndex);
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <h1>Welcome to My Blog</h1>
+  <div>
+    {paginatedPosts.map((post) => (
+      <div>
+        <div>
+          <figure>
+            <img
+              src={post.frontmatter.image}
+              alt="Blog post cover"
+            />
+          </figure>
+          <div>
+            <h2>
+              <span>{post.frontmatter.category}</span>
+              <time>{post.frontmatter.date}</time>
+            </h2>
+            <a href={`/posts/${slugify(post.frontmatter.title, { lower: true })}`}>
+              <h1>{post.frontmatter.title}</h1>
+            </a>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <div>
+    {currentPage > 1 && (
+      <a href={`/posts/${currentPage - 1}`}>Previous</a>
+    )}
+    {Array.from({ length: totalPages }).map((_, index) => (
+      <a href={`/posts/${index + 1}`} class={index + 1 === currentPage ? 'active' : ''}>
+        {index + 1}
+      </a>
+    ))}
+    {currentPage < totalPages && (
+      <a href={`/posts/${currentPage + 1}`}>Next</a>
+    )}
+  </div>
+</BaseLayout>

@@ -33,7 +33,11 @@ export default defineConfig({
   vite: {
     plugins: [yaml()],
     assetsInclude: ['**/*.yml']
-  }
+  }, 
 
-
+  "routes": [
+    { "src": "/posts/:page",
+      "dest": "posts/:[page].astro"
+    }
+  ]
 });
