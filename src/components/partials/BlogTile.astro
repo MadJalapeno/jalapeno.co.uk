@@ -1,0 +1,26 @@
+---
+const { post } = Astro.props;
+import slugify from 'slugify';
+---
+<time>{post.frontmatter.date}</time>
+
+<div class="card bg-base-100 w-96 shadow-xl">
+  <figure>
+    <img
+      src={post.frontmatter.image}
+      alt="Blog post cover"
+      class="max-w-96 h-48"
+    />
+  </figure>
+  <div class="card-body">
+    <h2 class="card-title">
+    <a href={`/posts/${slugify(post.frontmatter.title, { lower: true })}`}>
+      <h1>{post.frontmatter.title}</h1>
+    </a>
+    </h2>
+      <p>{post.frontmatter.description}</p>
+    <div class="card-actions justify-end">
+      <div class="badge badge-outline">{post.frontmatter.category}</div>
+      
+  </div>
+</div>

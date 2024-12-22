@@ -9,7 +9,7 @@ export const nav = [
     },
     {
         title: 'Posts',
-        url: '/posts/'
+        url: '/posts/1/'
     },
     {
         title: 'Tags',
