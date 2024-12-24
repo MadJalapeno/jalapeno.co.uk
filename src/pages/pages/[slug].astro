@@ -1,0 +1,32 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { getCollection } from "astro:content";
+import slugify from 'slugify';
+
+const allPages = await getCollection("pages");
+
+const { slug } = Astro.params;
+const posts = await Astro.glob('@content/pages/*.{md,mdx}');
+const page = allPages.find((p) => slugify(p.data.title, { lower: true }) === slug);
+
+if (!page) {
+  throw new Error(`Detritus says "Dat Page Not Found: ${slug}`);
+}
+
+const { frontmatter, Content } = page;
+
+export async function getStaticPaths() {
+  const allPages = await getCollection("pages");
+  return allPages.map((page) => {
+    const slug = slugify(page.data.title, { lower: true });
+    return { params: { slug } };
+  });
+}
+---
+
+<BaseLayout pageTitle={frontmatter.title}>
+  <h1 class="text-4xl font-bold">{frontmatter.title}</h1>
+  <div class="prose">
+    {body ? <Content content={body} /> : <p>Content is not available.</p>}
+    {body ? <div innerHTML={body} /> : <p>Content is not available.</p>}
+</BaseLayout>

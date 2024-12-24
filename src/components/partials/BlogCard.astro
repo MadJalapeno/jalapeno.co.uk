@@ -4,29 +4,24 @@ import slugify from 'slugify';
 
 const { posts, maxCardsToShow } = Astro.props;
 
-const imageSrc = "";
+// Log each post's hero image to the console
+posts.slice(0, maxCardsToShow).forEach((post) => {
+  console.log(post.data.hero);
+});
 
-// Function to extract the file name and construct the URL
-//function getPostUrl(filePath) {
-//  const fileName = filePath.split('/').pop();
-//  return `/posts/${fileName.replace(/\.[^/.]+$/, "")}`;
-//}
-
-var postUrl = "";
 ---
 
 {
   posts.slice(0, maxCardsToShow).map((post) => (
 
-      
-
     <article class="card lg:card-side ring-1 ring-base-content/10 bg-base-300/20 p-7 rounded-3xl">
       <a class="w-full" href={`/blog/${post.slug}`}>
         <Image
-          src={post.data.image}
-          format="webp"
+          src={post.data.hero}
           class="w-full h-52 rounded-xl object-cover"
-          alt="Blog post cover"
+          alt="{post.data.title}"
+          width={post.data.heroWidth}
+          height={post.data.heroHeight}
         />
       </a>
 

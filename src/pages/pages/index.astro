@@ -1,0 +1,24 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { getCollection } from "astro:content";
+import slugify from 'slugify';
+
+const allPages = await getCollection("pages");
+
+---
+
+<BaseLayout pageTitle="Home">
+  <h1>Welcome to My Site</h1>
+  <div>
+    {allPages.map((page) => (
+      <div key={page.slug}>
+        <h2>
+          <a href={`/pages/${slugify(page.data.title, { lower: true })}`}>
+            {page.data.title}
+          </a>
+        </h2>
+        <p>{page.data.description}</p>
+      </div>
+    ))}
+  </div>
+</BaseLayout>
