@@ -3,7 +3,10 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 import BlogPost from '@partials/BlogPost.astro';
 
 const { tag } = Astro.params;
-let posts = await Astro.glob('@content/posts/*.{md,mdx}');
+const postImports = import.meta.glob('@content/posts/*.{md,mdx}');
+const posts = await Promise.all(
+  Object.values(postImports).map((importPost) => importPost())
+);
 
 // Filter posts to include only those with the specified tag
 const filteredPosts = posts.filter(post => {
@@ -19,7 +22,10 @@ const filteredPosts = posts.filter(post => {
 
 // Generate static paths for all tags
 export async function getStaticPaths() {
-  let posts = await Astro.glob('@content/posts/*.{md,mdx}');
+  const postImports = import.meta.glob('@content/posts/*.{md,mdx}');
+  const posts = await Promise.all(
+    Object.values(postImports).map((importPost) => importPost())
+  );
   let tags = new Set();
 
   posts.forEach(post => {
