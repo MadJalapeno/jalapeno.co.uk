@@ -5,7 +5,10 @@ import BlogPost from '@partials/BlogPost.astro';
 const { tag } = Astro.params;
 const postImports = import.meta.glob('@content/posts/*.{md,mdx}');
 const posts = await Promise.all(
-  Object.values(postImports).map((importPost) => importPost())
+  Object.values(postImports).map(async (importPost) => {
+    const post = await importPost();
+    return post as { frontmatter: { tags: string | string[] } };
+  })
 );
 
 // Filter posts to include only those with the specified tag
@@ -24,7 +27,10 @@ const filteredPosts = posts.filter(post => {
 export async function getStaticPaths() {
   const postImports = import.meta.glob('@content/posts/*.{md,mdx}');
   const posts = await Promise.all(
-    Object.values(postImports).map((importPost) => importPost())
+    Object.values(postImports).map(async (importPost) => {
+      const post = await importPost();
+      return post as { frontmatter: { tags: string | string[] } };
+    })
   );
   let tags = new Set();
 
