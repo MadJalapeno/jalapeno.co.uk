@@ -29,7 +29,15 @@ if (!post) {
 //  heroImagePath = heroImagePath.src;
 //}
 
-
+// Import the hero image statically
+let heroImagePath;
+if (post.data.hero) {
+  try {
+    heroImagePath = await import(`${post.data.hero}`);
+  } catch (error) {
+    throw new Error(`Hero image not found at path: ${post.data.hero}`);
+  }
+}
 
 // Normalize tags to always be an array
 const tags = Array.isArray(post.data.tags) ? post.data.tags : [post.data.tags].filter(Boolean);
@@ -53,7 +61,7 @@ console.log(`🟧 `, imgSrc, ' 🟠');
   <div class="relative">
 
     <Image 
-      src={import(imgSrc)} 
+      src={heroImagePath.default} 
       alt={post.data.title}
       class="w-full h-64 object-cover"
       />
