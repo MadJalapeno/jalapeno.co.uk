@@ -13,23 +13,23 @@ if (!post) {
 }
 
 // Import the hero image dynamically
-const images = import.meta.glob('/src/content/posts/images/*');
-let heroImagePath;
+//const images = import.meta.glob('/src/content/posts/images/*');
+//let heroImagePath;
 
-if (post.data.hero) {
-  const imagePath = `${post.data.hero}`;
-  heroImagePath = images[imagePath];
+//if (post.data.hero) {
+//  const imagePath = `${post.data.hero}`;
+//  heroImagePath = images[imagePath];
 
-  if (!heroImagePath) {
-    throw new Error(`Hero image not found at path: ${imagePath}`);
-  }
+//  if (!heroImagePath) {
+//    throw new Error(`Hero image not found at path: ${imagePath}`);
+//  }
 
   // Resolve the image path
-  heroImagePath = (await heroImagePath()).default;
-  heroImagePath = heroImagePath.src;
-}
+//  heroImagePath = (await heroImagePath()).default;
+//  heroImagePath = heroImagePath.src;
+//}
 
-console.log(`⚪⚪⚪ `, heroImagePath);
+
 
 // Normalize tags to always be an array
 const tags = Array.isArray(post.data.tags) ? post.data.tags : [post.data.tags].filter(Boolean);
@@ -45,6 +45,7 @@ export async function getStaticPaths() {
 // Render the content
 const { Content } = await render(post);
 const imgSrc = post.data.hero;
+console.log(`🟧 `, imgSrc, ' 🟠');
 ---
 
 <BaseLayout pageTitle={post.data.title}>
