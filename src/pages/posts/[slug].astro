@@ -12,32 +12,32 @@ if (!post) {
   throw new Error(`Detritus says "Dat Post Not Found: ${slug}`);
 }
 
-// Import the hero image dynamically
-//const images = import.meta.glob('/src/content/posts/images/*');
-//let heroImagePath;
-
-//if (post.data.hero) {
-//  const imagePath = `${post.data.hero}`;
-//  heroImagePath = images[imagePath];
-
-//  if (!heroImagePath) {
-//    throw new Error(`Hero image not found at path: ${imagePath}`);
-//  }
-
-  // Resolve the image path
-//  heroImagePath = (await heroImagePath()).default;
-//  heroImagePath = heroImagePath.src;
-//}
+console.log(`🟧 `, post.data.hero, ' 🟠');
 
 // Import the hero image statically
+/*
 let heroImagePath;
 if (post.data.hero) {
   try {
-    heroImagePath = await import(`${post.data.hero}`);
+    heroImagePath = await render(`${post.data.hero}`);
   } catch (error) {
-    throw new Error(`Hero image not found at path: ${post.data.hero}`);
+    //throw new Error(`🔴 Hero image not found at path: ${post.data.hero}`);
   }
 }
+*/
+
+// Dynamically import images
+const images = import.meta.glob('/src/content/posts/images/*.{jpg,png,gif}');
+let imageSrc = post.data.hero;
+
+// Normalize the image path to match the keys in the images object
+const normalizedImagePath = post.data.hero.replace('./', '/src/content/posts/');
+
+if (images[normalizedImagePath]) {
+  const imageModule = await images[normalizedImagePath]();
+  imageSrc = imageModule.default;
+}
+
 
 // Normalize tags to always be an array
 const tags = Array.isArray(post.data.tags) ? post.data.tags : [post.data.tags].filter(Boolean);
@@ -53,7 +53,7 @@ export async function getStaticPaths() {
 // Render the content
 const { Content } = await render(post);
 const imgSrc = post.data.hero;
-console.log(`🟧 `, imgSrc, ' 🟠');
+
 ---
 
 <BaseLayout pageTitle={post.data.title}>
@@ -61,7 +61,7 @@ console.log(`🟧 `, imgSrc, ' 🟠');
   <div class="relative">
 
     <Image 
-      src={heroImagePath.default} 
+      src={imageSrc} 
       alt={post.data.title}
       class="w-full h-64 object-cover"
       />
