@@ -12,7 +12,7 @@ if (!post) {
   throw new Error(`Detritus says "Dat Post Not Found: ${slug}`);
 }
 
-console.log(`🟧 `, post.data.hero, ' 🟠');
+
 
 // Import the hero image statically
 /*
@@ -33,11 +33,13 @@ let imageSrc = post.data.hero;
 // Normalize the image path to match the keys in the images object
 const normalizedImagePath = post.data.hero.replace('./', '/src/content/posts/');
 
+// Check if the image is in the images object
 if (images[normalizedImagePath]) {
   const imageModule = await images[normalizedImagePath]();
   imageSrc = imageModule.default;
 }
 
+console.log(`🟧 `, imageSrc, ' 🟠');
 
 // Normalize tags to always be an array
 const tags = Array.isArray(post.data.tags) ? post.data.tags : [post.data.tags].filter(Boolean);
