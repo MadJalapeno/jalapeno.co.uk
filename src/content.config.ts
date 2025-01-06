@@ -1,24 +1,18 @@
-// Import the glob loader
-import { glob } from "astro/loaders";
+
 // Import utilities from `astro:content`
 import { defineCollection, z } from "astro:content";
 // Import the `format` function from `date-fns`
 import { format } from "date-fns";
 
 // Define the schema for the "posts" collection
-const posts = defineCollection({
-  // Load all MDX files from the "content/posts" directory
-  loader: glob( { pattern: '**/[^_]*.mdx', base: './src/content/posts' }),
-  schema: z.object({
+const postCollection = defineCollection({
+  schema: ({ image }) => z.object({
       title: z.string(),
       description: z.string(),
       date: z
         .string()
         .transform((str) => format(new Date(str), "MMMM d, yyyy")),
-      image: z.object({
-        url: z.string(),
-        alt: z.string(),
-      }),
+      hero: image(),
       tags: z.union([z.string(), z.array(z.string())]), // Allow tags to be a string or an array of strings
     }),
 });
@@ -38,6 +32,6 @@ const pages = defineCollection({
 });
 
 export const collections = {
-  posts,
+  posts: postCollection,
   pages,
 };

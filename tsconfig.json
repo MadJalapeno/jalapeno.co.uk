@@ -7,6 +7,9 @@
 		"baseUrl": ".",
 		"allowJs": true,
 		"paths": {
+			"@/*": [
+				"src/*",
+			],
 			"@components/*": [
 				"src/components/*",
 			],

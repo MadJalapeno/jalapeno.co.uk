@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import { getCollection, render } from "astro:content";
-
 import slugify from 'slugify';
 import { Image } from 'astro:assets';
 
@@ -13,6 +12,26 @@ if (!post) {
   throw new Error(`Detritus says "Dat Post Not Found: ${slug}`);
 }
 
+// get images
+const images = import.meta.glob('/src/content/posts/images/*.{jpg,png,gif}');
+let imageSrc = post.data.hero;
+
+// Normalize the image path to match the keys in the images object
+const normalizedImagePath = post.data.hero.replace('./', '/src/content/posts/');
+
+// Check if the image is in the images object
+if (images[normalizedImagePath]) {
+  const imageModule = await images[normalizedImagePath]();
+  imageSrc = imageModule.default;
+}
+
+console.log(`🟧 `, imageSrc, ' 🟠');
+
+import heroImage from (`imageSrc`);
+
+// Normalize tags to always be an array
+const tags = Array.isArray(post.data.tags) ? post.data.tags : [post.data.tags].filter(Boolean);
+
 export async function getStaticPaths() {
   const allPosts = await getCollection("posts");
   return allPosts.map((post) => {
@@ -21,10 +40,8 @@ export async function getStaticPaths() {
   });
 }
 
-const tags = post.data.tags;
+// Render the content
 const { Content } = await render(post);
-
-//console.log(`🟧 `, post.data.hero, ' 🟠');
 ---
 
 <BaseLayout pageTitle={post.data.title}>
@@ -32,7 +49,7 @@ const { Content } = await render(post);
   <div class="relative">
 
     <Image 
-      src={post.data.hero}
+      src={heroImage}
       alt={post.data.title}
       class="w-full h-64 object-cover"
       />
