@@ -41,7 +41,7 @@ const pageTitle = `Music playlist: ${playlist}`;
               <td class="py-1 px-4">{item.title}</td>
               <td class="py-1 px-4">{item.artist}</td>
               <td class="py-1 px-4">{item.album}</td>
-              <td class="py-1 px-4">{item.isrc}</td>
+              <td class="py-1 px-4"><a href={`https://isrc.soundexchange.com/?tab=%22code%22&isrcCode=%22${item.isrc}%22`}">{item.isrc}</a></td>
             </tr>
           ))
         ) : (
@@ -52,3 +52,4 @@ const pageTitle = `Music playlist: ${playlist}`;
       </tbody>
     </table>
   </BaseLayout>
+
