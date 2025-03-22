@@ -1,0 +1,24 @@
+
+{% include "header.njk" %}
+<div class="flex flex-col h-screen justify-between">
+  <!-- Header -->
+  <header>
+    <div class="w-3/4 m-auto max-w-5xl">
+{% include "navbar.njk" %}
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <div class="w-3/4 m-auto max-w-5xl">
+      {{ content | safe}}
+      </div>      
+  </main>
+
+  <!-- Footer -->
+      {% include "footer.njk" %}
+
+</div>
+        
+</body>
+</html>

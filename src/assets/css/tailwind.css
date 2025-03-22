@@ -1,0 +1,23 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography"; /* https://github.com/tailwindlabs/tailwindcss-typography */
+
+@plugin "daisyui"{}
+
+/* 
+https://daisyui.com/theme-generator/
+https://dequeuniversity.com/rules/axe/4.10/color-contrast
+*/
+
+@plugin "daisyui/theme" {
+  name: "light";
+  default: true;
+  prefersdark: false;
+  color-scheme: "light";
+}
+
+@plugin "daisyui/theme" {
+  name: "dracula";
+  default: false;
+  prefersdark: true;
+  color-scheme: "dracula";
+}

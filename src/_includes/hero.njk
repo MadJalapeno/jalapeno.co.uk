@@ -1,0 +1,20 @@
+<!-- hero start -->
+
+<style define:vars={{ bgImage }}>
+    .bghero {
+        background-image: var(--bgImage), linear-gradient(rgba(255,255,255,0.5),rgba(255,255,255,0.5));
+        background-blend-mode: overlay;
+    }
+</style>    
+<div class="hero p-0 bg-[url({{ bgImage }})] bg-linear-to-t from-white to-white h-screen/2 min-h-min flex items-end">
+    <div class="hero-content w-full p-0 gap-0 flex flex-col items-center">
+        <div class="text-center pt-10 min-h-[480px] content-end">
+            <div class="mb-8 p-8 bg-neutral-200/60 rounded-md shadow-md">
+                <h1 class="text-4xl md:text-5xl xl:text-7xl font-semibold">
+                    I am the tea kettle.
+                </h1>
+            </div>
+        </div>        
+    </div>
+</div>
+<!-- hero end -->

@@ -1,0 +1,15 @@
+
+<div class="mb-4" >
+  <div class="py-10 max-w-lg">
+    <h1 class="text-4xl md:text-5xl font-semibold">
+      Recent Articles
+    </h1>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+    {% for post in collections.postsDir %}
+
+      {% include "postCard.njk" %}
+
+    {% endfor %}
+  </div>
+</div>
