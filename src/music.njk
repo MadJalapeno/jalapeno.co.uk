@@ -1,0 +1,15 @@
+---
+layout: default.njk
+title: "Music"
+---
+{% for music in allmusic %}
+
+<div>
+  <div>
+    <a href="/music/{{music.source | slugify }}/">
+      {{ music.source }}
+    </a>
+  </div>
+  <div>{{ music.tag }}</div>
+</div>
+{% endfor %}

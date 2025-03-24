@@ -1,0 +1,23 @@
+---
+pagination:
+  data: allmusic
+  size: 1
+  alias: playlist
+permalink: "/music/{{ playlist.source | slugify }}/"
+---
+
+{% set csvData = collections[playlist.source] or [] %}
+
+<h1>{{ playlist.title }}</h1>
+<p>Source: {{ playlist.source }}</p>
+<p>Tag: {{ playlist.tag }}</p>
+
+{% if csvData | length > 0 %}
+  <ul>
+    {% for music in csvData %}
+      <li>{{ music.full_name }} - {{ music.title }}</li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p>No data found for {{ playlist.source }}</p>
+{% endif %}

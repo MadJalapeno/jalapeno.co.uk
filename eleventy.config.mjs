@@ -3,6 +3,9 @@ const now = String(Date.now())
 // Image transform plugin
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 
+// Import the parse function from csv-parse
+import { parse } from "csv-parse/sync"; 
+
 // add id to headings
 import markdownIt from "markdown-it";
 import markdownItAnchor from "markdown-it-anchor";
@@ -51,6 +54,16 @@ export default function (eleventyConfig) {
   });
   eleventyConfig.addShortcode('year', function () {
     return new Date().getFullYear()
+  });
+
+  // Add methood to read CSV files
+  eleventyConfig.addDataExtension("csv", (contents) => {
+    const records = parse(contents, {
+      columns: true,
+      skip_empty_lines: true,
+      delimiter: ';',
+    });
+    return records;
   });
 
   eleventyConfig.addPlugin(pluginFilters);
