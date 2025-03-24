@@ -1,25 +1,14 @@
-<!--
-// https://www.cyishere.dev/blog/astro-active-nav-item
-const pathname = new URL(Astro.request.url).pathname;
-const currentPath = pathname.split("/")[1]; // remove the first "/"
-
-import { nav } from "@data/nav.ts"; 
-import { Icon } from 'astro-icon/components';
-
-const { pageTitle } = Astro.props;
-
--->
 
 <!-- Navigation start -->
 {% set currentUrl = page.url %} 
 {% set urlParts = currentUrl | split('/') %} 
-{%set lastPart = urlParts[1] %}
+{% set lastPart = urlParts[1] %}
 
-  <div id="inner" class="navbar backdrop-blur-lg top-0 sticky">
+  <div id="inner" class="navbar backdrop-blur-md top-0">
     <!-- Branding -->  
     <div class="flex-1">
       <a href="/" class=" hover:underline md:text-xl font-bold flex gap-4 items-center">
-        <Icon name="logo" alt="Astro Blog" class="text-2xl" />
+        <img src="/assets/svg/jalapeno-logo.svg" alt="my jalapeno logo" class="w-8" />
       </a>
     </div>
     
@@ -28,7 +17,7 @@ const { pageTitle } = Astro.props;
       <ul class="menu menu-horizontal p-0 hidden md:flex">
         {% for item in nav %}
         <li>
-          <a href={{item.url}} class={currentPath === item.url.split("/")[1] ? "text-sky-400" : ""}>{{item.title}}</a>
+          <a href="{{item.url}}" class="text-sky-400">{{item.title}}</a>
         </li>
         {% endfor %}
       </ul>
@@ -47,3 +36,4 @@ const { pageTitle } = Astro.props;
       </div>
     </div>
   </div>
+<!-- Navigation end -->

@@ -21,7 +21,7 @@ export default function (eleventyConfig) {
   eleventyConfig.setLayoutsDirectory("_layouts");
 
   eleventyConfig.addPassthroughCopy("src/assets/images");
-  eleventyConfig.addPassthroughCopy("src/assets/fonts");
+  eleventyConfig.addPassthroughCopy("src/assets/svg");
   eleventyConfig.addPassthroughCopy({ 'src/robots.txt': '/robots.txt' });
   
   eleventyConfig.addWatchTarget("src");

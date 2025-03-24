@@ -4,6 +4,7 @@ pagination:
   size: 1
   alias: playlist
 permalink: "/music/{{ playlist.source | slugify }}/"
+layout: default.njk
 ---
 
 {% set csvData = collections[playlist.source] or [] %}
