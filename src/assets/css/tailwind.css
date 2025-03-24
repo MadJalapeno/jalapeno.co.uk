@@ -13,6 +13,14 @@ https://dequeuniversity.com/rules/axe/4.10/color-contrast
   default: true;
   prefersdark: false;
   color-scheme: "light";
+
+  --color-primary: oklch(44.69% 0.1181 135.05);
+  --color-primary-content: oklch(100% 0 0);
+
+  --color-accent: oklch(69.78% 0.1974 45.4);
+  --color-accent-content: oklch(0% 0 0);
+
+  ---depth: 1;
 }
 
 @plugin "daisyui/theme" {
@@ -20,4 +28,36 @@ https://dequeuniversity.com/rules/axe/4.10/color-contrast
   default: false;
   prefersdark: true;
   color-scheme: "dracula";
+
+  --color-primary: oklch(77.05% 0.1209 135.91);
+  --color-primary-content: oklch(0% 0 0);
+
+  --color-accent: oklch(69.78% 0.1974 45.4);
+  --color-accent-content: oklch(0% 0 0);
+
+}
+
+extend: {
+  screens: {
+    print: { raw: 'print' }
+  }
+}
+
+
+/* Increase font size everywhere */
+html {
+  font-size: 18px
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply text-primary font-light;
+
+}
+
+/* Custom CSS */
+
+@layer base {
+  @theme {
+    --font-sans: InterVariable, sans-serif; /* https://tailwindui.com/documentation#add-the-inter-font-family */
+  }
 }

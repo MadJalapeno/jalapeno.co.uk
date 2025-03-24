@@ -2,14 +2,34 @@
 layout: default.njk
 title: "Music"
 ---
-{% for music in allmusic %}
+<h2>Music Playlists</h2>
 
-<div>
-  <div>
-    <a href="/music/{{music.source | slugify }}/">
-      {{ music.source }}
-    </a>
+<p>I love listening to music, and use <a href="https://roon.app/en/">Roon</a> with Qobuz and Tidal for listening.</p>
+    
+<p>Here are some of my playlists.</p>
+
+<p>Playlists are exported directly from Roon, and can be imported into <a href="https://soundiiz.com/">Soundiiz</a>. </p>
+<p>Enjoy.</p>
+
+<div class="grid grid-cols-2 gap-4 plain pb-4">
+
+
+{% for list in allmusic %}
+
+  <div class="card">
+    <div class="card-body">
+      <a href="/playlists/{{ list.full_name | slugify }}/" class="block card bg-base-200 shadow-sm border border-base-300 hover:bg-base-300 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">      
+        <h2 class="card-title">{{ list.full_name }}</h2>
+        <p>{{list.tag}}</p>
+      </a>
+
+    <a href="/csv/{{ list.full_name }}.csv" class="">
+      <img src="/assets/svg/fa-csv.svg" alt="csv" class="w-6 h-6 fill-accent">
+    </a> 
+    </div>
   </div>
-  <div>{{ music.tag }}</div>
-</div>
+
+
 {% endfor %}
+
+</div>

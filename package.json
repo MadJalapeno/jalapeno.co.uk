@@ -1,31 +1,32 @@
 {
   "scripts": {
-      "start": "concurrently \"npm run dev:*\"",
-      "dev:11ty": "npx @11ty/eleventy --serve --port=8080",
-      "dev:tw": "tailwindcss -i src/assets/css/tailwind.css -o _site/assets/css/tailwind.css --watch",
-      "build": "npx @11ty/eleventy && npx tailwindcss -i src/assets/css/tailwind.css -c tailwind.config.js -o _site/assets/css/tailwind.css"
+    "start": "concurrently \"npm run dev:*\"",
+    "dev:11ty": "npx @11ty/eleventy --serve --port=8080",
+    "dev:tw": "tailwindcss -i src/assets/css/tailwind.css -o _site/assets/css/tailwind.css --watch",
+    "build": "npx @11ty/eleventy && npx tailwindcss -i src/assets/css/tailwind.css -c tailwind.config.js -o _site/assets/css/tailwind.css"
   },
   "devDependencies": {
-      "@11ty/eleventy": "^3.0.0",
-      "@tailwindcss/forms": "^0.5.10",
-      "@tailwindcss/typography": "^0.5.16",
-      "alpinejs": "^3.14.8",
-      "concurrently": "^9.1.2",
-      "daisyui": "^5.0.6",
-      "tailwindcss": "^4.0.14"
+    "@11ty/eleventy": "^3.0.0",
+    "@tailwindcss/forms": "^0.5.10",
+    "@tailwindcss/typography": "^0.5.16",
+    "alpinejs": "^3.14.8",
+    "concurrently": "^9.1.2",
+    "daisyui": "^5.0.6",
+    "tailwindcss": "^4.0.14"
   },
   "dependencies": {
-      "@11ty/eleventy-img": "^6.0.1",
-      "@11ty/eleventy-navigation": "^0.3.5",
-      "@11ty/eleventy-plugin-rss": "^2.0.2",
-      "@tailwindcss/cli": "^4.0.8",
-      "@tailwindcss/postcss": "^4.0.7",
-      "csv-parse": "^5.6.0",
-      "dotenv": "^16.4.7",
-      "eleventy-plugin-time-to-read": "^1.3.0",
-      "markdown-it-anchor": "^9.2.0",
-      "postcss": "^8.5.2",
-      "update": "^0.7.4",
-      "upgrade": "^1.1.0"
+    "@11ty/eleventy-img": "^6.0.1",
+    "@11ty/eleventy-navigation": "^0.3.5",
+    "@11ty/eleventy-plugin-rss": "^2.0.2",
+    "@tailwindcss/cli": "^4.0.8",
+    "@tailwindcss/postcss": "^4.0.7",
+    "csv-parse": "^5.6.0",
+    "dotenv": "^16.4.7",
+    "eleventy-plugin-time-to-read": "^1.3.0",
+    "markdown-it-anchor": "^9.2.0",
+    "path": "^0.12.7",
+    "postcss": "^8.5.2",
+    "update": "^0.7.4",
+    "upgrade": "^1.1.0"
   }
 }

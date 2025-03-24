@@ -22,6 +22,7 @@ export default function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy("src/assets/images");
   eleventyConfig.addPassthroughCopy("src/assets/svg");
+  eleventyConfig.addPassthroughCopy({"src/_data/csv/" : "/csv"});
   eleventyConfig.addPassthroughCopy({ 'src/robots.txt': '/robots.txt' });
   
   eleventyConfig.addWatchTarget("src");

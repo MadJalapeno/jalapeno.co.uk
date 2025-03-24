@@ -7,18 +7,28 @@ permalink: "/music/{{ playlist.source | slugify }}/"
 layout: default.njk
 ---
 
-{% set csvData = collections[playlist.source] or [] %}
+{% set csvData = playlist.source | parseCSV %}
+{% set odd = true %}
 
 <h1>{{ playlist.title }}</h1>
 <p>Source: {{ playlist.source }}</p>
 <p>Tag: {{ playlist.tag }}</p>
 
-{% if csvData | length > 0 %}
-  <ul>
-    {% for music in csvData %}
-      <li>{{ music.full_name }} - {{ music.title }}</li>
-    {% endfor %}
-  </ul>
-{% else %}
-  <p>No data found for {{ playlist.source }}</p>
-{% endif %}
+<div class="grid grid-cols-4 w-full p-2 text-2xl font-bold">
+  <div>Title</div>
+  <div>Artist</div>
+  <div>Album</div>
+  <div>ISRC</div>
+</div>
+
+{% for music in csvData %}
+<div class="grid grid-cols-4 w-full {% if odd %}bg-base-300{% endif %} p-2">
+  {% set odd = not odd %}
+  <div>{{ music['title'] }}</div>
+  <div>{{ music['artist'] }}</div>
+  <div>{{ music['album'] }}</div>
+  <div>{{ music['isrc'] }}</div>
+</div>
+{% endfor %}
+
+<div class="my-4"></div>
