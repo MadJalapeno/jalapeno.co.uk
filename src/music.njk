@@ -11,21 +11,25 @@ title: "Music"
 <p>Playlists are exported directly from Roon, and can be imported into <a href="https://soundiiz.com/">Soundiiz</a>. </p>
 <p>Enjoy.</p>
 
-<div class="grid grid-cols-2 gap-4 plain pb-4">
-
-
+<div class="grid grid-cols-2 gap-4 plain">
 {% for list in allmusic %}
 
   <div class="card">
-    <div class="card-body">
-      <a href="/playlists/{{ list.full_name | slugify }}/" class="block card bg-base-200 shadow-sm border border-base-300 hover:bg-base-300 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">      
-        <h2 class="card-title">{{ list.full_name }}</h2>
-        <p>{{list.tag}}</p>
-      </a>
+    <div class="card-body bg-base-200 shadow-sm border border-base-300 hover:bg-base-300 m-4 rounded-sm">
+      <div class="flex justify-between">
+        <div>
+          <a href="/music/{{ list.source }}/" >      
+            <h2 class="card-title">{{ list.full_name }}</h2>
+            <p>{{list.tag}}</p>
+          </a>
+        </div>
 
-    <a href="/csv/{{ list.full_name }}.csv" class="">
-      <img src="/assets/svg/fa-csv.svg" alt="csv" class="w-6 h-6 fill-accent">
-    </a> 
+        <div>
+          <a href="/csv/{{ list.source }}.csv">
+            {{ '/src/assets/svg/fa-csv.svg' | svgContents("fill-primary w-6") | safe }}
+          </a> 
+        </div>
+      </div>
     </div>
   </div>
 

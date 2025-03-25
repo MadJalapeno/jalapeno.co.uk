@@ -1,0 +1,8 @@
+    {% for post in collections.pagesDir %}
+
+      {{ post.data.title }}
+      {{ post.data.date | readableDate }}
+      {{ post.data.description }}
+      <a href="{{ post.url }}">{{ post.url }}</a>
+
+    {% endfor %}

@@ -10,6 +10,8 @@ import { parse } from "csv-parse/sync";
 import markdownIt from "markdown-it";
 import markdownItAnchor from "markdown-it-anchor";
 
+import svgContents from "eleventy-plugin-svg-contents";
+
 import pluginFilters from "./filters.mjs";
 
 //import dotenv from 'dotenv';
@@ -37,10 +39,17 @@ export default function (eleventyConfig) {
   eleventyConfig.addPlugin(eleventyImageTransformPlugin,{
     formats: ["avif", "webp", "jpeg"],
   });
-  
+
+  // Embed SVGs
+  eleventyConfig.addPlugin(svgContents);
+
   // Automatically create a collection of all posts
   eleventyConfig.addCollection("postsDir", function (collectionApi) {
     return collectionApi.getFilteredByGlob("src/posts/*.md");
+  });
+
+  eleventyConfig.addCollection("pagesDir", function (collectionApi) {
+    return collectionApi.getFilteredByGlob("src/pages/*.md");
   });
 
   let markdownLibrary = markdownIt({
