@@ -1,0 +1,52 @@
+{% include "header.njk" %}
+<div class="flex flex-col h-screen justify-between">
+  <!-- Header -->
+  <header>
+    <div class="w-3/4 m-auto max-w-5xl">
+{% include "navbar.njk" %}
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <div class="w-3/4 m-auto max-w-5xl">
+
+  <div class="relative rounded-lg overflow-hidden bg-base-200">
+
+    <img 
+      src="{{ hero }}"
+      alt="{{ title }}"
+      class="w-full h-96 object-cover "
+      eleventy:widths="1024"
+      />
+    
+    <div class="absolute inset-0 flex items-center justify-center">
+      <h1 class="text-4xl font-bold text-neutral px-8 bg-neutral-50/50 mx-8 rounded-sm p-2">{{ title }}</h1>
+    </div>
+  </div>
+
+  <div class="max-w-5xl mx-auto p-6 bg-base-200 shadow-md rounded-lg my-4">
+    <p class="text-base-content mb-6">{{ date | readableDate }}</p>
+
+    <div class="prose prose-lg mb-6">
+
+      {{ content | safe}}
+
+    </div>
+    <div class="flex flex-wrap gap-2">
+      {% for tag in tags %}
+      <a href="/tags/{{ tag | slugify }}" class="bg-base-200 text-base-content px-3 py-1 rounded-full text-sm">{{ tag }}</a>
+      {% endfor %}
+    </div>
+  </div>
+
+      </div>
+  </main>
+
+  <!-- Footer -->
+      {% include "footer.njk" %}
+
+</div>
+        
+</body>
+</html>
