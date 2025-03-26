@@ -1,7 +1,11 @@
 ---
 title:  Kopia/Restic Notifications
-parent: Backup
+layout: page.njk
 excerpt: Notifications please
+eleventyNavigation:
+  key: Restic Notifications
+  parent: backup
+  order: 4
 ---
 
 

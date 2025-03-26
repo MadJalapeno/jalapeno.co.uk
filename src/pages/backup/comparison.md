@@ -1,9 +1,13 @@
 ---
 title: Different Backup Solutions
-parent: Backup
+layout: page.njk
 excerpt: Comparisons and tests
+eleventyNavigation:
+  key: Backup Solution Comparison
+  parent: backup
+  order: 2
 ---
-
+1
 ## The Requirements
 
 I wanted software that was reliable, secure, space efficient, easy to use, and had some kind of notification system for successful/unsuccesful backups.

@@ -1,11 +1,13 @@
 ---
 title: ESPHome on Shelly RGB Duo
-parent: ESPHome
+layout: page.njk
 excerpt: Adding Shelly RGB Duo bulbs to Home Assistant
+eleventyNavigation:
+  parent: esphome
+  title: ESPHome on Shelly RGB
+  key: shelly
 ---
 ## Getting ESPHome onto Shelly RGBW GU-10 Bulbs 
-
-{: .ps-5 .mt-2 .space-y-1 .list-decimal .list-outside }
 
 * Follow the Shelly instructions to connect the bulb to your network in the normal way.
 

@@ -1,7 +1,11 @@
 ---
 title: Bare Minimum Install
-parent: ESPHome
+layout: post.njk
 excerpt: A simple and safe YAML for installing onto a device that will set it up to use information stored in your secrets.yaml file
+eleventyNavigation:
+  key: bare
+  parent: esphome
+  title: Bare Minimum Install
 ---
 
 ## Bare Minimum ESPHome

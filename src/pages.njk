@@ -1,8 +1,21 @@
-    {% for post in collections.pagesDir %}
+---
+layout: page.njk
+---
 
-      {{ post.data.title }}
-      {{ post.data.date | readableDate }}
-      {{ post.data.description }}
-      <a href="{{ post.url }}">{{ post.url }}</a>
+{# https://www.mikeaparicio.com/posts/2022-08-19-nested-navigation-in-eleventy/ #}
 
-    {% endfor %}
+{% set navPages = collections.all | eleventyNavigation %}
+{% macro renderNavListItem(entry) -%}
+<li{% if entry.url == page.url %} class="my-active-class"{% endif %}>
+  <a href="{{ entry.url }}">{{ entry.title }}</a>
+{%- if entry.children.length -%}
+  <ul>
+    {%- for child in entry.children %}{{ renderNavListItem(child) }}{% endfor -%}
+  </ul>
+{%- endif -%}
+</li>
+{%- endmacro %}
+
+<ul>
+{%- for entry in navPages %}{{ renderNavListItem(entry) }}{%- endfor -%}
+</ul>

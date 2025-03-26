@@ -12,25 +12,19 @@
     <div class="w-3/4 m-auto max-w-5xl">
 
   <div class="relative rounded-lg overflow-hidden bg-base-200">
-
-    <img 
-      src="{{ hero }}"
-      alt="{{ title }}"
-      class="w-full h-96 object-cover "
-      eleventy:widths="1024"
-      />
-    
     <div class="absolute inset-0 flex items-center justify-center">
       <h1 class="text-4xl font-bold text-neutral px-8 bg-neutral-50/50 mx-8 rounded-sm p-2">{{ title }}</h1>
     </div>
   </div>
 
   <div class="max-w-5xl mx-auto p-6 bg-base-200 shadow-md rounded-lg my-4">
+    {% if date %}
     <p class="text-base-content mb-6">{{ date | readableDate }}</p>
+    {% endif %}
 
     <div class="prose prose-lg mb-6">
 
-      {{ content | safe}}
+      {{- content | safe -}}
 
     </div>
     <div class="flex flex-wrap gap-2">
