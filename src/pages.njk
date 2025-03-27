@@ -1,21 +1,35 @@
 ---
-layout: page.njk
+layout: default.njk
 ---
 
 {# https://www.mikeaparicio.com/posts/2022-08-19-nested-navigation-in-eleventy/ #}
 
 {% set navPages = collections.all | eleventyNavigation %}
-{% macro renderNavListItem(entry) -%}
-<li{% if entry.url == page.url %} class="my-active-class"{% endif %}>
-  <a href="{{ entry.url }}">{{ entry.title }}</a>
-{%- if entry.children.length -%}
-  <ul>
-    {%- for child in entry.children %}{{ renderNavListItem(child) }}{% endfor -%}
-  </ul>
-{%- endif -%}
-</li>
+
+{% macro renderNavListItem(entry) %}
+  {% if entry.children.length %}
+    <li>
+      <details
+        {%- for child in entry.children %}
+          {% if child.parent == entry.title and child.url == page.url %}
+            class="is-active"
+            open
+          {% endif %}
+        {% endfor %}
+      >
+        <summary>{{ entry.title }}</summary>
+        <ul role="list">
+          {%- for child in entry.children %}{{ renderNavListItem(child) }}{% endfor -%}
+        </ul>
+      </details>
+    </li>
+  {% else %}
+    <li>
+      <a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page" {% endif %}>{{ entry.title }}</a>
+    </li>
+  {%- endif -%}
 {%- endmacro %}
 
-<ul>
+<ul class="nav-list" role="list">
 {%- for entry in navPages %}{{ renderNavListItem(entry) }}{%- endfor -%}
 </ul>
