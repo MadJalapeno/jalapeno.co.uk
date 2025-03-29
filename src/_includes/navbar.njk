@@ -4,14 +4,14 @@
 {% set urlParts = currentUrl | split('/') %} 
 {% set lastPart = urlParts[1] %}
 
-  <div id="inner" class="navbar backdrop-blur-md top-0">
+  <div id="inner" class="navbar px-0 top-0">
     <!-- Branding -->  
     <div class="flex-1">
       <a href="/" class=" hover:underline md:text-xl font-bold flex gap-4 items-center">
         <img 
           src="/assets/svg/jalapeno-logo.svg" 
           alt="my jalapeno logo" 
-          class="w-8" 
+          class="w-12 pl-4" 
           eleventy:ignore/>
       </a>
     </div>
