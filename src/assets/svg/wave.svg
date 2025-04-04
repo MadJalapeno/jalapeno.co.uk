@@ -1,3 +1,8 @@
+<!-- 
+  https://codepen.io/goodkatz/pen/LYPGxQz?editors=1100
+  https://svg-path.com/
+  
+   -->
   <svg 
     class="waves" 
     xmlns="http://www.w3.org/2000/svg" 
@@ -6,12 +11,13 @@
     preserveAspectRatio="none" 
     shape-rendering="auto">
     <defs>
-      <path id="gentle-wave" d=" M-160,44 c30,0,58,-18,88,-18 s58,18,88,18 s58,-18,88,-18 s58,18,88,18 v-44 h-352 Z" />
+      <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
     </defs>
     <g class="parallax">
-      <use xlink:href="#gentle-wave" x="24" y="0" stroke-width="0.25" stroke="#91c679" fill-opacity="0" />
-      <use xlink:href="#gentle-wave" x="48" y="0" stroke-width="0.25" stroke="#91c679" fill-opacity="0" />
-      <use xlink:href="#gentle-wave" x="72" y="0" stroke-width="0.25" stroke="#91c679" fill-opacity="0" />
-      <use xlink:href="#gentle-wave" x="96" y="0" stroke-width="0.25" stroke="#91c679" fill-opacity="0" />
+      <use xlink:href="#gentle-wave" x="24" y="2" stroke-width="0.25" stroke="#91c679" fill="#91c679" fill-opacity="0.0" />
+      <use xlink:href="#gentle-wave" x="48" y="0" stroke-width="0.25" stroke="#91c679" fill="#91c679" fill-opacity="0.0" />
+      <use xlink:href="#gentle-wave" x="72" y="4" stroke-width="0.25" stroke="#91c679" fill="#91c679" fill-opacity="0.0" />
     </g>
   </svg>
+
+
