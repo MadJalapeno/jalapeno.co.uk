@@ -1,6 +1,5 @@
 ---
 title: Boosting Sales with Effective Search Engine Optimization (SEO)
-permalink: "/posts/{{ title | slugify }}/"
 description: Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic eos odit sequi minima iure natus, odio tempora sit Lorem ipsum dolor sit.
 date: 2024-01-12
 hero: /posts/images/post-1.jpg

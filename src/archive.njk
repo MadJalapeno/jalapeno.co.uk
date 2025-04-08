@@ -1,0 +1,58 @@
+---
+title: Archive
+layout: default.njk
+pagination:
+  data: collections.posts
+  size: 10
+  alias: postslist
+  reverse: true
+---
+<h1>Archive</h1>
+
+{% if pagination.pageLinks.length > 1 %}
+
+  <div class="pb-6 sm:pb-0">
+    <p class="text-md text-gray-500">
+      Showing
+      <span class="font-medium">
+        {{ (pagination.pageNumber * pagination.size) + 1 }}
+      </span>
+      to
+      <span class="font-medium">
+        {% if pagination.nextPageLink %}
+          {{ (pagination.pageNumber * pagination.size) + pagination.size }}
+        {% else %}
+          {{ collections.posts.length }}
+        {% endif %}
+      </span>
+      of
+      <span class="font-medium">{{ collections.posts.length }}</span>
+      results
+    </p>
+  </div>
+{% endif %}
+
+<div class=" grid grid-cols-1 gap-4"> 
+{%- for post in postslist %}
+  {% include "postCard.njk" %}
+{% endfor %}
+</div>
+
+<nav class="">
+  <div class="grid grid-cols-2 gap-4 mt-4">
+    <div class="text-right">
+	{% if pagination.previousPageLink %}
+	  <a class="underline decoration-primary hover:decoration-double" href="{{ pagination.previousPageHref }}">← Previous</a>
+	{% else %}
+	  <span class="">-</span>
+	{% endif %}
+      </div>
+      <div>
+	{% if pagination.nextPageLink %}
+	  <a class="underline decoration-primary hover:decoration-double" href="{{ pagination.nextPageHref}}">Next →</a>
+	{% else %}
+	  <span class="">-</span>
+	{% endif %}
+      </div>
+    </div>
+  </nav>
