@@ -10,7 +10,6 @@ module.exports = () => {
 
   return {
     // ... other values here
-    hass: process.env.GIT_COMMIT_HASH || latestGitCommitHash,
-    hash: latestGitCommitHash,
+    hash: process.env.GIT_COMMIT_HASH || latestGitCommitHash,
   }
 };

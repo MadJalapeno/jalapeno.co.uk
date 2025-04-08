@@ -1,7 +1,9 @@
+{% set niceURL = post.data.title | slugify %}
+{% set niceURL = "/posts/" + niceURL + "/" %}
 
 
     <article class="card lg:card-side ring-1 ring-base-content/10 bg-base-300/20 p-7 rounded-3xl">
-      <a class="w-full" href="{{ post.url }}">
+      <a class="w-full" href="{{ niceURL }}">
         <img
           src="{{ post.data.hero }}"
           class="w-full h-52 rounded-xl object-cover zoomie"
@@ -16,7 +18,7 @@
             {{ post.data.date | readableDate}}
           </time>
         </h2>
-        <a href="{{ post.url }}">
+        <a href="{{ niceURL }}" class="mt-2">
           <h1 class="font-semibold text-lg lg:text-xl">{{ post.data.title }}</h1>
         </a>
 
@@ -26,7 +28,7 @@
           </p>
         </div>
 
-        <a href={`/posts/${slugify(post.data.title, { lower:true })}`} class="mt-auto flex items-center">
+        <a href={{ niceURL }} class="mt-auto flex items-center">
           <h2 class="text-sm font-semibold text-primary">Read article</h2>
           <svg
             viewBox="0 0 16 16"

@@ -1,0 +1,22 @@
+---
+title: Portfolio
+layout: default.njk
+permalink: /tags/
+
+---
+    {%- set excludedTags = ["all", "postsDir", "pagesDir"] %}
+
+
+<!-- tags start -->
+  <div class="border-2 border-l-0 border-gray-200 dark:border-gray-700 pl-4 rounded-br-lg rounded-tr-lg pr-4 pb-4">
+    <h1>Tags</h1>
+    <div class="grid grid-cols-2 gap-4">
+        {%- for tag, posts in collections %}
+        {% if tag not in excludedTags %}
+        <a href="{{ tag | url | slugify }}" class="text-gray-700 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400">
+          <span class="text-lg font-semibold">{{ tag }}</span> {{ posts.length }}
+        {% endif %}
+        {%- endfor %}
+    </div>
+  </div>
+<!-- tags end -->
