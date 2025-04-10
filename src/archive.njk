@@ -1,14 +1,12 @@
 ---
 title: Archive
-layout: default.njk
+layout: page.njk
 pagination:
   data: collections.posts
   size: 10
   alias: postslist
   reverse: true
 ---
-<h1>Archive</h1>
-
 {% if pagination.pageLinks.length > 1 %}
 
   <div class="pb-6 sm:pb-0">

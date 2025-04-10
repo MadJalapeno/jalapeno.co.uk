@@ -4,7 +4,7 @@ pagination:
   size: 1
   alias: playlist
 permalink: "/music/{{ playlist.source }}/"
-layout: default.njk
+layout: page.njk
 ---
 
 {% set csvData = playlist.source | parseCSV %}
@@ -22,12 +22,12 @@ layout: default.njk
 </div>
 
 {% for music in csvData %}
-<div class="grid grid-cols-4 w-full {% if odd %}bg-base-300{% endif %} p-2">
+<div class="grid grid-cols-4 w-full text-sm {% if odd %}bg-base-300{% endif %} p-2">
   {% set odd = not odd %}
   <div>{{ music['title'] }}</div>
   <div>{{ music['artist'] }}</div>
   <div>{{ music['album'] }}</div>
-  <div>{{ music['isrc'] }}</div>
+  <div><a href="https://isrcsearch.ifpi.org/?tab=%22code%22&isrcCode=%22{{ music['isrc'] }}%22&showReleases=true" target="_blank">{{ music['isrc'] }}</a></div>
 </div>
 {% endfor %}
 
