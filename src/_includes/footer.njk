@@ -1,25 +1,24 @@
 <!-- Footer -->
-<footer class="footer footer-center p-4 min-h-24">
-  <div class="grid gap-4 grid-cols-1 md:grid-cols-3 items-center ">
-    <div class="text-center md:text-left">
-      <p class="text-xs text-base-content/70">
+<footer class="footer footer-center py-4 min-h-24">
+  <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-4">
+
+    <div class="text-center md:text-left w-full">
+      <p class="text-tiny text-base-content/70">
         &copy; <span id="footer-year">{% year %}</span> All rights reserved.
       </p>
     </div>
+
     <div class="text-center">
-      <p class="text-xs text-base-content/70 flex justify-center items-center">
+      <p class="text-tiny text-base-content/70 flex justify-center items-center">
         Built with 
-      </p>
-      <p class="text-xs text-base-content/70">
-        <a href="https://11ty.dev">Eleventy v{{ eleventy.version }}</a>
+        <a href="https://11ty.dev">11ty v{{ eleventy.version }}</a>
       </p>
     </div>
-    <div class="text-center md:text-right">
-      <p class="text-xs text-base-content/70">
-         Source Code Version: 
-      </p>
-      <p>
-        <a href="https://github.com/MadJalapeno/jalapeno.co.uk" target="_blank" rel="noopener noreferrer" class="text-xs text-base-content/70">
+
+    <div class="text-center md:text-right w-full">
+      <p class="text-tiny text-base-content/70">
+        git v: 
+        <a href="https://github.com/MadJalapeno/jalapeno.co.uk" target="_blank" rel="noopener noreferrer" class="text-tiny text-base-content/70">
         {{ buildInfo.hash }}
         </a>
       </p>
