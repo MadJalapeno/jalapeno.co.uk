@@ -4,17 +4,24 @@ const eleventyNavigation = {
 	order: 1,
 };
 
-const layout = "default.njk";
+const layout = "page.njk";
 const numberOfLatestPostsToShow = 5;
+const title = "Latest Posts";
 ---
 {% set postsCount = collections.posts | length %}
 {% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
 
-<h1 class="mb-4">Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}</h1>
-
-<div class="my-4">
-Most recent posts
+<!--
+<div class="pt-4">
+  Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}
 </div>
+-->
+
+{% set hero = true %}
+{% set heroTitle = "Latest Posts" %}
+{% set heroSubtitle = "A collection of my latest posts." %}
+
+{% set pageTitle = title %}
 
 {% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %}
 {% set postslistCounter = postsCount %}

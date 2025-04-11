@@ -1,0 +1,23 @@
+<!-- sidebar start -->
+
+<div class="print:hidden">
+    <div class="p-4 rounded-lg max-w-sm border-primary/30 border">
+      <div class="mb-2 text-xs">
+        Reading Time:
+      </div>
+
+{% if date %}
+<p class="text-base-content mb-6">{{ date | readableDate }}</p>
+{% endif %}
+
+{% if tags %}
+<div class="flex flex-wrap gap-2">
+  {% for tag in tags %}
+  <a href="/tags/{{ tag | slugify }}" class="bg-base-200 text-base-content px-3 py-1 rounded-full text-sm">{{ tag }}</a>
+  {% endfor %}
+</div>
+{% endif %}
+</div>
+</div>
+
+<!-- sidebar end -->

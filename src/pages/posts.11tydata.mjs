@@ -2,5 +2,5 @@ export default {
 	tags: [
 		"pages"
 	],
-	"layout": "page.njk",
+	"layout": "pages.njk",
 };

@@ -6,9 +6,11 @@ eleventyNavigation:
   key: bare
   parent: esphome
   title: Bare Minimum Install
+prose: true
 ---
+{{ excerpt }}
 
-## Bare Minimum ESPHome
+### Bare Minimum ESPHome
 
 After accidently overwriting the API key on a light bulb I didn't want to make the same mistake again, so now I have a new way of installing ESPHome on devices.
 
@@ -50,7 +52,7 @@ esphome:
   name: ${name}
   friendly_name: ${friendly_name}
 
-# Enable Home Assistant API
+#S Enable Home Assistant API
 api:
   encryption:
     key: !secret api_encryption_key
