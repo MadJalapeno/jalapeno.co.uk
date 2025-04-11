@@ -1,6 +1,6 @@
 ---
 title: Bare Minimum Install
-layout: post.njk
+layout: page.njk
 excerpt: A simple and safe YAML for installing onto a device that will set it up to use information stored in your secrets.yaml file
 eleventyNavigation:
   key: bare
