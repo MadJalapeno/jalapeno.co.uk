@@ -7,6 +7,7 @@ import { parse } from "csv-parse/sync";
 import eleventyNavigationPlugin from "@11ty/eleventy-navigation";
 import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
+import timeToRead  from "eleventy-plugin-time-to-read";
 
 // add id to headings
 import markdownIt from "markdown-it";
@@ -46,6 +47,8 @@ export default function (eleventyConfig) {
 
   // Embed SVGs
   eleventyConfig.addPlugin(svgContents);
+
+  eleventyConfig.addPlugin(timeToRead);
 
   // 11ty Plugins
   eleventyConfig.addPlugin(eleventyNavigationPlugin);

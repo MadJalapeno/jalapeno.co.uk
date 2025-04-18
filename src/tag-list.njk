@@ -1,22 +1,24 @@
 ---
-title: Portfolio
+title: Tag List
 layout: page.njk
 permalink: /tags/
 
 ---
-    {%- set excludedTags = ["all", "postsDir", "pagesDir"] %}
+    {%- set excludedTags = ["all", "postsDir", "pagesDir", "posts"] %}
+    {%- set sortedTags = collections | dictsort %}
 
 
 <!-- tags start -->
-  <div class="border-2 border-l-0 border-gray-200 dark:border-gray-700 pl-4 rounded-br-lg rounded-tr-lg pr-4 pb-4">
-    <h1>Tags</h1>
-    <div class="grid grid-cols-2 gap-4">
-        {%- for tag, posts in collections %}
-        {% if tag not in excludedTags %}
-        <a href="{{ tag | url | slugify }}" class="text-gray-700 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400">
-          <span class="text-lg font-semibold">{{ tag }}</span> {{ posts.length }}
-        {% endif %}
-        {%- endfor %}
+  <div class="">
+    {%- for tag, posts in sortedTags %}
+    {% if tag not in excludedTags %}
+    <div class="indicator mx-4">
+      <span class="indicator-item badge badge-primary badge-sm">{{ posts.length }}</span> 
+      <a href="{{ tag | url | slugify }}" class="">
+        <div class="border rounded-lg py-2 px-4 border-primary bg-base-200 hover:bg-base-300">{{ tag }}</div>
+      </a>
     </div>
+    {% endif %}
+    {%- endfor %}
   </div>
 <!-- tags end -->

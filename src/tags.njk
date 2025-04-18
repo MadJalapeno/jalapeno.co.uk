@@ -1,11 +1,12 @@
 ---
-title: Portfolio
-layout: default.njk
+layout: page.njk
 pagination:
   data: collections
   size: 1
   alias: tag
 permalink: /tags/{{ tag | slug }}/
+eleventyComputed:
+    title: "Tag: {{ tag }}"
 ---
 <!-- tags start -->
 {% set currentUrl = page.url %}
@@ -19,13 +20,10 @@ permalink: /tags/{{ tag | slug }}/
 {% endfor %}
 <!-- current url: {{ currentUrl }} -->
 
-  <div class="border-2 border-l-0 border-gray-200 dark:border-gray-700 pl-4 rounded-br-lg rounded-tr-lg pr-4 pb-4">
-    <h1>Tag: {{ currentTag | ucfirst}}</h1>
     <div class="grid grid-cols-2 gap-4">
 {% set taglist = collections[ tag ] %}
 {% for post in taglist | reverse %}
       {% include "postCard.njk" %}
 {% endfor %}
     </div>
-  </div>
 <!-- tags end -->

@@ -1,23 +1,39 @@
 <!-- sidebar start -->
-
 <div class="print:hidden">
-    <div class="p-4 rounded-lg max-w-sm border-primary/30 border">
-      <div class="mb-2 text-xs">
-        Reading Time:
+  <div class="p-4 rounded-lg max-w-sm border-primary/30 border">
+    <div class="grid grid-cols-2 gap-2 text-xs">
+
+      <div class="text-right">
+        Reading Time: 
+      </div>
+      <div >
+          {{ content | timeToRead }} 
       </div>
 
+
 {% if date %}
-<p class="text-base-content mb-6">{{ date | readableDate }}</p>
+    <div class="text-right">
+      Date:
+      </div>
+      <div>
+        {{ date | readableDate }}
+      </div>
 {% endif %}
+    </div>
 
 {% if tags %}
-<div class="flex flex-wrap gap-2">
-  {% for tag in tags %}
-  <a href="/tags/{{ tag | slugify }}" class="bg-base-200 text-base-content px-3 py-1 rounded-full text-sm">{{ tag }}</a>
-  {% endfor %}
-</div>
-{% endif %}
-</div>
-</div>
+    <div class="flex flex-wrap gap-2 pt-4">
+{% for tag in tags %}
+      
+        <a href="/tags/{{ tag | slugify }}">
+        <div class="p-2 border border-primary rounded-md text-xs bg-base-200 hover:bg-base-300">
+          {{ tag }}
+        </div>
+        </a>
 
+{% endfor %}
+    </div>
+{% endif %}
+  </div>
+</div>
 <!-- sidebar end -->
