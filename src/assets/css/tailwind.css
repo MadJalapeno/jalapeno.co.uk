@@ -61,6 +61,18 @@ h1, h2, h3, h4, h5, h6 {
   @apply transform transition-transform duration-500 hover:scale-105;
 }
 
+.prose pre {
+  @apply bg-gray-900 text-gray-100 rounded-lg;
+}
+
+.prose code {
+  @apply bg-gray-100 text-red-600 px-1.5 py-0.5 rounded;
+}
+
+.prose pre code {
+  @apply bg-transparent text-gray-100 p-0;
+}
+
 /*
 
 Waves 
@@ -124,3 +136,4 @@ Waves
     
   }
 }
+
