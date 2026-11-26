@@ -6,6 +6,7 @@ eleventyNavigation:
   key: Restic Notifications
   parent: backup
   order: 4
+tags: [backup, kopia, restic, docker, notifications]
 ---
 
 

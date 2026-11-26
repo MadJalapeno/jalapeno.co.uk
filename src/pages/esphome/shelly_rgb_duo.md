@@ -6,6 +6,7 @@ eleventyNavigation:
   parent: esphome
   title: ESPHome on Shelly RGB
   key: shelly
+tags: [esphome, home-assistant, shelly, tasmota]
 ---
 ## Getting ESPHome onto Shelly RGBW GU-10 Bulbs 
 

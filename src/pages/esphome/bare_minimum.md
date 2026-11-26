@@ -7,8 +7,8 @@ eleventyNavigation:
   parent: esphome
   title: Bare Minimum Install
 prose: true
+tags: [esphome, home-assistant, yaml]
 ---
-{{ excerpt }}
 
 ### Bare Minimum ESPHome
 

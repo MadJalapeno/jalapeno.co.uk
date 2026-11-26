@@ -1,11 +1,12 @@
 ---
-title: garage
+title: Garage
 excerpt: Self Hosted S3 distributed storage
 layout: page.njk
 eleventyNavigation:
   parent: homelab
   title: garage
   key: homelab
+tags: [homelab, s3, storage, docker, self-hosted]
 ---
 
 Garage is a lightweight geo-distributed data store that implements the Amazon S3 object storage protocol. It enables applications to store large blobs such as pictures, video, images, documents, etc., in a redundant multi-node setting. S3 is versatile enough to also be used to publish a static website.

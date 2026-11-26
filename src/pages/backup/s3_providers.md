@@ -7,6 +7,7 @@ eleventyNavigation:
   key: s3 Storage Providers
   parent: backup
   order: 3
+tags: [s3, storage, backup, pricing]
 ---
 
 {# https://markdown-it.github.io/ #}

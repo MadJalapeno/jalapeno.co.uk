@@ -6,6 +6,7 @@ eleventyNavigation:
   key: Backup Solution Comparison
   parent: backup
   order: 2
+tags: [backup, restic, kopia, docker, s3]
 ---
 1
 ## The Requirements

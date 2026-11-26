@@ -6,5 +6,6 @@ eleventyNavigation:
   parent: homelab
   title: Homelab Set Up
   key: homelab
+tags: [homelab]
 ---
 1 2 3
