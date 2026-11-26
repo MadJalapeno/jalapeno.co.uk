@@ -18,7 +18,10 @@ import svgContents from "eleventy-plugin-svg-contents";
 import pluginFilters from "./filters.mjs";
 import seoPlugin from "./seo.mjs";
 import pluginRss from "@11ty/eleventy-plugin-rss";
-import topicMeta from "./src/_data/topics.json" with { type: "json" };
+import fs from "node:fs";
+
+// Read as plain JSON so the build works on older Node versions (JSON import attributes need Node 18.20+/20.10+)
+const topicMeta = JSON.parse(fs.readFileSync(new URL("./src/_data/topics.json", import.meta.url), "utf-8"));
 
 //import dotenv from 'dotenv';
 //dotenv.config();
