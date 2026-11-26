@@ -2,38 +2,29 @@
 layout: page.njk
 title: "Music"
 ---
-<h2>Music Playlists</h2>
-
-<p>I love listening to music, and use <a href="https://roon.app/en/">Roon</a> with Qobuz and Tidal for listening.</p>
-    
-<p>Here are some of my playlists.</p>
-
-<p>Playlists are exported directly from Roon, and can be imported into <a href="https://soundiiz.com/">Soundiiz</a>. </p>
-<p>Enjoy.</p>
-
-<div class="grid grid-cols-2 gap-4 plain">
-{% for list in allmusic %}
-
-  <div class="card">
-    <div class="card-body bg-base-200 shadow-sm border border-base-300 hover:bg-base-300 m-4 rounded-sm">
-      <div class="flex justify-between">
-        <div>
-          <a href="/music/{{ list.source }}/" >      
-            <h2 class="card-title">{{ list.full_name }}</h2>
-            <p>{{list.tag}}</p>
-          </a>
-        </div>
-
-        <div>
-          <a href="/csv/{{ list.source }}.csv">
-            {{ '/src/assets/svg/fa-csv.svg' | svgContents("fill-primary w-6") | safe }}
-          </a> 
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-{% endfor %}
-
+<div class="-mt-4 mb-12 max-w-2xl space-y-4 text-lg text-base-content/70">
+  <p>I love listening to music, and use <a class="link" href="https://roon.app/en/">Roon</a> with Qobuz and Tidal for listening. Here are some of my playlists.</p>
+  <p>Playlists come straight from Roon, and each one can be downloaded as a CSV and imported into <a class="link" href="https://soundiiz.com/">Soundiiz</a>.</p>
 </div>
+
+<ul class="grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-3" aria-label="Playlists">
+{% for list in allmusic %}
+  <li class="card relative">
+    {% if list.cover %}
+    <figure class="aspect-square overflow-hidden rounded-box bg-base-200">
+      <img src="/assets/images/playlists/{{ list.source }}.jpg" alt="" width="600" height="600" loading="lazy" class="size-full object-cover" eleventy:widths="448" />
+    </figure>
+    {% else %}
+    <figure class="grid aspect-square place-items-center rounded-box bg-base-200 text-base-content/70" aria-hidden="true">
+      {{ '/node_modules/lucide-static/icons/music.svg' | svgContents("size-10") | safe }}
+    </figure>
+    {% endif %}
+    <div class="card-body gap-1 px-0 pb-0 pt-3">
+      <h2 class="card-title text-base leading-snug">
+        <a href="/music/{{ list.source }}/" class="link link-hover after:absolute after:inset-0">{{ list.full_name }}</a>
+      </h2>
+      {% if list.tag %}<p class="line-clamp-2 text-sm text-base-content/70">{{ list.tag }}</p>{% endif %}
+    </div>
+  </li>
+{% endfor %}
+</ul>

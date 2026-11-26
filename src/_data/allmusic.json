@@ -1,80 +1,143 @@
 [
   {
+    "full_name": "All 2026",
+    "source": "2026",
+    "title": "General Music from 2026",
+    "tag": "Music I starred in 2026",
+    "cover": true
+  },
+  {
+    "full_name": "EDM 2026",
+    "source": "2026-EDM",
+    "title": "EDM Music from 2026",
+    "tag": "EDM music starred in 2026",
+    "roon_name": "2026 - EDM",
+    "cover": true
+  },
+  {
+    "full_name": "All 2025",
+    "source": "2025",
+    "title": "General Music from 2025",
+    "tag": "Music I starred in 2025",
+    "roon_index": 1,
+    "cover": true
+  },
+  {
+    "full_name": "EDM 2025",
+    "source": "2025-EDM",
+    "title": "EDM Music from 2025",
+    "tag": "EDM music starred in 2025",
+    "roon_name": "2025 - EDM",
+    "cover": true
+  },
+  {
+    "full_name": "All 2024",
+    "source": "2024",
+    "title": "General Music from 2024",
+    "tag": "Music I starred in 2024",
+    "cover": true
+  },
+  {
+    "full_name": "EDM 2024",
+    "source": "2024-EDM",
+    "title": "EDM Music from 2024",
+    "tag": "EDM music starred in 2024",
+    "roon_name": "2024 - EDM",
+    "cover": true
+  },
+  {
     "full_name": "All 2023",
     "source": "2023",
     "title": "General Music from 2023",
-    "tag": "Music I starred in 2023"
+    "tag": "Music I starred in 2023",
+    "cover": true
   },
   {
     "full_name": "EDM 2023",
     "source": "2023-EDM",
     "title": "EDM Music from 2023",
-    "tag": "EDM music starred in 2023"
+    "tag": "EDM music starred in 2023",
+    "roon_name": "2023 - EDM",
+    "cover": true
   },
   {
     "full_name": "All 2022",
     "source": "2022",
     "title": "General Music from 2022",
-    "tag": "Music I starred in 2022"
+    "tag": "Music I starred in 2022",
+    "cover": true
   },
   {
     "full_name": "EDM 2022",
     "source": "2022-EDM",
     "title": "EDM Music from 2022",
-    "tag": "EDM music starred in 2022"
+    "tag": "EDM music starred in 2022",
+    "roon_name": "2022 - EDM",
+    "cover": true
   },
   {
     "full_name": "All 2021",
     "source": "2021",
     "title": "Music I starred in 2021",
-    "tag": "All music I starred during 2021"
+    "tag": "All music I starred during 2021",
+    "cover": true
   },
   {
     "full_name": "All 2020",
     "source": "2020",
     "title": "Music starred in 2020",
-    "tag": "First year with Roon, and these are the songs I starred."
+    "tag": "First year with Roon, and these are the songs I starred.",
+    "cover": true
   },
   {
     "full_name": "Harman Art of Listening",
     "source": "harman_art_of_listening_playlist",
     "title": "Harman Art of Listening",
     "bio": "<a href=\"https://artoflistening.harman.com/\">More Info</a>",
-    "tag": "What is the difference between hearing and listening?"
+    "tag": "What is the difference between hearing and listening?",
+    "roon_name": "Harman Art of Listening Playlist",
+    "cover": true
   },
   {
     "full_name": "LX Demo",
     "source": "lx_demo",
     "title": "Demo Files for LX521",
     "tag": "Music that shows the full potential of my speakers.",
-    "bio": "I have a gorgeous sound system. These are songs to challenge it with either deep rumbling bass, great imaging or crystal clear voices."
+    "bio": "I have a gorgeous sound system. These are songs to challenge it with either deep rumbling bass, great imaging or crystal clear voices.",
+    "cover": true
   },
   {
     "full_name": "Gorgeous and Timeless",
     "source": "gorgeous_and_timeless",
     "title": "Goregeous and Timeless songs",
-    "bio": null
+    "bio": null,
+    "cover": true
   },
   {
     "full_name": "Passion",
     "source": "Passion",
     "title": "Passion ♥️",
     "tag": "Sundays at Studio Valbonne",
-    "bio": "Growing up with the best music"
+    "bio": "Growing up with the best music",
+    "roon_index": 1,
+    "cover": true
   },
   {
     "full_name": "School Disco",
     "source": "school_disco",
-    "title": "Schoool Disco"
+    "title": "Schoool Disco",
+    "cover": true
   },
   {
     "full_name": "Radio Paradise Faves",
     "source": "radio_paradise_faves",
-    "title": "Favorites from Radio Paradise"
+    "title": "Favorites from Radio Paradise",
+    "cover": true
   },
   {
     "full_name": "GetDaFlockOuttaHere",
     "source": "GetDaFlockOuttaHere",
-    "title": "GetDaFlockOuttaHere"
+    "title": "GetDaFlockOuttaHere",
+    "cover": true
   }
 ]

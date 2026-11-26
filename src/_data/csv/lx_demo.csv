@@ -1,38 +1,46 @@
-title;artist;album;isrc
-Overture;Chicane;Behind The Sun;gbcuy9900034
-Holding On;Gregory Porter;Still Rising - The Collection;frum71600283
-Time Lapse;Ludovico Einaudi;In A Time Lapse;itb281200060
-Fuel to Fire;Agnes Obel;Aventine;bep011300129
-Still;Foo Fighters;In Your Honor;usrw30500015
-Let's Go Back;Chuck Love, Fourfeet;Om Records - 25 Years;usom82070003
-Chant;Nils Frahm;Solo;gbwzd1506505
-Carriages;Tiny Ruins;Brightly Painted One;nzah01400007
-Inception: Time;Hans Zimmer;Inception (Music from the Motion Picture);usre11000577
-Hunter;Bjork;Homogenic (US Internet Release);gbbtf9700142
-Adagio, for violin, strings & organ in G minor, T. Mi 26 (composed by Remo Giazotto, not by Albinoni);;Herbert von Karajan, Albinoni, Pachelbel, Vivaldi, Bach, Mozart, Gluck...;def058300580
-Dead Already (From American Beauty Soundtrack);Thomas Newman;American Beauty (Original Motion Picture Score);usdw19921001
-Moan;Trentemoller;The Last Resort;del020620038
-Miss You;Trentemoller;The Last Resort;
-bad guy;Billie Eilish;WHEN WE ALL FALL ASLEEP, WHERE DO WE GO?;usum71900764
-Angel of Verdun (Main titles);Christophe Beck;Edge of Tomorrow (Original Motion Picture Soundtrack);usnli1400046
-No Time to Die, film score: Final Ascent;Hans Zimmer;No Time To Die (Original Motion Picture Soundtrack);gbum72003929
-La Ritournelle;Sebastien Tellier;Politics;frs710300071
-Traveling Miles;Cassandra Wilson;Traveling Miles;usbn29801071
-Richter: November;Mari Samuelsen / Konzerthausorchester Berlin / Jonathan Stockhammer;Richter: November (Single Edit);den961802531
-Last Girl on Earth;Supreme Beings of Leisure;Supreme Beings Of Leisure;uspa39900076
-Sure Thing;St Germain;Tourist (Remastered Hi-Res Version) (Remastered);fr92s1200006
-Sleep: Dream 3 (in the midst of my life);Max Richter;From Sleep;den961500380
-Carnival;Natalie Merchant;Tigerlily (Edition Studio Masters);usee11100403
-Wilmot;The Sabres Of Paradise;Haunted Dancehall;gbbpw9400119
-Stay;Grum;Deep State;gbewa1902891
-Regrets;Eurythmics;Touch (Reissue - Deluxe Edition);gbarl0300601
-Who's That Girl?;Eurythmics;Touch (Reissue - Deluxe Edition);gbarl0300604
-Who's That Girl?;Eurythmics;Touch (Reissue - Deluxe Edition);gbarl0300613
-Black Marlin;Parov Stelar;Voodoo Sonic;ate612010013
-Cry Me a River;Diana Krall;The Look Of Love;usgr10110631
-I Don't Wanna Grow Up;Holly Cole;Temptation;usbn29500302
-Defiant;Charles Lloyd & The Marvels + Lucinda Williams;Vanished Gardens;usug11800640
-Orion;Jah Wobble;In Dub;gbbly1603898
-Untitled (Late Sun) (Another Shade of DWIG remix);Kerala Dust;Late Sun;deh741700834
-Dubassex (Wish You Were Here);Rabbit in the Moon;Decade;qmda61399777
-Heroes (Kruder Long Loose Bossa / Edit);Roni Size / Reprazent;New Forms (20th Anniversary Edition);gbum71703757
+title;artist;album;isrc;image
+Overture;Chicane;Behind The Sun;gbcuy9900034;
+Holding On;Gregory Porter;Still Rising - The Collection;frum71600283;610a5b45f3.jpg
+Einaudi: Time Lapse;Ludovico Einaudi;;;a4c62586bc.jpg
+Fuel to Fire;Agnes Obel;Aventine;bep011300129;95416aca0a.jpg
+Still;Foo Fighters;In Your Honor;usrw30500015;f3dfc79745.jpg
+Let's Go Back;Chuck Love, Fourfeet;Om Records - 25 Years;usom82070003;0523fc7cfa.jpg
+Chant;Nils Frahm;Solo;gbwzd1506505;0a444ab1a8.jpg
+Carriages;Tiny Ruins;Brightly Painted One;nzah01400007;c2536e843a.jpg
+Time;Michel Vaucaire, Charles Dumont, Hans Zimmer, Bruce Fowler, Carl Rydlund, Edward Neumeister, Elizabeth Finch, Kevin Kaska, Rick Giovinazzo, Suzette Moriarty, Walt Fowler, Matt Dunkley;;;c4e25cd933.jpg
+Hunter;Bjork;Homogenic (US Internet Release);gbbtf9700142;22b053f45b.jpg
+"Adagio, for violin, strings & organ in G minor, T. Mi 26 (composed by Remo Giazotto; not by Albinoni)";Tomaso Albinoni, Berlin Philharmonic Orchestra, Herbert von Karajan;;;
+Dead Already (From American Beauty Soundtrack);Thomas Newman;American Beauty (Original Motion Picture Score);usdw19921001;b191ae6622.jpg
+Moan;Trentemoller;The Last Resort;del020620038;c3abddfb8d.jpg
+Miss You;Trentemoller;The Last Resort;;c3abddfb8d.jpg
+bad guy;Billie Eilish;WHEN WE ALL FALL ASLEEP, WHERE DO WE GO?;usum71900764;3c513b3a28.jpg
+Angel of Verdun (Main titles);Christophe Beck;Edge of Tomorrow (Original Motion Picture Soundtrack);usnli1400046;f044e76763.jpg
+No Time to Die, film score: Final Ascent;Hans Zimmer;No Time To Die (Original Motion Picture Soundtrack);gbum72003929;3035d3df45.jpg
+La Ritournelle;Sebastien Tellier;Politics;frs710300071;
+Traveling Miles;Cassandra Wilson;Traveling Miles;usbn29801071;82e1ea0605.jpg
+Richter: November;Mari Samuelsen / Konzerthausorchester Berlin / Jonathan Stockhammer;Richter: November (Single Edit);den961802531;21c4b040cb.jpg
+Last Girl on Earth;Supreme Beings of Leisure;Supreme Beings Of Leisure;uspa39900076;397e677e15.jpg
+Sure Thing;St Germain;Tourist (Remastered Hi-Res Version) (Remastered);fr92s1200006;7271749f05.jpg
+Sleep: Dream 3 (in the midst of my life);Max Richter;From Sleep;den961500380;00c4107eba.jpg
+Carnival;Natalie Merchant;Tigerlily (Edition Studio Masters);usee11100403;8dffe8e974.jpg
+Wilmot;The Sabres Of Paradise;Haunted Dancehall;gbbpw9400119;
+Stay;Grum;Deep State;gbewa1902891;63552b5a90.jpg
+Regrets;Eurythmics;Touch (Reissue - Deluxe Edition);gbarl0300601;a5888e18d9.jpg
+Who's That Girl?;Eurythmics;Touch (Reissue - Deluxe Edition);gbarl0300604;a5888e18d9.jpg
+Who's That Girl?;Eurythmics;Touch (Reissue - Deluxe Edition);gbarl0300613;a5888e18d9.jpg
+Black Marlin;Parov Stelar;Voodoo Sonic;ate612010013;
+Cry Me a River;Diana Krall;The Look Of Love;usgr10110631;e926ad97a6.jpg
+I Don't Wanna Grow Up;Holly Cole;Temptation;usbn29500302;be201afd66.jpg
+Defiant;Charles Lloyd & The Marvels + Lucinda Williams;Vanished Gardens;usug11800640;13439aa52f.jpg
+Orion;Jah Wobble;In Dub;gbbly1603898;1efe456dc5.jpg
+Untitled (Late Sun) (Another Shade of DWIG remix);Kerala Dust;Late Sun;deh741700834;2bf0b6cc72.jpg
+Dubassex (Wish You Were Here);Rabbit in the Moon;Decade;qmda61399777;c6212e83ba.jpg
+Heroes (Kruder Long Loose Bossa / Edit);Roni Size / Reprazent;New Forms (20th Anniversary Edition);gbum71703757;b09bda2462.jpg
+Summertime (Album Version);Renee Olstead, David Walter Foster, John Clayton, Dorothy Heyward, DuBose Heyward, George Gershwin, Ira Gershwin;;;fcf4e23430.jpg
+"Take the ""A"" Train";Billy Strayhorn, Duke Ellington and His Orchestra, Duke Ellington;;;bdefd22cb7.jpg
+Heart Is A Drum (Album Version);Beck;;;c1e912f216.jpg
+Me and Julio Down by the Schoolyard;Paul Simon;;;de51e264fd.jpg
+Ain't No Sunshine;Bill Withers, José James;;;fed39601b6.jpg
+Diamonds on the Soles of Her Shoes;Paul Simon, Joseph Shabalala, Ladysmith Black Mambazo;;;e4445dc436.jpg
+You Say;Paul Mabury, Jason Ingram, Lauren Daigle;;;16871cfefb.jpg
+Don't Let It Bring You Down (Live at Massey Hall 1971);Neil Young;;;2a65251d53.jpg

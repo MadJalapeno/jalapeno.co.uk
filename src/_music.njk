@@ -5,30 +5,48 @@ pagination:
   alias: playlist
 permalink: "/music/{{ playlist.source }}/"
 layout: page.njk
+eleventyComputed:
+  title: "{{ playlist.title }}"
 ---
-
 {% set csvData = playlist.source | parseCSV %}
-{% set odd = true %}
 
-<h1>{{ playlist.title }}</h1>
-<p>Source: {{ playlist.source }}</p>
-<p>Tag: {{ playlist.tag }}</p>
-
-<div class="grid grid-cols-4 w-full p-2 text-2xl font-bold">
-  <div>Title</div>
-  <div>Artist</div>
-  <div>Album</div>
-  <div>ISRC</div>
+<div class="mb-10 grid gap-8 md:grid-cols-[14rem_minmax(0,1fr)] md:items-end">
+  {% if playlist.cover %}
+  <figure class="aspect-square w-56 max-w-full overflow-hidden rounded-box bg-base-200">
+    <img src="/assets/images/playlists/{{ playlist.source }}.jpg" alt="Cover art for {{ playlist.title }}" width="600" height="600" class="size-full object-cover" eleventy:widths="448" />
+  </figure>
+  {% endif %}
+  <div class="{% if not playlist.cover %}md:col-span-2 {% endif %}max-w-2xl">
+    {% if playlist.tag %}<p class="text-xl leading-relaxed text-base-content/70">{{ playlist.tag }}</p>{% endif %}
+    {% if playlist.bio %}<p class="mt-4">{{ playlist.bio | safe }}</p>{% endif %}
+    <p class="mt-4 text-sm tabular-nums text-base-content/70">
+      {{ csvData.length }} {% if csvData.length == 1 %}track{% else %}tracks{% endif %}
+      &middot; <a class="link" href="/csv/{{ playlist.source }}.csv">Download CSV</a>
+      &middot; <a class="link" href="/music/">All playlists</a>
+    </p>
+  </div>
 </div>
 
+<ul class="list">
 {% for music in csvData %}
-<div class="grid grid-cols-4 w-full text-sm {% if odd %}bg-base-300{% endif %} p-2">
-  {% set odd = not odd %}
-  <div>{{ music['title'] }}</div>
-  <div>{{ music['artist'] }}</div>
-  <div>{{ music['album'] }}</div>
-  <div><a href="https://isrcsearch.ifpi.org/?tab=%22code%22&isrcCode=%22{{ music['isrc'] }}%22&showReleases=true" target="_blank">{{ music['isrc'] }}</a></div>
-</div>
+  <li class="list-row items-center gap-x-4">
+    {% if music.image %}
+    <img src="/assets/images/playlists/thumbs/{{ music.image }}" alt="" width="96" height="96" loading="lazy" class="size-12 rounded-box object-cover" eleventy:ignore />
+    {% else %}
+    <div class="size-12 rounded-box bg-base-200" aria-hidden="true"></div>
+    {% endif %}
+    <div class="list-col-grow min-w-0">
+      <div class="truncate font-semibold">{{ music['title'] }}</div>
+      <div class="truncate text-sm text-base-content/70">{{ music['artist'] }}{% if music['album'] %} &middot; {{ music['album'] }}{% endif %}</div>
+    </div>
+    {% if music['isrc'] %}
+    <a class="link text-xs tabular-nums" href="https://isrcsearch.ifpi.org/?tab=%22code%22&isrcCode=%22{{ music['isrc'] }}%22&showReleases=true" target="_blank" rel="noopener noreferrer" aria-label="Look up ISRC {{ music['isrc'] }} for {{ music['title'] }}">{{ music['isrc'] }}</a>
+    {% endif %}
+    <div class="tooltip tooltip-left" data-tip="Search on YouTube">
+      <a class="btn btn-ghost btn-square btn-sm" href="https://www.youtube.com/results?search_query={{ (music['title'] + ' ' + music['artist']) | truncate(120, true, '') | urlencode }}" target="_blank" rel="noopener noreferrer" aria-label="Search YouTube for {{ music['title'] }} by {{ music['artist'] }} (opens in a new window)">
+        {{ '/node_modules/lucide-static/icons/square-play.svg' | svgContents("size-5") | safe }}
+      </a>
+    </div>
+  </li>
 {% endfor %}
-
-<div class="my-4"></div>
+</ul>
