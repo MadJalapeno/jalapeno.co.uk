@@ -8,16 +8,15 @@ eleventyNavigation:
   order: 2
 tags: [backup, restic, kopia, docker, s3]
 ---
-1
 ## The Requirements
 
-I wanted software that was reliable, secure, space efficient, easy to use, and had some kind of notification system for successful/unsuccesful backups.
+I wanted software that was reliable, secure, space efficient, easy to use, and had some kind of notification system for successful/unsuccessful backups.
 
-It had to be multi-platform, as I was planning for the situation where the original machine had died, and that was why I was needing to do a restore.
+It had to be multi-platform, as I was planning for the situation where the original machine had died, and that was why I needed to do a restore.
 
 ## The Contenders
 
-After reading online I chose the following to evaluate:
+After reading online, I chose the following to evaluate:
 * Restic
 * Borg
 * Duplicacy
@@ -27,16 +26,16 @@ After reading online I chose the following to evaluate:
 
 ## The Testing
 
-I installed each package onto my Unraid server as a docker package. I then backed up two folders to an S3 off-site machine and noted the size. I then tried downloading a folder from the upload on a Mac and a PC to check it was possible to safely recover files when all I had was the keys and passwords. 
+I installed each package onto my Unraid server as a Docker package. I then backed up two folders to an S3 off-site machine and noted the size. I then tried downloading a folder from the upload on a Mac and a PC to check it was possible to safely recover files when all I had was the keys and passwords. 
 
 Total size of the source folders was:
 
 | Folder | Content | Size |
 | --- |---|---|
 | appdata | Mix of text, databases and binaries and images | 1.1GB |
-| YouTube | MP4 video files | 798M |
+| YouTube | MP4 video files | 798MB |
 
-Everything was done on my Unraid server, which has a Xeon CPU and 16Gb ram, backing up to a Storj repository via a 1Gb internet connection. I set up a new docker image for debian linux to have a common base for everything.
+Everything was done on my Unraid server, which has a Xeon CPU and 16GB RAM, backing up to a Storj repository via a 1Gbps internet connection. I set up a new Docker image for Debian Linux to have a common base for everything.
 
 ```bash
 apt update && apt upgrade
@@ -47,7 +46,7 @@ apt autoremove
 ## Details
 
 ### Restic
-Restic is a very well regarded backup program that handles deduplication, compression and encryption well. Although it is command line based there are some very nice GUI's available to simplify operation. The use of RClone allows a large variety of repositories to be used. I tried the CLI and a GUI called backrest.
+Restic is a very well-regarded backup program that handles deduplication, compression and encryption well. Although it is command line based there are some very nice GUIs available to simplify operation. The use of rclone allows a large variety of repositories to be used. I tried the CLI and a GUI called Backrest.
 
 
 
@@ -147,7 +146,7 @@ Borg doesn't use S3, which makes things a little more complicated to compare, bu
 ```bash
 apt install borgbackup
 ```
-I'll be running this to backup to a local folder
+I'll be running this to back up to a local folder
 
 ```bash
 borg init --encryption=repokey /mnt/user/borg/borg-test
@@ -198,7 +197,7 @@ All archives:                1.92 GB              1.74 GB              1.69 GB
 Chunk index:                    8517                 8967
 ------------------------------------------------------------------------------
 ```
-To restore I wanted to use Windows, but there is no windows version. Instead I tried my Mac, first mounting the server folder.
+To restore I wanted to use Windows, but there is no Windows version. Instead I tried my Mac, first mounting the server folder.
 
 ```bash
 borg list /Volumes/borg/borg-test
@@ -275,7 +274,7 @@ Backup took 3m:13s, and was a total of 1.52 GB.
 
 One very nice feature is the ability to verify files easily in the GUI.
 
-However many users report having problems with the database the program uses, so tempted to pass on Duplicati.
+However many users report having problems with the database the program uses, so I'm tempted to pass on Duplicati.
 
 
 ### Kopia
@@ -292,27 +291,27 @@ Restoring is really nice as you can mount the backup as a drive to browse.
 
 Note: Backup size is larger with Duplicati and Cloudberry as I needed to install them both.
 
-Cloudberry on unraid works as a VM, with a VNC type connection to the GUI. All very pretty, but it means you can not copy/paste Access Keys into the window, and as they're long I decided this made it unuseable. 
+Cloudberry on unraid works as a VM, with a VNC-type connection to the GUI. All very pretty, but it means you cannot copy/paste Access Keys into the window, and as they're long I decided this made it unusable. 
 
 It's a shame, as I've used Cloudberry for many years at work.
 
 ## Final Results
 
-#### Summary
+### Summary
 
 | Program | Bucket Size | Time  | Ease of use | Recovery |
 | --- | --- | --- | --- | --- |
 | Restic | 1.63 GB | 43s * | command line is pretty simple | restored files using Backrest on Windows with no problem | 
-| Borg| 1.69 GB | 49s (local) | command line is pretty simple | No windows version. Permission issues on MacOS. |
+| Borg| 1.69 GB | 49s (local) | command line is pretty simple | No Windows version. Permission issues on macOS. |
 | Duplicacy | 1.5 GB | 7m:40s | GUI is clear | Restored individual files easily on Windows |
-| Duplicati | 1.5 GB | 3m:13s | Easy to use GUI | 
+| Duplicati | 1.5 GB | 3m:13s | Easy to use GUI | |
 | Kopia | 1.9 GB | 67s * | GUI is a little confusing at first, but easy to use once you get the hang of it | Very easy |
-| Cloudberry | - | - | Could not use a container is set up to not allow copy/paste of keys | |
+| Cloudberry | - | - | Could not use: the container is set up to not allow copy/paste of keys | |
 
-Notes: * I don't know if this was timing was accurate as rclone may cache data?
+Notes: * I don't know if this timing was accurate, as rclone may cache data.
 
 
-#### Storj buckets
+### Storj buckets
 
 | Bucket | Files | Storage |
 | --- | --- | --- |
@@ -325,4 +324,4 @@ Notes: * I don't know if this was timing was accurate as rclone may cache data?
 
 If it wasn't for the reports of database problems with Duplicati I would probably go with that as it's so easy to use.
 
-I'm having a hard time deciding between restic and kopia, so will [next](/pages/backup/kopia_restic/) try seeing how good the reporting and notifications work.
+I'm having a hard time deciding between restic and kopia, so I will [next](/pages/backup/kopia_restic/) try seeing how good the reporting and notifications work.

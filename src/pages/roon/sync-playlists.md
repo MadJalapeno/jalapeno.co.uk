@@ -80,13 +80,13 @@ npm run roon -- --only "2026 - EDM"
 
 **The extension only shows in Roon while the script is running.** If you cannot find it under Settings > Extensions, the script has probably already timed out. Run it with `--wait 300` and look while it waits.
 
-**The library insists on an email address.** The extension registration needs an `email` field. Use a generic address you control rather than your personal one, because it appears in Roon's extension list.
+**The API library insists on an email address.** The extension registration needs an `email` field. Use a generic address you control rather than your personal one, because it appears in Roon's extension list.
 
 **Artist names are noisy.** Roon lists every credit for a track, so the artist can be "Sacha Skarbek, Amanda Ghost, James Blunt". An older export may only have "James Blunt". The script matches tracks by title and any shared artist name, so existing rows keep the artist, album and ISRC they already had. Only new tracks get Roon's long credit string.
 
 **No ISRCs.** The API does not provide them, so new tracks have none. If your site links tracks to an ISRC lookup, those links only appear for tracks you already had.
 
-**Playlists can contain the same track twice.** Roon's own count is the number of unique tracks. The script lists each song once so the numbers agree.
+**Playlists can contain the same track twice.** Roon's own count seems to be of unique tracks. The script lists each song once, so the counts come out close to Roon's.
 
 **Duplicate playlist names are common**, especially if you have imported playlists from a streaming service. Run a dry run for each copy and pick the one that matches the playlist you published before.
 

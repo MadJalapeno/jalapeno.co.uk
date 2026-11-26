@@ -10,14 +10,14 @@ tags: [backup, kopia, restic, docker, notifications]
 ---
 
 
-### A Cunning Plan
+## A Cunning Plan
 
 I just worked out that I can install restic in the kopia docker package which should at least help simplify things during testing.
 
 ```bash 
 apk add restic 
 ``` 
-so now have one minimal package with both applications using the same rclone config.
+So I now have one minimal package with both applications using the same rclone config.
 
 What could possibly go wrong?
 
@@ -27,7 +27,7 @@ What could possibly go wrong?
 
 | Name | Website | Comments |
 |---|---|---|
-| Promethus | [link](https://github.com/prometheus/prometheus) | monitoring system and time series database |
+| Prometheus | [link](https://github.com/prometheus/prometheus) | monitoring system and time series database |
 | Uptime Kuma | [link](https://uptime.kuma.pet/) | Available as a Docker package on Unraid. Can use its own notification system (includes Apprise, Home Assistant and Signal) and detect lots of different statuses. |
 | Apprise | [link](https://github.com/caronc/apprise)| A wrapper for lots of services for sending notifications. Available as a Docker package on Unraid |
 | Notifiarr | [link](https://github.com/Notifiarr/notifiarr) | Sends notifications via Discord |
@@ -36,8 +36,8 @@ What could possibly go wrong?
 | Howler | [link](https://github.com/Zggis/howler) | Log file monitor |
 | Splunk | [link](https://www.splunk.com/)  | a Cisco company 😞 |
 | iGotify | [link](https://github.com/androidseb25/iGotify-Notification-Assistent) | Send notifications to the Gotify iPhone app. |
-| Ntfy | [link](https://ntfy.sh) | send notifications to ntfy app via scripts from any computer |
-| Slackbot | [link](https://github.com/rockymadden/slack-cli?tab=readme-ov-file) | Create a slack bot |
+| Ntfy | [link](https://ntfy.sh) | Send notifications to the ntfy app via scripts from any computer |
+| Slackbot | [link](https://github.com/rockymadden/slack-cli?tab=readme-ov-file) | Create a Slack bot |
 
 ## Backup Software
 
@@ -57,14 +57,14 @@ root@kopia:/# restic version
 restic 0.16.5 compiled with go1.22.5 on linux/amd64
 ```
 
-I've been playing with a wrapper for restic called [resticprofile](https://creativeprojects.github.io/resticprofile/). It lets you easily write a yaml script for restic, and includes scheduling and notifications via command hooks and http hooks.
+I've been playing with a wrapper for restic called [resticprofile](https://creativeprojects.github.io/resticprofile/). It lets you easily write a YAML script for restic, and includes scheduling and notifications via command hooks and http hooks.
 
 ```bash
 resticprofile version
 resticprofile version 0.27.1 commit eb130039b794e944223c7192673ccb04814347ca
 ```
 
-My basic yaml is below (anything inside <> has been changed to protect my information).
+My basic YAML is below (anything inside <> has been changed to protect my information).
 
 ```yaml
 version: "1"
@@ -94,16 +94,16 @@ default:
 
 #### Restic Profile
 
-https://creativeprojects.github.io/resticprofile/
+<https://creativeprojects.github.io/resticprofile/>
 
 #### Restic Exporter
 
-https://github.com/ngosang/restic-exporter
+<https://github.com/ngosang/restic-exporter>
 
 #### Restic Shell Script
 
-https://drwho.virtadpt.net/archive/2020-04-15/migrating-to-restic-for-offsite-backups/
+<https://drwho.virtadpt.net/archive/2020-04-15/migrating-to-restic-for-offsite-backups/>
 
 #### Restic Exit Codes
 
-https://forum.restic.net/t/restic-example-gists/1751/2
+<https://forum.restic.net/t/restic-example-gists/1751/2>

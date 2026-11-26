@@ -10,21 +10,21 @@ prose: true
 tags: [esphome, home-assistant, yaml]
 ---
 
-### Bare Minimum ESPHome
+## Bare Minimum ESPHome
 
-After accidently overwriting the API key on a light bulb I didn't want to make the same mistake again, so now I have a new way of installing ESPHome on devices.
+After accidentally overwriting the API key on a light bulb, I didn't want to make the same mistake again, so now I have a new way of installing ESPHome on devices.
 
-This is a simple YAML file for installing onto blank ESP devices, or when installing ESPhome over Tasmota, and I will be using it as a default.
+This is a simple YAML file for installing onto blank ESP devices, or when installing ESPHome over Tasmota, and I will be using it as a default.
 
 Rather than a random API encryption key and a random WiFi password it will use the data stored in the appropriate keys of secrets.yaml right from the beginning.
 
-To use, change the 4 lines indicated to match relevent configuration.
+To use, change the four lines indicated to match your configuration.
 
 * **name** *(Required, string)*: This is the name of the node. It should always be unique in your ESPHome network. May only contain lowercase characters, digits and hyphens, and can be at most 24 characters long by default, or 31 characters long if name_add_mac_suffix is false. See Changing ESPHome Node Name.
 
 * **friendly_name** *(Optional, string)*: This is the name sent to the frontend. It is used by Home Assistant as the integration name, device name, and is automatically prefixed to entities where necessary.
 
-* **board** *(Required, string)*: The PlatformIO board ID that should be used. Choose the appropriate board from this list (the icon next to the name can be used to copy the board ID). This only affects pin aliases, flash size and some internal settings, if unsure choose a generic board from Espressif such as esp01_1m.
+* **board** *(Required, string)*: The PlatformIO board ID that should be used. Choose the appropriate board from the list in the ESP8266 or ESP32 reference below (the icon next to the name can be used to copy the board ID). This only affects pin aliases, flash size and some internal settings, if unsure choose a generic board from Espressif such as esp01_1m.
 
 * [Core Reference](https://esphome.io/components/esphome/)
 * [ESP8266 Reference](https://esphome.io/components/esp8266/)

@@ -14,30 +14,30 @@ tags: [esphome, home-assistant, shelly, tasmota]
 
 * Open the IP address of the bulb in the browser *shellyip*.
 
-* Check list at https://github.com/arendst/mgos-to-tasmota for link to software version
+* Check the list at <https://github.com/arendst/mgos-to-tasmota> for the link to your software version.
 
 * For RGB Duo Bulbs it is http://*shellyip*/ota?url=http://ota.tasmota.com/tasmota/shelly/mg2tasmota-ShellyDuoRGBW.zip
 
-    eg http://192.168.1.177/ota?url=http://ota.tasmota.com/tasmota/shelly/mg2tasmota-ShellyDuoRGBW.zip
+    e.g. http://192.168.1.177/ota?url=http://ota.tasmota.com/tasmota/shelly/mg2tasmota-ShellyDuoRGBW.zip
 
-* Type that address into the browser. it will return some JSON. Wait 5 minutes for it to finish the install and let it will reboot itself.
+* Type that address into the browser. It will return some JSON. Wait 5 minutes for it to finish installing and reboot itself.
 
-* Using your phone, connect to the devices captive portal called Tasmota-[random]. Connect the new device to the network (same as step 1).
+* Using your phone, connect to the device's captive portal called Tasmota-[random]. Connect the new device to the network (same as step 1).
 
 * Connect to the device using the IP address from above.
 
-* In ESPHome add a new ESP8266 device, give it a name, but **skip** installing it.
+* In ESPHome, add a new ESP8266 device, give it a name, but **skip** installing it.
 
 * Use the bare minimum code from [here](/pages/esphome/bare_minimum/) for the first install to make sure all the keys are correct, but change the name and friendly name to match what you want the final name to be.
 
-* Create a new firmware for the bulb. Download it locally, and then GZIP it so it will upload successfully. 
+* Create new firmware for the bulb. Download it locally, and then GZIP it so it will upload successfully. 
 {% highlight "shell" %}
 gzip filename.bin
 {% endhighlight %}
 
-* Using the Tasmota web update install the new firmware.
+* Using the Tasmota web updater, install the new firmware.
 
-* Add the new found device to Home Assistant when prompted.
+* Add the newly found device to Home Assistant when prompted.
 
 * You can now update the YAML to add the rest of the config.
 

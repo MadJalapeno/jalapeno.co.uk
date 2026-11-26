@@ -1,6 +1,6 @@
 ---
 title: Garage
-excerpt: Self Hosted S3 distributed storage
+excerpt: Self-hosted S3 distributed storage
 layout: page.njk
 eleventyNavigation:
   parent: homelab
