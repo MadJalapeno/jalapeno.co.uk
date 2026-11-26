@@ -28,7 +28,7 @@ tags: [esphome, home-assistant, shelly, tasmota]
 
 * In ESPHome add a new ESP8266 device, give it a name, but **skip** installing it.
 
-* Use the bare minimum code from [here]( _pages/esphome/bare_minimum.md ) for the first install to make sure all the keys are correct, but change the name and friendly name to match what you want the final name to be.
+* Use the bare minimum code from [here](/pages/esphome/bare_minimum/) for the first install to make sure all the keys are correct, but change the name and friendly name to match what you want the final name to be.
 
 * Create a new firmware for the bulb. Download it locally, and then GZIP it so it will upload successfully. 
 {% highlight "shell" %}

@@ -325,4 +325,4 @@ Notes: * I don't know if this was timing was accurate as rclone may cache data?
 
 If it wasn't for the reports of database problems with Duplicati I would probably go with that as it's so easy to use.
 
-I'm having a hard time deciding between restic and kopia, so will [next](/pages/kopia_restic/) try seeing how good the reporting and notifications work.
+I'm having a hard time deciding between restic and kopia, so will [next](/pages/backup/kopia_restic/) try seeing how good the reporting and notifications work.
