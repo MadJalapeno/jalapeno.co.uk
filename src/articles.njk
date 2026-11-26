@@ -7,6 +7,7 @@ const eleventyNavigation = {
 const layout = "page.njk";
 const numberOfLatestArticlesToShow = 5;
 const title = "Latest Articles";
+const noindex = true;
 ---
 {% set articlesCount = collections.articles | length %}
 {% set articleList = collections.articles | head(-1 * numberOfLatestArticlesToShow) %}

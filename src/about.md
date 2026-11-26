@@ -1,6 +1,7 @@
 ---
 layout: page.njk
 title: About
+noindex: true
 prose: true
 ---
 

@@ -16,6 +16,8 @@ import markdownItAnchor from "markdown-it-anchor";
 import svgContents from "eleventy-plugin-svg-contents";
 
 import pluginFilters from "./filters.mjs";
+import seoPlugin from "./seo.mjs";
+import pluginRss from "@11ty/eleventy-plugin-rss";
 import topicMeta from "./src/_data/topics.json" with { type: "json" };
 
 //import dotenv from 'dotenv';
@@ -28,6 +30,8 @@ export default function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy("src/assets/images");
   eleventyConfig.addPassthroughCopy("src/assets/svg");
+  // icons, web manifest: served from the site root (/apple-touch-icon.png, /manifest.webmanifest)
+  eleventyConfig.addPassthroughCopy({ "src/assets/icons": "/" });
   eleventyConfig.addPassthroughCopy({"src/_data/csv/" : "/csv"});
   eleventyConfig.addPassthroughCopy({ 'src/robots.txt': '/robots.txt' });
   
@@ -118,6 +122,8 @@ export default function (eleventyConfig) {
   });
 
   eleventyConfig.addPlugin(pluginFilters);
+  eleventyConfig.addPlugin(seoPlugin);
+  eleventyConfig.addPlugin(pluginRss);
 };
 
 export const config = {

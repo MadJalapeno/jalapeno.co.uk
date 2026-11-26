@@ -1,12 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="{{ site.lang }}" class="scroll-smooth">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <title>{{ title }}</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="generator" content="" />
-    <meta name="description" content="{{ description }}" />
+    {% seoHead %}
 
     <script>
       // Apply the saved (or OS) colour scheme before first paint to avoid a flash.
@@ -17,9 +14,14 @@
         if (dark) document.documentElement.setAttribute('data-theme', 'jalapeno-dark');
       } catch (e) {}
     </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,300..800&display=swap" />
     <link rel="stylesheet" href="/assets/css/tailwind.css" />
     <link rel="icon" href="/assets/svg/jalapeno-logo.svg" type="image/svg+xml" />
-    <script src="https://10w.us/api/script.js" data-site-id="1" defer></script>
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="alternate" type="application/atom+xml" title="{{ site.name }} updates" href="/feed.xml" />
     <!--
     debugging info
     =============================

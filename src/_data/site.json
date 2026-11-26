@@ -1,0 +1,11 @@
+{
+  "name": "Jalapeno",
+  "url": "https://jalapeno.co.uk",
+  "lang": "en-GB",
+  "locale": "en_GB",
+  "tagline": "Guides, playlists and small experiments",
+  "description": "Guides, playlists and small experiments from a personal corner of the web: backups, ESPHome, homelab, Roon and music.",
+  "ogImage": "/assets/images/og-default.png",
+  "themeColorLight": "#fafaf5",
+  "themeColorDark": "#1b211b"
+}
