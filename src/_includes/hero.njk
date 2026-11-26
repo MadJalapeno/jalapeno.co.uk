@@ -1,15 +1,26 @@
 <!-- hero start -->
-
-<div class="hero p-0 h-screen/2 min-h-min rounded-lg"
-  style="background-image: url({{ bgImage }});">
-    <div class="hero-content w-full p-0 gap-0 flex flex-col items-center">
-        <div class="text-center pt-10 min-h-[480px] content-end">
-            <div class="mb-8 p-8 bg-base-300/60 rounded-md shadow-md">
-                <h1 class="text-4xl md:text-5xl xl:text-7xl font-semibold text-base-content">
-                    I am the tea kettle.
-                </h1>
-            </div>
-        </div>        
+<section class="hero relative min-h-[72vh] overflow-hidden border-b border-base-300">
+  {% include "linefield.njk" %}
+  <div class="hero-content relative w-full max-w-5xl justify-start px-6 py-24">
+    <div class="max-w-2xl">
+      <h1 class="text-5xl font-semibold leading-[0.95] tracking-tight text-base-content md:text-7xl xl:text-8xl">
+        I am the tea&nbsp;kettle.
+      </h1>
+      <p class="mt-6 max-w-md text-lg text-base-content/70">
+        Guides, playlists and small experiments from a personal corner of the web.
+      </p>
+      <div class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
+        <a href="/pages/" class="btn btn-primary btn-sm">Read the guides</a>
+        <a href="/music/" class="link link-hover text-sm">Or browse the playlists</a>
+      </div>
     </div>
-</div>
+  </div>
+  <!-- cursor effect selector -->
+  <div class="join absolute bottom-4 right-6" role="radiogroup" aria-label="Cursor effect">
+    <input class="join-item btn btn-xs" type="radio" name="fx" value="brighten" aria-label="Brighten" checked="checked" />
+    <input class="join-item btn btn-xs" type="radio" name="fx" value="fatten" aria-label="Fatten" />
+    <input class="join-item btn btn-xs" type="radio" name="fx" value="bend" aria-label="Bend" />
+    <input class="join-item btn btn-xs" type="radio" name="fx" value="pluck" aria-label="Pluck" />
+  </div>
+</section>
 <!-- hero end -->

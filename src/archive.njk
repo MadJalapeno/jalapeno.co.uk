@@ -2,9 +2,10 @@
 title: Archive
 layout: page.njk
 pagination:
-  data: collections.posts
+  data: collections.articles
   size: 10
-  alias: postslist
+  alias: articlelist
+  generatePageOnEmptyData: true
   reverse: true
 ---
 {% if pagination.pageLinks.length > 1 %}
@@ -20,21 +21,25 @@ pagination:
         {% if pagination.nextPageLink %}
           {{ (pagination.pageNumber * pagination.size) + pagination.size }}
         {% else %}
-          {{ collections.posts.length }}
+          {{ collections.articles.length }}
         {% endif %}
       </span>
       of
-      <span class="font-medium">{{ collections.posts.length }}</span>
+      <span class="font-medium">{{ collections.articles.length }}</span>
       results
     </p>
   </div>
 {% endif %}
 
-<div class=" grid grid-cols-1 gap-4"> 
-{%- for post in postslist %}
-  {% include "postCard.njk" %}
+{% if articlelist.length %}
+<ul class="list">
+{%- for article in articlelist %}
+  {% include "articleCard.njk" %}
 {% endfor %}
-</div>
+</ul>
+{% else %}
+<p class="max-w-md text-base-content/70">The archive is empty for now. Articles will appear here as they are published.</p>
+{% endif %}
 
 <nav class="">
   <div class="grid grid-cols-2 gap-4 mt-4">

@@ -1,44 +1,67 @@
-
 <!-- Navigation start -->
-{% set currentUrl = page.url %} 
-{% set urlParts = currentUrl | split('/') %} 
-{% set lastPart = urlParts[1] %}
-
-  <div id="inner" class="navbar px-0 top-0">
-    <!-- Branding -->  
-    <div class="flex-1">
-      <a href="/" class=" hover:underline md:text-xl font-bold flex gap-4 items-center">
-        <img 
-          src="/assets/svg/jalapeno-logo.svg" 
-          alt="my jalapeno logo" 
-          class="w-12 pl-4" 
-          eleventy:ignore/>
-      </a>
-    </div>
-    
-    <!-- Navbar -->
-    <div class="flex-none">
-      <ul class="menu menu-horizontal p-0 hidden md:flex">
-        {% for item in nav %}
-        <li>
-          <a href="{{item.url}}" class="">{{item.title}}</a>
-        </li>
-        {% endfor %}
-      </ul>
-      
-      <!-- Mobile menu button -->
-      <div class="dropdown dropdown-end md:hidden">
-        <label tabindex={0} class="btn btn-ghost btn-square">
-          <svg class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-        </label>
-        <ul tabindex={0} class="dropdown-content menu p-2 rounded-box w-52 menu-compact">
-        {% for item in nav %}
-        <li>
-          <a href="{{item.url}}" class="">{{item.title}}</a>
-        </li>
-        {% endfor %}
-        </ul>
-      </div>
-    </div>
+{% set currentUrl = page.url or '' %}
+<nav class="navbar px-0 min-h-20" aria-label="Main">
+  <div class="navbar-start">
+    <a href="/" class="flex items-center" aria-label="Jalapeno home">
+      <img
+        src="/assets/svg/jalapeno-logo.svg"
+        alt="Jalapeno logo"
+        class="h-10 w-10 object-contain"
+        eleventy:ignore/>
+    </a>
   </div>
+
+  <div class="navbar-end gap-1">
+    <ul class="menu menu-horizontal hidden md:flex">
+      {% for item in nav %}
+      <li>
+        <a href="{{ item.url }}"{% if currentUrl == item.url or (item.url != '/' and currentUrl.startsWith(item.url)) %} class="menu-active" aria-current="page"{% endif %}>{{ item.title }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+
+    <!-- Light / dark: shows the moon in light mode (switch to dark), the sun in dark mode -->
+    <label class="swap swap-rotate btn btn-ghost btn-square">
+      <input type="checkbox" value="jalapeno-dark" class="theme-controller" id="theme-toggle" aria-label="Dark mode" />
+      <span class="swap-off">{{ '/node_modules/lucide-static/icons/moon.svg' | svgContents("size-5") | safe }}</span>
+      <span class="swap-on">{{ '/node_modules/lucide-static/icons/sun.svg' | svgContents("size-5") | safe }}</span>
+    </label>
+
+    <!-- Mobile menu -->
+    <button
+      class="btn btn-ghost btn-square md:hidden"
+      popovertarget="main-menu"
+      style="anchor-name:--main-menu"
+      aria-label="Open menu"
+    >
+      {{ '/node_modules/lucide-static/icons/menu.svg' | svgContents("size-6") | safe }}
+    </button>
+    <ul
+      class="dropdown dropdown-end menu bg-base-100 rounded-box z-1 mt-3 w-52 border border-base-300 p-2"
+      popover
+      id="main-menu"
+      style="position-anchor:--main-menu"
+    >
+      {% for item in nav %}
+      <li>
+        <a href="{{ item.url }}"{% if currentUrl == item.url or (item.url != '/' and currentUrl.startsWith(item.url)) %} class="menu-active" aria-current="page"{% endif %}>{{ item.title }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</nav>
 <!-- Navigation end -->
+<script>
+(() => {
+  const toggle = document.getElementById('theme-toggle');
+  if (!toggle) return;
+  const root = document.documentElement;
+  // Hand control from the early data-theme attribute to the toggle (same theme, so no visual change).
+  toggle.checked = root.getAttribute('data-theme') === 'jalapeno-dark';
+  root.removeAttribute('data-theme');
+  toggle.addEventListener('change', () => {
+    try { localStorage.setItem('theme', toggle.checked ? 'dark' : 'light'); } catch (e) {}
+    window.dispatchEvent(new Event('themechange'));
+  });
+})();
+</script>

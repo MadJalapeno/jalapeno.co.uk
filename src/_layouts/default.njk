@@ -1,26 +1,20 @@
-
 {% include "header.njk" %}
-<div class="flex flex-col h-screen justify-between">
-  <!-- Header -->
-  <header>
-    <div class="w-3/4 m-auto max-w-5xl">
-{% include "navbar.njk" %}
+<div class="flex min-h-screen flex-col">
+  <header class="border-b border-base-300">
+    <div class="mx-auto w-full max-w-5xl px-6">
+      {% include "navbar.njk" %}
     </div>
   </header>
 
-  <!-- Main Content -->
-  <main>
-    <div class="w-3/4 m-auto max-w-5xl">
-      {{ content | safe}}
-      </div>      
+  <main class="flex-1">
+    {{ content | safe }}
   </main>
 
-  <!-- Footer -->
-      <div class="w-3/4 m-auto max-w-5xl">
+  <div class="border-t border-base-300">
+    <div class="mx-auto w-full max-w-5xl px-6">
       {% include "footer.njk" %}
-      </div>
-
+    </div>
+  </div>
 </div>
-        
 </body>
 </html>

@@ -1,9 +1,9 @@
 export default {
 	tags: [
-		"posts"
+		"articles"
 	],
 	"layout": "page.njk",
-	"permalink": "/posts/{{ title | slugify }}/",
+	"permalink": "/articles/{{ title | slugify }}/",
 	"prose": true,
 	"sidebar": true
 };

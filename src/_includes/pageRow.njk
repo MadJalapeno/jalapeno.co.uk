@@ -1,0 +1,17 @@
+<li class="list-row items-start gap-x-6 py-5">
+  <div class="list-col-grow">
+    <a href="{{ entry.url }}" class="link link-hover">
+      <h3 class="text-lg font-semibold leading-snug md:text-xl">{{ entry.data.title }}</h3>
+    </a>
+    {% if showTopic and topics[entry.data.topic] %}<p class="mt-1 text-xs font-semibold uppercase tracking-wide text-base-content/70">{{ topics[entry.data.topic].title }}</p>{% endif %}
+    {% if entry.data.excerpt %}
+    <p class="mt-1 line-clamp-2 text-sm text-base-content/70 md:text-base">{{ entry.data.excerpt }}</p>
+    {% endif %}
+  </div>
+  <a href="{{ entry.url }}" class="btn btn-ghost btn-sm self-center" aria-label="Read {{ entry.data.title }}">
+    Read
+    <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" class="size-4 stroke-current">
+      <path d="M6.75 5.75 9.25 8l-2.5 2.25" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+  </a>
+</li>

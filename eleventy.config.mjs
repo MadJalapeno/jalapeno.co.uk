@@ -16,6 +16,7 @@ import markdownItAnchor from "markdown-it-anchor";
 import svgContents from "eleventy-plugin-svg-contents";
 
 import pluginFilters from "./filters.mjs";
+import topicMeta from "./src/_data/topics.json" with { type: "json" };
 
 //import dotenv from 'dotenv';
 //dotenv.config();
@@ -54,9 +55,38 @@ export default function (eleventyConfig) {
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
   eleventyConfig.addPlugin(syntaxHighlight);
 
-  // Automatically create a collection of all posts
-  eleventyConfig.addCollection("postsDir", function (collectionApi) {
-    return collectionApi.getFilteredByGlob("src/posts/*.md");
+  // Pages grouped by topic (first folder under /pages/), in reading order
+  eleventyConfig.addCollection("pageTopics", function (collectionApi) {
+    const groups = {};
+    for (const item of collectionApi.getFilteredByTag("pages")) {
+      if (!item.url) continue; // skip permalink: false placeholders
+      const slug = item.filePathStem.split("/")[2];
+      (groups[slug] ||= []).push(item);
+    }
+    const order = (item) => item.data.eleventyNavigation?.order ?? 999;
+    return Object.entries(groups)
+      .map(([slug, pages]) => ({
+        slug,
+        title: slug,
+        order: 999,
+        ...(topicMeta[slug] || {}),
+        pages: pages.sort((a, b) => order(a) - order(b) || a.data.title.localeCompare(b.data.title)),
+      }))
+      .sort((a, b) => a.order - b.order);
+  });
+
+  eleventyConfig.addFilter("topicPages", (topics, slug) =>
+    (topics || []).find((t) => t.slug === slug)?.pages || []
+  );
+
+  eleventyConfig.addFilter("adjacentPages", (pages, url) => {
+    const i = (pages || []).findIndex((p) => p.url === url);
+    return { prev: i > 0 ? pages[i - 1] : null, next: i >= 0 && i < pages.length - 1 ? pages[i + 1] : null };
+  });
+
+  // Automatically create a collection of all articles
+  eleventyConfig.addCollection("articlesDir", function (collectionApi) {
+    return collectionApi.getFilteredByGlob("src/articles/*.md");
   });
 
   eleventyConfig.addCollection("pagesDir", function (collectionApi) {

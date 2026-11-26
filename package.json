@@ -3,7 +3,8 @@
     "start": "concurrently \"npm run dev:*\"",
     "dev:11ty": "NODE_ENV=dev npx @11ty/eleventy --serve --port=8080",
     "dev:tw": "tailwindcss -i src/assets/css/tailwind.css -o _site/assets/css/tailwind.css --watch",
-    "build": "npx @11ty/eleventy && npx tailwindcss -i src/assets/css/tailwind.css -c tailwind.config.js -o _site/assets/css/tailwind.css"
+    "build": "npx @11ty/eleventy && npx tailwindcss -i src/assets/css/tailwind.css -c tailwind.config.js -o _site/assets/css/tailwind.css",
+    "roon": "node scripts/roon-sync.mjs"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0",
@@ -12,6 +13,10 @@
     "alpinejs": "^3.14.8",
     "concurrently": "^9.1.2",
     "daisyui": "^5.0.6",
+    "lucide-static": "^1.80.0",
+    "node-roon-api": "github:roonlabs/node-roon-api",
+    "node-roon-api-browse": "github:roonlabs/node-roon-api-browse",
+    "node-roon-api-image": "github:roonlabs/node-roon-api-image",
     "tailwindcss": "^4.0.14"
   },
   "dependencies": {

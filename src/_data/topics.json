@@ -1,0 +1,22 @@
+{
+  "backup": {
+    "title": "Backups",
+    "order": 1,
+    "blurb": "Keeping data safe on Linux, macOS and Windows: strategy, tools and storage providers."
+  },
+  "esphome": {
+    "title": "ESPHome",
+    "order": 2,
+    "blurb": "Flashing and configuring ESPHome on devices like Shelly bulbs, ready for Home Assistant."
+  },
+  "homelab": {
+    "title": "Homelab",
+    "order": 3,
+    "blurb": "What runs in the basement, and how it is set up."
+  },
+  "roon": {
+    "title": "Roon",
+    "order": 4,
+    "blurb": "Getting playlists and album art out of Roon and onto this site."
+  }
+}

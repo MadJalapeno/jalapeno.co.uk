@@ -4,26 +4,30 @@ pagination:
   data: collections
   size: 1
   alias: tag
+  filter:
+    - all
+    - pages
+    - articles
+    - articlesDir
+    - pagesDir
+    - pageTopics
 permalink: /tags/{{ tag | slug }}/
 eleventyComputed:
     title: "Tag: {{ tag }}"
 ---
-<!-- tags start -->
-{% set currentUrl = page.url %}
-{% set urlParts = currentUrl | split('/') %}
-{% set currentTag = "" %}
-
-{% for part in urlParts %}
-  {% if part %}
-    {% set currentTag = part %}
+{% set taglist = collections[ tag ] %}
+{% set showTopic = true %}
+<p class="-mt-4 mb-8 text-lg text-base-content/70">
+  {{ taglist.length }} {% if taglist.length == 1 %}page{% else %}pages{% endif %} tagged <span class="font-semibold text-base-content">{{ tag }}</span>.
+  <a href="/tags/" class="link">All tags</a>
+</p>
+<ul class="list">
+{% for entry in taglist %}
+  {% if entry.data.topic %}
+    {% include "pageRow.njk" %}
+  {% else %}
+    {% set article = entry %}
+    {% include "articleCard.njk" %}
   {% endif %}
 {% endfor %}
-<!-- current url: {{ currentUrl }} -->
-
-    <div class="grid grid-cols-2 gap-4">
-{% set taglist = collections[ tag ] %}
-{% for post in taglist | reverse %}
-      {% include "postCard.njk" %}
-{% endfor %}
-    </div>
-<!-- tags end -->
+</ul>

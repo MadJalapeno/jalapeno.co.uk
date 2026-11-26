@@ -1,0 +1,32 @@
+---js
+const eleventyNavigation = {
+	key: "Home",
+	order: 1,
+};
+
+const layout = "page.njk";
+const numberOfLatestArticlesToShow = 5;
+const title = "Latest Articles";
+---
+{% set articlesCount = collections.articles | length %}
+{% set articleList = collections.articles | head(-1 * numberOfLatestArticlesToShow) %}
+
+{% if articlesCount == 0 %}
+<p class="max-w-md text-base-content/70">
+  There are no articles yet. The first one is still being written. In the meantime, the <a href="/music/" class="link">playlists</a> are ready to browse.
+</p>
+{% else %}
+<ul class="list">
+  {%- for article in articleList | reverse %}
+      {% include "articleCard.njk" %}
+  {% endfor %}
+</ul>
+
+{% set moreArticles = articlesCount - numberOfLatestArticlesToShow %}
+{% if moreArticles > 0 %}
+<div class="mt-10">
+  <h2 class="text-xl font-semibold">Older articles</h2>
+  <p class="mt-2">{{ moreArticles }} more article{% if moreArticles != 1 %}s{% endif %} can be found in <a href="/archive/" class="link">the archive</a>.</p>
+</div>
+{% endif %}
+{% endif %}

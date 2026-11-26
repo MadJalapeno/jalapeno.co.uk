@@ -1,0 +1,19 @@
+<!-- topic aside start -->
+<div class="print:hidden border-t border-base-content pt-4">
+  <h2 class="text-sm font-semibold">More in {{ topicInfo.title }}</h2>
+  <ul class="menu menu-sm mt-2 w-full px-0">
+    {% for s in siblings %}
+    <li><a href="{{ s.url }}"{% if s.url == page.url %} class="menu-active" aria-current="page"{% endif %}>{{ s.data.title }}</a></li>
+    {% endfor %}
+  </ul>
+  {% set shownTags = tags | filterTagList %}
+  {% if shownTags.length %}
+  <div class="mt-6 flex flex-wrap gap-2" aria-label="Tags">
+    {% for tag in shownTags %}
+    <a href="/tags/{{ tag | slugify }}/" class="badge badge-outline hover:badge-neutral">{{ tag }}</a>
+    {% endfor %}
+  </div>
+  {% endif %}
+  <p class="mt-6 text-sm text-base-content/70">Reading time <span class="tabular-nums text-base-content">{{ content | timeToRead }}</span></p>
+</div>
+<!-- topic aside end -->

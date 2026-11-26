@@ -1,0 +1,17 @@
+{% set niceURL = "/articles/" + (article.data.title | slugify) + "/" %}
+
+<li class="list-row items-start gap-x-6 py-6">
+  <time class="w-24 pt-1 text-sm tabular-nums text-base-content/70">{{ article.data.date | readableDate }}</time>
+  <div class="list-col-grow">
+    <a href="{{ niceURL }}" class="link link-hover">
+      <h3 class="text-lg font-semibold leading-snug md:text-xl">{{ article.data.title }}</h3>
+    </a>
+    <p class="mt-1 line-clamp-2 text-sm text-base-content/70 md:text-base">{{ article.data.description }}</p>
+  </div>
+  <a href="{{ niceURL }}" class="btn btn-ghost btn-sm self-center" aria-label="Read {{ article.data.title }}">
+    Read
+    <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" class="size-4 stroke-current">
+      <path d="M6.75 5.75 9.25 8l-2.5 2.25" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+  </a>
+</li>

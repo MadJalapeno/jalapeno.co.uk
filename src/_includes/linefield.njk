@@ -1,0 +1,169 @@
+<!-- Animated line field: lines drift, and bend away from the pointer -->
+<canvas
+  id="linefield"
+  aria-hidden="true"
+  class="pointer-events-none absolute inset-0 size-full text-primary [mask-image:linear-gradient(to_right,rgba(0,0,0,0.3),black_75%)]"
+></canvas>
+<script>
+(() => {
+  const canvas = document.getElementById('linefield');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const host = canvas.parentElement;
+  const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const SPEED = 0.35;                // 1 = original drift speed
+  const STEP = 8;                    // px between samples; drawn as smooth curves
+  let fx = 'brighten';               // bend | pluck | brighten | fatten
+  let w = 0, h = 0, t = 0, raf = 0, onScreen = true, n = 0, nx = 0;
+  let off = [], vel = [];            // per-line, per-column spring state (pluck)
+  const p = { x: -9999, y: -9999, px: -9999, py: -9999, strength: 0, target: 0, speed: 0 };
+
+  const gauss = (d, r) => Math.exp(-2 * (d / r) * (d / r));
+
+  function resize() {
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const r = canvas.getBoundingClientRect();
+    w = r.width; h = r.height;
+    canvas.width = Math.round(w * dpr);
+    canvas.height = Math.round(h * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    n = w < 640 ? 9 : 15;
+    nx = Math.ceil(w / STEP) + 2;
+    off = Array.from({ length: n }, () => new Float32Array(nx));
+    vel = Array.from({ length: n }, () => new Float32Array(nx));
+    draw();
+  }
+
+  // resting position of line i at column x
+  function rest(i, x) {
+    const k = i / (n - 1);
+    return h * 0.12 + h * 0.78 * k
+      + Math.sin(x * 0.0042 + t * SPEED * 0.00045 * (1 + k * 0.6) + i * 0.55) * (16 + k * 26)
+      + Math.sin(x * 0.011 - t * SPEED * 0.0003 + i) * 5;
+  }
+
+  function stepSprings() {
+    // 1D wave equation along each line; pointer movement plucks nearby lines
+    const R = 140;
+    for (let i = 0; i < n; i++) {
+      const o = off[i], v = vel[i];
+      for (let c = 1; c < nx - 1; c++) {
+        v[c] += 0.22 * (o[c - 1] + o[c + 1] - 2 * o[c]) - 0.012 * o[c];
+        v[c] *= 0.985;
+      }
+      for (let c = 1; c < nx - 1; c++) o[c] += v[c];
+      if (p.strength > 0.05 && p.speed > 0.5) {
+        const y0 = rest(i, p.x);
+        const dy = y0 - p.y;
+        const g = gauss(Math.abs(dy), R);
+        if (g > 0.02) {
+          const c0 = Math.round(p.x / STEP);
+          for (let c = Math.max(1, c0 - 12); c < Math.min(nx - 1, c0 + 12); c++) {
+            const gx = gauss((c - c0) * STEP, R * 0.7);
+            v[c] += (dy / (Math.abs(dy) + 40)) * g * gx * Math.min(p.speed, 40) * 0.12;
+          }
+        }
+      }
+    }
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, w, h);
+    const color = getComputedStyle(canvas).color;
+    ctx.strokeStyle = color; ctx.fillStyle = color;
+    ctx.lineCap = 'butt'; ctx.lineJoin = 'round';
+    const R = 150, s = p.strength;
+    for (let i = 0; i < n; i++) {
+      const k = i / (n - 1);
+      const baseAlpha = 0.18 + 0.55 * k;
+      const ys = new Float32Array(nx), gs = new Float32Array(nx);
+      for (let c = 0; c < nx; c++) {
+        const x = c * STEP;
+        let y = rest(i, x);
+        if (fx === 'pluck') y += off[i][c];
+        else if (fx === 'bend' && s > 0.01) {
+          const dx = x - p.x, dy = y - p.y;
+          y += (dy / (Math.abs(dy) + 60)) * gauss(Math.hypot(dx, dy), 170) * 70 * s;
+        }
+        ys[c] = y;
+        gs[c] = (fx === 'brighten' || fx === 'fatten') && s > 0.01 ? gauss(Math.hypot(x - p.x, y - p.y), R) * s : 0;
+      }
+      const path = (ctx2) => {
+        ctx2.moveTo(0, ys[0]);
+        for (let c = 1; c < nx - 1; c++) ctx2.quadraticCurveTo(c * STEP, ys[c], (c + 0.5) * STEP, (ys[c] + ys[c + 1]) / 2);
+      };
+      if (fx === 'fatten') {
+        // ribbon: half-width grows smoothly under the pointer, no overlapping strokes
+        const hw = (c) => 0.65 + gs[c] * 3.4;
+        ctx.globalAlpha = baseAlpha + 0.25 * Math.max(...gs);
+        ctx.beginPath();
+        ctx.moveTo(0, ys[0] - hw(0));
+        for (let c = 1; c < nx - 1; c++) ctx.quadraticCurveTo(c * STEP, ys[c] - hw(c), (c + 0.5) * STEP, (ys[c] + ys[c + 1]) / 2 - (hw(c) + hw(c + 1)) / 2);
+        for (let c = nx - 2; c >= 1; c--) ctx.quadraticCurveTo(c * STEP, ys[c] + hw(c), (c - 0.5) * STEP, (ys[c] + ys[c - 1]) / 2 + (hw(c) + hw(c - 1)) / 2);
+        ctx.lineTo(0, ys[0] + hw(0));
+        ctx.closePath();
+        ctx.fill();
+        continue;
+      }
+      // base line
+      ctx.globalAlpha = baseAlpha;
+      ctx.lineWidth = 1.25;
+      ctx.beginPath(); path(ctx); ctx.stroke();
+      if (fx === 'brighten') {
+        // overlay only the stretch under the pointer, alpha following the falloff
+        ctx.lineWidth = 1.25;
+        for (let c = 0; c < nx - 1; c++) {
+          const g = (gs[c] + gs[c + 1]) / 2;
+          if (g < 0.02) continue;
+          ctx.globalAlpha = g * 0.95;
+          ctx.beginPath(); ctx.moveTo(c * STEP, ys[c]); ctx.lineTo((c + 1) * STEP, ys[c + 1]); ctx.stroke();
+        }
+      }
+    }
+    ctx.globalAlpha = 1;
+  }
+
+  function frame(now) {
+    t = now;
+    p.strength += (p.target - p.strength) * 0.08;
+    p.speed *= 0.9;
+    if (fx === 'pluck') stepSprings();
+    draw();
+    raf = requestAnimationFrame(frame);
+  }
+  function start() { if (!raf && !motion.matches && onScreen && !document.hidden) raf = requestAnimationFrame(frame); }
+  function stop() { if (raf) cancelAnimationFrame(raf); raf = 0; }
+
+  host.addEventListener('pointermove', (e) => {
+    const r = canvas.getBoundingClientRect();
+    p.px = p.x; p.py = p.y;
+    p.x = e.clientX - r.left; p.y = e.clientY - r.top; p.target = 1;
+    if (p.px > -9000) p.speed = Math.max(p.speed, Math.hypot(p.x - p.px, p.y - p.py));
+  });
+  host.addEventListener('pointerleave', () => { p.target = 0; });
+
+  function setFx(v) {
+    fx = v;
+    try { localStorage.setItem('linefield-fx', v); } catch (e) {}
+    off.forEach((a) => a.fill(0)); vel.forEach((a) => a.fill(0));
+    if (motion.matches) draw();
+  }
+  document.addEventListener('change', (e) => {
+    if (e.target && e.target.name === 'fx') setFx(e.target.value);
+  });
+  document.addEventListener('DOMContentLoaded', () => {
+    let saved = null;
+    try { saved = localStorage.getItem('linefield-fx'); } catch (e) {}
+    const el = (saved && document.querySelector('input[name="fx"][value="' + saved + '"]')) || document.querySelector('input[name="fx"]:checked');
+    if (el) { el.checked = true; setFx(el.value); }
+  });
+
+  new ResizeObserver(resize).observe(canvas);
+  new IntersectionObserver(([e]) => { onScreen = e.isIntersecting; onScreen ? start() : stop(); }).observe(canvas);
+  document.addEventListener('visibilitychange', () => (document.hidden ? stop() : start()));
+  motion.addEventListener('change', () => { stop(); motion.matches ? draw() : start(); });
+  window.addEventListener('themechange', draw);
+  resize();
+  start();
+})();
+</script>

@@ -1,68 +1,67 @@
-{% include "header.njk" %}
-<div class="flex flex-col h-screen justify-between">
-  <!-- Header -->
-<!--Waves Container-->
-<div>
+---
+layout: default.njk
+---
+{% set topicInfo = topics[topic] if topic else null %}
+{% set siblings = (collections.pageTopics | topicPages(topic)) if topicInfo else [] %}
+{% set adj = siblings | adjacentPages(page.url) %}
+<div class="mx-auto w-full max-w-5xl px-6 py-12 md:py-16">
 
-{{ '/src/assets/svg/wave.svg' | svgContents | safe }}
+  {% if topicInfo %}
+  <nav class="breadcrumbs mb-6 text-sm" aria-label="Breadcrumb">
+    <ul>
+      <li><a href="/pages/">Pages</a></li>
+      <li>{{ topicInfo.title }}</li>
+    </ul>
+  </nav>
+  {% endif %}
 
-</div>
-<!--Waves end-->
-  <header>
-    <div class="w-3/4 m-auto max-w-5xl border-l-1 border-r-1 border-base-200 bg-linear-to-b to-base-100/85 from-base-200/85">
-{% include "navbar.njk" %}
+  {% if hero %}
+  <figure class="mb-10 aspect-[21/9] overflow-hidden rounded-box bg-base-200">
+    <img
+      src="{{ hero }}"
+      alt=""
+      class="size-full object-cover"
+      eleventy:widths="1024"
+    />
+  </figure>
+  {% endif %}
+
+  <h1 class="max-w-3xl text-4xl font-semibold leading-tight tracking-tight text-base-content md:text-6xl">{{ title }}</h1>
+  {% if topicInfo and excerpt %}
+  <p class="mt-5 max-w-2xl text-xl leading-relaxed text-base-content/70">{{ excerpt }}</p>
+  {% endif %}
+
+  <div class="mt-10 grid gap-12{% if sidebar or topicInfo %} lg:grid-cols-[minmax(0,1fr)_15rem]{% endif %}">
+    <div class="min-w-0{% if prose %} prose prose-lg max-w-[68ch] [--tw-prose-body:var(--color-base-content)] [--tw-prose-headings:var(--color-base-content)] [--tw-prose-lead:var(--color-base-content)] [--tw-prose-links:var(--color-primary)] [--tw-prose-bold:var(--color-base-content)] [--tw-prose-counters:var(--color-base-content)] [--tw-prose-bullets:var(--color-primary)] [--tw-prose-hr:var(--color-base-300)] [--tw-prose-quotes:var(--color-base-content)] [--tw-prose-quote-borders:var(--color-primary)] [--tw-prose-captions:var(--color-base-content)] [--tw-prose-code:var(--color-base-content)] [--tw-prose-pre-code:var(--color-neutral-content)] [--tw-prose-pre-bg:var(--color-neutral)] [--tw-prose-th-borders:var(--color-base-300)] [--tw-prose-td-borders:var(--color-base-300)] prose-headings:font-semibold prose-headings:tracking-tight prose-a:decoration-primary{% endif %}">
+      {{ content | safe }}
     </div>
-  </header>
 
-  <!-- Main Content -->
-  <main>
-    <div class="w-3/4 m-auto max-w-5xl border-l-1 border-r-1 border-base-200 min-h-[85vh] bg-base-100/85">
-
-      {% if hero %}
-      <div class="relative rounded-lg overflow-hidden bg-base-200 mx-4">
-
-        <img 
-        src="{{ hero }}"
-        alt="{{ title }}"
-        class="w-full h-96 object-cover "
-        eleventy:widths="1024"
-        />
-        <div class="absolute inset-0 flex items-center justify-center">
-          <h1 class="text-4xl font-bold text-neutral px-8 bg-base-300/70 mx-8 rounded-sm p-2">{{ title }}</h1>
-        </div>
-      </div>
-      {% else %}
-      <h1 class="text-4xl font-bold px-4 pt-4">{{ title }}</h1>
-      {% endif %}
-
-
-      <!-- main content -->
-      <div class="max-w-5xl mx-auto my-4 relative">
-
-        <div class="{% if prose %}prose {% endif %}prose-lg mb-6 px-4 ">
-          {{ content | safe }}
-        </div>
-
-      {% if sidebar %}
-        <div class="absolute top-18 right-4 ">
-      {% include "sidebar.njk" %}
-      </div>
-      {% endif %}        
-
-      </div>
-
-
-    </div>
-  </main>
-
-  <!-- Footer -->
-  <div class="w-3/4 max-w-5xl mx-auto px-4 border-r-1 border-l-1 bg-linear-to-t border-base-200 to-base-100 from-base-200">
-  {% include "footer.njk" %}
+    {% if sidebar or topicInfo %}
+    <aside class="lg:sticky lg:top-8 lg:self-start">
+      {% if topicInfo %}{% include "pageAside.njk" %}{% else %}{% include "sidebar.njk" %}{% endif %}
+    </aside>
+    {% endif %}
   </div>
 
+  {% if adj.prev or adj.next %}
+  <nav class="mt-16 grid gap-6 border-t border-base-300 pt-8 sm:grid-cols-2" aria-label="More in {{ topicInfo.title }}">
+    <div>
+      {% if adj.prev %}
+      <a href="{{ adj.prev.url }}" class="link link-hover block">
+        <span class="block text-xs text-base-content/70">Previous</span>
+        <span class="block text-lg font-semibold leading-snug">{{ adj.prev.data.title }}</span>
+      </a>
+      {% endif %}
+    </div>
+    <div class="sm:text-right">
+      {% if adj.next %}
+      <a href="{{ adj.next.url }}" class="link link-hover block">
+        <span class="block text-xs text-base-content/70">Next</span>
+        <span class="block text-lg font-semibold leading-snug">{{ adj.next.data.title }}</span>
+      </a>
+      {% endif %}
+    </div>
+  </nav>
+  {% endif %}
+
 </div>
-
-
-        
-</body>
-</html>

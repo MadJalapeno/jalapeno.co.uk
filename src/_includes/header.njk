@@ -1,15 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <title>{{ title }}</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="generator" content="" />
     <meta name="description" content="{{ description }}" />
-    
 
+    <script>
+      // Apply the saved (or OS) colour scheme before first paint to avoid a flash.
+      // The toggle in the navbar takes over once the page has loaded.
+      try {
+        var saved = localStorage.getItem('theme');
+        var dark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (dark) document.documentElement.setAttribute('data-theme', 'jalapeno-dark');
+      } catch (e) {}
+    </script>
     <link rel="stylesheet" href="/assets/css/tailwind.css" />
     <link rel="icon" href="/assets/svg/jalapeno-logo.svg" type="image/svg+xml" />
     <script src="https://10w.us/api/script.js" data-site-id="1" defer></script>
@@ -31,4 +38,5 @@
 {% endif %}
 
 </head>
+<body class="bg-base-100 text-base-content antialiased">
 <!-- header layout end -->

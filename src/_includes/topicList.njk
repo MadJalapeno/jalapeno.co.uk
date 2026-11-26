@@ -1,0 +1,14 @@
+{% for t in collections.pageTopics %}
+<section class="grid gap-6 border-t border-base-content py-10 md:grid-cols-[14rem_minmax(0,1fr)] md:gap-12" aria-labelledby="topic-{{ t.slug }}">
+  <div>
+    <h2 id="topic-{{ t.slug }}" class="text-2xl font-semibold tracking-tight">{{ t.title }}</h2>
+    {% if t.blurb %}<p class="mt-2 text-sm text-base-content/70">{{ t.blurb }}</p>{% endif %}
+    <p class="mt-3 text-xs tabular-nums text-base-content/70">{{ t.pages.length }} {% if t.pages.length == 1 %}page{% else %}pages{% endif %}</p>
+  </div>
+  <ul class="list">
+    {% for entry in t.pages %}
+      {% include "pageRow.njk" %}
+    {% endfor %}
+  </ul>
+</section>
+{% endfor %}

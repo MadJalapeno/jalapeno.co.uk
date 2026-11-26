@@ -1,24 +1,24 @@
 ---
-title: Tag List
+title: Tags
 layout: page.njk
 permalink: /tags/
-
 ---
-    {%- set excludedTags = ["all", "postsDir", "pagesDir", "posts"] %}
-    {%- set sortedTags = collections | dictsort %}
+{%- set excludedTags = ["all", "articlesDir", "pagesDir", "articles", "pages", "pageTopics"] %}
+{%- set sortedTags = collections | dictsort %}
 
+<p class="-mt-4 mb-10 max-w-xl text-lg text-base-content/70">
+  Every tag used across the pages. The number shows how many pages carry it.
+</p>
 
-<!-- tags start -->
-  <div class="">
-    {%- for tag, posts in sortedTags %}
-    {% if tag not in excludedTags %}
-    <div class="indicator mx-4">
-      <span class="indicator-item badge badge-primary badge-sm">{{ posts.length }}</span> 
-      <a href="{{ tag | url | slugify }}" class="">
-        <div class="border rounded-lg py-2 px-4 border-primary bg-base-200 hover:bg-base-300">{{ tag }}</div>
-      </a>
-    </div>
-    {% endif %}
-    {%- endfor %}
-  </div>
-<!-- tags end -->
+<ul class="flex flex-wrap gap-3" aria-label="All tags">
+  {%- for tag, items in sortedTags %}
+  {% if tag not in excludedTags %}
+  <li>
+    <a href="/tags/{{ tag | slugify }}/" class="btn btn-outline btn-sm">
+      {{ tag }}
+      <span class="badge badge-sm badge-ghost tabular-nums">{{ items.length }}</span>
+    </a>
+  </li>
+  {% endif %}
+  {%- endfor %}
+</ul>
